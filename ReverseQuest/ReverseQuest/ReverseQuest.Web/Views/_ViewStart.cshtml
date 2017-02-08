@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    //USED GLOBALLY
+    var userName = '@System.Web.HttpContext.Current.User.Identity.Name';
+    var isAuthenticated = '@Request.IsAuthenticated' === 'False' ? false : true;
+    var path = '@Request.Path';
+</script>
+
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        System.Web.Helpers.AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + "," + formToken;
+    }
+}
+
+<input type="hidden" id="forgeryToken" value="@GetAntiForgeryToken()" />

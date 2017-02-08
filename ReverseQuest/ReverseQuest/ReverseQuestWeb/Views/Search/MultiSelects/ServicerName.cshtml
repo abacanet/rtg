@@ -1,0 +1,25 @@
+﻿<div id="divServicerName">
+    <div id="windowServicerName" style="display:none"></div>
+
+    <span id="btnServicerName" class="k-button hidden-on-narrow">Servicer Type</span>
+
+    <div class="responsive-message"></div>
+
+    <script>
+
+                $("#btnServicerName").click(function () {
+                    $("#windowServicerName").data("kendoWindow").open();
+                });
+
+                $(document).ready(function() {
+                    $("#windowServicerName").kendoWindow({
+                        visible: false,                        
+                        width: "630px",
+                        height: "315px",
+                        title: "Select Servicer Type",
+                        actions: ["Close"],
+                        content: "/html/ServicerNameMultiSelect.html",                        
+                    }).data("kendoWindow");
+                });
+    </script>
+</div>

@@ -1,0 +1,26 @@
+.btn {
+    font-weight: bolder;
+    outline: none;
+    border-width: 2px !important;
+}
+
+.btn:focus, .btn:active {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.pointer:hover, .pointer:focus, .pointer:active {
+    text-decoration: none;
+}
+
+.linkbutton, .linkbutton:hover, .linkbutton:focus {
+    background-color: none;
+    color: #373a3c;
+    text-decoration: none;
+}
+.material-icons.md-blue{
+    color: #0078d7;
+}

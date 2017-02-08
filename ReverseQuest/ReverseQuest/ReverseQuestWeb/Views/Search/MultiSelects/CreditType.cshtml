@@ -1,0 +1,59 @@
+﻿<div id="divCreditType">
+    <div id="windowCreditType" style="display:none">
+        <div id="MSCreditType">
+            <div class="demo-section k-content">
+                <select id="multiSelectCreditType" multiple="multiple"></select>
+            </div>
+            <script>
+        var CreditTypeDataSource = {
+            //   type: "json",
+            serverFiltering: false,
+            transport: {
+                read: {
+                    url: "http://localhost:53176/api/refCreditType/GetCreditTypes",
+                }
+            }
+        };
+        $(document).ready(function () {
+            $("#multiSelectCreditType").kendoMultiSelect({
+                height: 200,
+                placeholder: "Select Credit Type...",
+                dataTextField: "Credit_type_description",
+                dataValueField: "Credit_type_skey",
+                autoBind: false,
+                autoClose: false,
+                dataSource: CreditTypeDataSource,
+                close: function (e) {
+                   // e.preventDefault();
+                }
+            });
+        });
+            </script>
+        </div>
+
+
+    </div>
+
+    <span id="btnCreditType" class="k-button hidden-on-narrow">Credit Type</span>
+
+    <div class="responsive-message"></div>
+
+    <script>
+
+                $("#btnCreditType").click(function () {
+                    $("#windowCreditType").data("kendoWindow").open();
+                });
+
+                $(document).ready(function() {
+                    $("#windowCreditType").kendoWindow({
+                       
+                        visible: false,                        
+                        width: "630px",
+                        height: "315px",
+                        title: "Select Credit Type",
+                        actions: ["Close"],
+                        content: "/html/CreditTypeMultiSelect.html",                        
+                    }).data("kendoWindow");
+                });
+    </script>
+</div>

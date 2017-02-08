@@ -1,0 +1,170 @@
+﻿<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline dashboard-headline"><strong>Loan Details</strong></span>
+        </md-card-title-text>
+        <md-card-avatar>
+            <md-button class="md-icon-button">
+                <md-tooltip>View More</md-tooltip>
+                <ng-md-icon icon="input"></ng-md-icon>
+            </md-button>
+        </md-card-avatar>
+    </md-card-title>
+    <md-card-content>
+        <div layout="row">
+            <div flex="50" layout="column">
+                <md-expansion-panel md-component-id="panelTwo">
+
+                    <md-expansion-panel-collapsed>
+                        <div class="md-title">Borrower Information</div>
+                        <md-button class="md-icon-button" aria-label="toggle">
+                            <ng-md-icon icon="expand_less"></ng-md-icon>
+                        </md-button>
+                    </md-expansion-panel-collapsed>
+
+
+                    <md-expansion-panel-expanded>
+
+                        <md-expansion-panel-header>
+                            <div class="md-title">Borrower Information</div>
+                            <md-button class="md-icon-button" aria-label="toggle" ng-click="$panel.collapse()">
+                                <ng-md-icon icon="expand_more"></ng-md-icon>
+                            </md-button>
+                        </md-expansion-panel-header>
+
+                        <md-expansion-panel-content class="list-striped">
+                            <!--<h4>Content</h4>-->
+                            <md-list>
+                                <md-list-item>
+                                    <p><small>Name</small></p>
+                                    <span>{{vm.model.loanDetails.PriorServicerInfo.Name || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Address</small></p>
+                                    <span>{{vm.model.loanDetails.PriorServicerInfo.Address || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Property Address</small></p>
+                                    <span>{{vm.model.loanDetails.PriorServicerInfo.PropertyAddress || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>SSN</small></p>
+                                    <span>{{vm.model.loanDetails.PriorServicerInfo.SSN || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Home Phone</small></p>
+                                    <span>{{vm.model.loanDetails.PriorServicerInfo.Phone || 'N/A'}}</span>
+                                </md-list-item>
+                            </md-list>
+                        </md-expansion-panel-content>
+
+                    </md-expansion-panel-expanded>
+
+                </md-expansion-panel>
+            </div>
+            <div flex="50" layout="column" flex-offset="5">
+                <md-expansion-panel md-component-id="panelThree">
+
+                    <md-expansion-panel-collapsed>
+                        <div class="md-title">Servicing Information</div>
+                        <md-button class="md-icon-button" aria-label="toggle">
+                            <ng-md-icon icon="expand_less"></ng-md-icon>
+                        </md-button>
+                    </md-expansion-panel-collapsed>
+                    <md-expansion-panel-expanded>
+
+                        <md-expansion-panel-header>
+                            <div class="md-title">Servicing Information</div>
+                            <md-button class="md-icon-button" aria-label="toggle" ng-click="$panel.collapse()">
+                                <ng-md-icon icon="expand_more"></ng-md-icon>
+                            </md-button>
+                        </md-expansion-panel-header>
+
+                        <md-expansion-panel-content class="list-striped">
+                            <!--<h4>Content</h4>-->
+                            <md-list>
+                                <md-list-item>
+                                    <p><small>LoanSKey</small></p>
+                                    <span>{{vm.model.loanDetails.LoanRate.LoanSKey || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>LoanNumber</small></p>
+                                    <span>{{vm.model.loanDetails.PriorServicerInfo.LoanNumber || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Loan Status</small></p>
+                                    <span>{{vm.model.loanDetails.PriorServicerInfo.LoanStatus || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Sub-Status</small></p>
+                                    <span>{{vm.model.loanDetails.PriorServicerInfo.SubStatus || 'N/A'}}</span>
+                                </md-list-item>
+                            </md-list>
+                        </md-expansion-panel-content>
+                    </md-expansion-panel-expanded>
+
+                </md-expansion-panel>
+            </div>
+        </div>
+        
+        <!--<div layout="row">
+            <md-expansion-panel md-component-id="panelOne">
+
+                <md-expansion-panel-collapsed>
+                    <div class="md-title">Loan Information</div>
+                    <md-button class="md-icon-button" aria-label="toggle">
+                        <ng-md-icon icon="expand_less"></ng-md-icon>
+                    </md-button>
+                </md-expansion-panel-collapsed>
+                <md-expansion-panel-expanded>
+
+                    <md-expansion-panel-header>
+                        <div class="md-title">Loan Information</div>
+                        <md-button class="md-icon-button" aria-label="toggle" ng-click="$panel.collapse()">
+                            <ng-md-icon icon="expand_more"></ng-md-icon>
+                        </md-button>
+                    </md-expansion-panel-header>
+
+                    <md-expansion-panel-content class="list-striped">
+                        <md-list>
+                            <md-list-item>
+                                <p><small>LoanSkey</small></p>
+                                <span>{{vm.model.loanDetails.LoanRate.LoanSkey || 'N/A'}}</span>
+                            </md-list-item>
+                            <md-list-item>
+                                <p><small>Loan Number</small></p>
+                                <span>{{vm.model.loanDetails.PriorServicerInfo.LoanNumber || 'N/A'}}</span>
+                            </md-list-item>
+                            <md-list-item>
+                                <p><small>Loan Status</small></p>
+                                <span>{{vm.model.loanDetails.LoanStatus || 'N/A'}}</span>
+                            </md-list-item>
+                            <md-list-item>
+                                <p><small>Sub-Status</small></p>
+                                <span>{{vm.model.loanDetails.PriorServicerInfo.SubStatus || 'N/A'}}</span>
+                            </md-list-item>
+                            <md-list-item>
+                                <p><small>FHA Case Number</small></p>
+                                <span>{{vm.model.loanDetails.LoanRecording.FhaCaseNumber || 'N/A'}}</span>
+                            </md-list-item>
+                            <md-list-item>
+                                <p><small>Product Type</small></p>
+                                <span>{{vm.model.loanDetails.ProductType || 'N/A'}}</span>
+                            </md-list-item>
+                            <md-list-item>
+                                <p><small>Investor Loan Number</small></p>
+                                <span>{{vm.model.loanDetails.PriorServicerInfo.LoanNumber || 'N/A'}}</span>
+                            </md-list-item>
+                            <md-list-item>
+                                <p><small>Ginnie Mae Number</small></p>
+                                <span>{{vm.model.loanDetails.LoanRecording.GinnieMaeNumber || 'N/A'}}</span>
+                            </md-list-item>
+                        </md-list>
+                    </md-expansion-panel-content>
+                </md-expansion-panel-expanded>
+
+            </md-expansion-panel>
+        </div>-->
+        
+    </md-card-content>
+</md-card>

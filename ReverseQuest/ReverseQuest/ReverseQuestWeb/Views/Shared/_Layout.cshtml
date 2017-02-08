@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_Header")
+	<script src="@Url.Content("~/Scripts/kendo/2016.1.18/jszip.min.js")"></script>
+</head>
+<body>
+    <!-- NAVBAR HEADER -->
+    <div class="container-fluid rta-navbar">
+        <nav class="row flex-items-xs-between flex-items-xs-middle">
+            <div class="col-lg-8">
+                <div class="row flex-items-xs-left flex-items-xs-middle">
+                    <div class="rta-navbar__item rta-navbar__item--moduletab">
+                        <i id="clickme" class="material-icons md-light">apps</i>
+                    </div>
+                    <div class="rta-navbar__item">
+                        RTG
+                    </div>
+                    <div class="rta-navbar__item">@ViewBag.ModuleTitle</div>
+                </div>
+            </div>
+            <div class="col-4-lg">
+                <div class="row flex-items-xs-right flex-items-xs-middle padding-right">
+                    <div class="rta-navbar__item flex-xs-bottom pointer"> 
+                        <i class="material-icons md-light">perm_identity</i><span>@ViewBag.UserName
+                        @User.Identity.Name  Web Test 1</span>
+                    </div>
+                    <div class="rta-navbar__item flex-xs-bottom pointer">
+                        <i class="material-icons md-light">settings</i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        @Html.Partial("_TopNavDrawer")
+    </div>
+    <!---------------------------------------------------------------------------------------------------------->
+    <!----------------------------------------Main Content------------------------------------------------------>
+    <!---------------------------------------------------------------------------------------------------------->
+    <div id="wrapper" class="toggled-2">
+        @Html.Partial("_Sidebar")
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+                @*@Html.Partial("_Footer")*@
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------------------------------------------------------------------------->
+    <!----------------------------------------Main Content------------------------------------------------------>
+    <!---------------------------------------------------------------------------------------------------------->
+</body>
+</html>
+
+@*@if (ViewContext.RouteData.DataTokens["area"] != null && !ViewContext.RouteData.DataTokens["area"].Equals(""))
+{*@
+    <script>
+        $(document).ready(function () {
+            $("#book").slideUp("fast");
+        });
+    </script>
+@*}*@
+<script>
+    $("#clickme").click(function (e) {
+        e.preventDefault();
+        if ($("#book:first").is(":hidden")) {
+            $("div").slideDown("slow");
+        } else {
+            $("#book").slideUp();
+        }
+        //$("#book").slideUp("slow", function () {
+        //    // Animation complete.
+        //});
+    });
+</script>
+
+@RenderSection("scripts", required: false)

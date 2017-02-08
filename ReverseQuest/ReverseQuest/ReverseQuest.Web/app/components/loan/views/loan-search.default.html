@@ -1,0 +1,411 @@
+﻿<div id="tab1" class="tab-pane active in">
+    <div class="row">
+        <form name="searchForm" class="form-horizontal" ng-submit="vm.submitHandler()">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="fa fa-fw fa-file-text-o"></i> Search Criteria
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-3">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="search" class="control-label col-md-5">
+                                    Loan Skey
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" aria-label="LoanSkey" name="LoanSkey" placeholder="00000" ng-model="vm.searchParams.aiLoanSKey" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="LoanNumber" class="control-label col-md-5">
+                                    Original Loan#
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="LoanNumber" id="LoanNumber" placeholder="00000000000" ng-model="vm.searchParams.avcOriginalLoanNumber" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FHACaseNumber" class="control-label col-md-5">
+                                    FHA Case#
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="FHACaseNumber" id="FHACaseNumber" placeholder="000-0000000" ng-model="vm.searchParams.avcFhaCaseNumber" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ContactType" class="control-label col-md-5">
+                                    Credit Type
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <select name="ContactType" id="ContactType" class="form-control" 
+                                            ng-model="vm.searchParams.avcCreditType" 
+                                            ng-options="contactType as contactType.name for contactType in vm.contactTypes track by contactType.id">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="BoardingType" class="control-label col-md-5">
+                                    SPOC
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <select name="Spoc" id="Spoc" class="form-control" 
+                                            ng-model="vm.searchParams.avcSpocsKey"
+                                            ng-options="spoc as spoc.name for spoc in vm.spocs track by spoc.id">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="InvestorLoanNumber" class="control-label col-md-5">
+                                    Investor Loan#
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="InvestorLoanNumber" id="InvestorLoanNumber" placeholder="0000000000" ng-model="vm.searchParams.avcInvestorLoanNumber" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="BoardingType" class="control-label col-md-5">
+                                    Boarding Type
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <select name="BoardingType" id="BoardingType" class="form-control" 
+                                            ng-model="vm.searchParams.avcBoardingType"
+                                            ng-options="boardingType as boardingType.name for boardingType in vm.boardingTypes track by boardingType.id">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="PriorServicerLoanNumber" class="control-label col-md-5">
+                                    Prior Serv Loan #
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="PriorServicerLoanNumber" id="PriorServicerLoanNumber" placeholder="0000000000" ng-model="vm.searchParams.avcPriorServicerLoanNumber" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="FirstName" class="control-label col-md-5">
+                                    First Name
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="FirstName" id="FirstName" placeholder="Enter Contact First Name" ng-model="vm.searchParams.avcContactFirstName" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="LastName" class="control-label col-md-5">
+                                    Last Name
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="LastName" id="LastName" placeholder="Enter Contact Last Name" ng-model="vm.searchParams.avcContactLastName" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="PhoneNumber" class="control-label col-md-5">
+                                    Phone#
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-fw fa-phone"></i>
+                                    </span>
+                                    <input type="text" name="PhoneNumber" id="PhoneNumber" placeholder="(555) 555-5555" ng-model="vm.searchParams.avcContactPhoneNumber" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="BoardedDateFrom" class="control-label col-md-5">
+                                    Boarded Date
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-fw fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="BoardedDateFrom" id="BoardedDateFrom" placeholder="YYYY-MM-DD to YYYY-MM-DD" ng-model="vm.searchParams.adtmBoardedDateFrom" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="PropertyAddress" class="control-label col-md-5">
+                                    Propty. Address
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="PropertyAddress" id="PropertyAddress" placeholder="Enter Property Address" ng-model="vm.searchParams.avcPropertyAddress" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="PropertyCity" class="control-label col-md-5">
+                                    Propty. City
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="PropertyCity" id="PropertyCity" placeholder="Enter City" ng-model="vm.searchParams.avcPropertyCity" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="PropertyState" class="control-label col-md-5">
+                                    Propty. State
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <select name="PropertyState" id="PropertyState" 
+                                            ng-model="vm.model.searchParams.avcPropertyStateCodes" class="form-control"
+                                            ng-options="state as state.state_name for state in vm.states track by state.state_code">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="PropertyZip" class="control-label col-md-5">
+                                    Propty. Zip
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="PropertyZip" id="PropertyZip" placeholder="Enter Zip Code" ng-model="vm.searchParams.avcPropertyZipCode" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="fa fa-fw fa-file-text-o"></i> Advance Search Criteria
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="row-sm-3 col-md-4">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Loan Status
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%" 
+                                            ng-model="vm.searchParams.avcLoanStatus"
+                                            ng-options="loanStatus as loanStatus.loan_status_description for loanStatus in vm.loanStatuses track by loanStatus.loan_status_code">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Loan Sub-Status
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%" 
+                                            ng-model="vm.searchParams.avcLoanSubStatusCodes"
+                                            ng-options="loanSubStatus as loanSubStatus.loan_sub_status_description for loanSubStatus in vm.loanSubStatuses track by loanSubStatus.loan_sub_status_code">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Servicer Names
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%"
+                                            ng-model="vm.searchParams.avcLoanServicerSKeys"
+                                            ng-options="servicer as servicer.servicer_name for servicer in vm.servicers track by servicer.loan_servicer_skey">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Investor Names
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%" 
+                                            ng-model="vm.searchParams.avcInvestorSKeys" 
+                                            ng-options="investor as investor.investor_name for investor in vm.investors track by investor.investor_skey">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Investor Pools
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%"
+                                            ng-model="vm.searchParams.avcLoanPoolSKeys"
+                                            ng-options="investorPool as investorPool.loan_pool_short_description for investorPool in vm.investorPools track by investorPool.loan_pool_skey">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-sm-3 col-md-4">
+                        <div class="form-group">
+                            <label for="FirstName" class="col-md-4 control-label">
+                                Contact Types
+                            </label>
+                            <div class="input-group col-md-8">
+                                <select class="form-control multi-select" multiple style="width:100%" 
+                                        ng-model="vm.searchParams.avcContactTypeSKeys"
+                                        ng-options="contactType as contactType.name for contactType in vm.contactTypes track by contactType.id">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="FirstName" class="col-md-4 control-label">
+                                Incl Doc Types
+                            </label>
+                            <div class="input-group col-md-8">
+                                <select class="form-control multi-select" multiple style="width:100%" 
+                                        ng-model="vm.searchParams.avcLoanServicerSKeys"
+                                        ng-options="inclDocType as inclDocType.name for inclDocType in vm.inclDocTypes track by inclDocType.id">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="FirstName" class="col-md-4 control-label">
+                                Excl Doc Types
+                            </label>
+                            <div class="input-group col-md-8">
+                                <select class="form-control multi-select" multiple style="width:100%" 
+                                        ng-model="vm.searchParams.avcLoanServicerSKeys"
+                                        ng-options="exclDocType as exclDocType.name for exclDocType in vm.exclDocTypes track by exclDocType.id">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="FirstName" class="col-md-4 control-label">
+                                Incl Alerts
+                            </label>
+                            <div class="input-group col-md-8">
+                                <select class="form-control multi-select" multiple style="width:100%" 
+                                        ng-model="vm.searchParams.avcLoanServicerSKeys"
+                                        ng-options="inclAlert as inclAlert.name for inclAlert in vm.inclAlerts track by inclAlert.id">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="FirstName" class="col-md-4 control-label">
+                                Excl Alerts
+                            </label>
+                            <div class="input-group col-md-8">
+                                <select class="form-control multi-select" multiple style="width:100%" 
+                                        ng-model="vm.searchParams.avcLoanServicerSKeys"
+                                        ng-options="exclAlert as exclAlert.name for exclAlert in vm.exclAlerts track by exclAlert.id">
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row-sm-3 col-md-4">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Product Types
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%" 
+                                            ng-model="vm.searchParams.avcProductTypeSKeys"
+                                            ng-options="productType as productType.name for productType in vm.productTypes track by productType.id">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Pmnt Plan Types
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%" 
+                                            ng-model="vm.searchParams.avcPaymentPlanTypes"
+                                            ng-options="paymentPlanType as paymentPlanType.payment_plan_description for paymentPlanType in vm.paymentPlanTypes track by paymentPlanType.payment_plan_type">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Int Rate Types
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%" 
+                                            ng-model="vm.searchParams.avcRateIndexTypeSKeys"
+                                            ng-options="rateIndexType as rateIndexType.name for rateIndexType in vm.rateIndexTypes track by rateIndexType.id">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Arm Type
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%" 
+                                            ng-model="vm.searchParams.avcArmTypes"
+                                            ng-options="armType as armType.name for armType in vm.armTypes track by armType.id">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div>
+                <div class="row">
+                    <div class="col-md-offset-10 col-md-12">
+                        <button type="submit" class="btn btn-primary">
+                            Retrieve
+                        </button>
+                        &nbsp;
+                        <button type="reset" class="btn btn-default bttn_reset">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+        </form>
+    </div>
+    <div class="row">
+        <div id="grid" kendo-grid="loanSearchGrid" options="vm.loanSearchGridOptions" ng-dblclick="vm.viewDetails()"></div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+
+        $(".multi-select").select2({
+            theme: "bootstrap"
+        });
+
+        $('#BoardedDateFrom').daterangepicker({
+            "showDropdowns": true,
+            "alwaysShowCalendars": true
+        }, function (start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+
+        $(".fa-chevron-up").eq(1).trigger('click');
+
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+﻿@*@if (ViewContext.RouteData.DataTokens["area"] != null && ViewContext.RouteData.DataTokens["area"].Equals("LoanModule"))
+{*@
+<div id="book" class="row rta-welcome-hero" hidden">
+    <div class="col-xs-12">
+        @*<div class="row flex-items-xs-left flex-items-xs-middle">
+                <div class="col-xs-12">
+                    <h1>Modules</h1>
+                </div>
+            </div>*@
+        <div class="row flex-items-xs-left flex-items-xs-middle padding-left padding-right">
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Dashboard</span>
+            </div>
+            <a href="/Search">
+                <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                    <i class="material-icons md-blue md-48">highlight_off</i>
+                    <span>Loan Search
+                        @*@Html.ActionLink("Loan", "Index", "LoanModule",
+           new { area = "LoanModule" },
+           new { @class = "linkbutton" })*@
+                    </span>
+                </div>
+            </a>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Disbursement</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Compliance</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Default</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Foreclosure</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Bankruptcy</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Release</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Claims</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Servicing</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Reports</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>Import/Export</span>
+            </div>
+            <div class="rta-module flex-items-xs-center flex-items-xs-middle flex-column">
+                <i class="material-icons md-blue md-48">highlight_off</i>
+                <span>HMBS</span>
+            </div>
+        </div>
+    </div>
+</div>
+@*}*@

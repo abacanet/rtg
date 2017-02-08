@@ -1,0 +1,494 @@
+﻿<span kendo-notification="vm.notificiationToast" k-options="vm.notificiationToastOptions"></span>
+<script id="notificationTemplate" type="text/x-kendo-template">
+    <div class="upload-success">
+        <h3>#= kValue #</h3>
+    </div>
+</script>
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Loan Contacts
+                </h3>
+                <span class="pull-right hidden-xs">
+                    <i class="fa fa-fw fa-plus" ng-click="vm.addNewContact()" title="Add New Contact"></i>
+                    <i class="fa fa-fw fa-chevron-up clickable"></i>
+                </span>
+            </div>
+            <div class="panel-body">
+                <div id="contactsGrid" kendo-grid="vm.contactsGrid" options="vm.contactsGridGridOptions">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<form id="loan-contact" name="loan-contact" role="form" data-disable="false" ng-show="vm.saveType === 'update' || vm.saveType === 'create'"
+      data-toggle="validator" class="form-horizontal" ng-submit="vm.saveContact()">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <!--ng-class="{ 'label label-warning': actionMessageCssClass == 'new', 'label label-danger': actionMessageCssClass == 'edit' }"-->
+                        Loan Contact Details <span class="label label-warning">{{vm.actionMessage}}</span>
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <!--<i class="fa fa-fw fa-plus" ng-click="" title="Add New Contact"></i>-->
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div disable-all="vm.loanContact.ContactTypeDescription === 'Borrower' ||
+                                 vm.loanContact.ContactTypeDescription === 'Co-Borrower'||
+                                 vm.loanContact.ContactTypeDescription === 'Non-Borrowing Spouse'">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="contactType">
+                                        Contact Type:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <select id="contactType" name="contactType" class="form-control"
+                                                kendo-drop-down-list style="width: 100%;"
+                                                ng-model="vm.loanContact.ContactTypeSkey"
+                                                ng-disabled='vm.saveType === "update"'></select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="contactTypeDescription">
+                                        Type Description:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="contactTypeDescription" name="contactTypeDescription" class="form-control"
+                                               ng-model="vm.loanContact.ContactTypeDescription"
+                                               ng-disabled="true"
+                                               placeholder="Enter Contact Type Desc.">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="companyName">
+                                        Company Name:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="companyName" name="companyName" class="form-control"
+                                               ng-model="vm.loanContact.CompanyName"
+                                               ng-disabled="true"
+                                               placeholder="Enter Company Name">
+
+                                    </div>
+                                </div>
+
+                                <!--<div class="form-group">
+                                    <label class="col-md-3 control-label" for="contactName">
+                                        Contact Name:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="contactName" name="contactName" class="form-control"
+                                               ng-model="vm.loanContact.FormattedName"
+                                               ng-disabled="true"
+                                               placeholder="Enter Contact Name">
+                                    </div>
+                                </div>-->
+
+                                <div class="form-group required">
+                                    <label class="col-md-3 control-label">
+                                        First, Mid, Last Name
+                                    </label>
+                                    <div class="col-md-3">
+                                        <input type="text" id="contactFirstName" name="contactFirstName" class="form-control"
+                                               ng-model="vm.loanContact.FirstName"
+                                               placeholder="Enter First Name" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" id="contactMiddleName" name="contactMiddleName" class="form-control"
+                                               ng-model="vm.loanContact.MiddleName"
+                                               placeholder="Enter Middle Name" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" id="contactLastName" name="contactLastName" class="form-control"
+                                               ng-model="vm.loanContact.LastName"
+                                               placeholder="Enter Last Name" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="address1">
+                                        Address 1:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="address1" name="address1" class="form-control"
+                                               ng-model="vm.loanContact.Address1"
+                                               placeholder="Enter Address 1">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="address2">
+                                        Address 2:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="address2" name="address2" class="form-control"
+                                               ng-model="vm.loanContact.Address2"
+                                               placeholder="Enter Address 2">
+                                    </div>
+                                </div>
+
+                                <div class="form-group required">
+                                    <label class="col-md-3 control-label">
+                                        City, State, Zip:
+                                    </label>
+                                    <div class="col-md-3">
+                                        <input type="text" id="city" name="city" class="form-control"
+                                               ng-model="vm.loanContact.City"
+                                               placeholder="Enter City" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select id="state" name="state" class="form-control"
+                                                kendo-drop-down-list style="width: 100%;"
+                                                k-data-text-field="'state_name'"
+                                                k-data-value-field="'state_code'"
+                                                k-data-source="vm.states"
+                                                ng-model="vm.loanContact.StateCode" required></select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" id="zip" name="zip" class="form-control"
+                                               ng-model="vm.loanContact.ZipCode"
+                                               placeholder="Enter Zip" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="email">
+                                    Email:
+                                </label>
+                                <div class="col-md-9">
+                                    <input type="email" id="email" name="email" class="form-control"
+                                           ng-model="vm.loanContact.Email"
+                                           placeholder="Enter Email"
+                                           data-error="Email address is invalid">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="languagePreference">
+                                    Language Pref:
+                                </label>
+                                <div class="col-md-9">
+                                    <select id="languagePreference" name="languagePreference" class="form-control"
+                                            kendo-drop-down-list style="width: 100%;"
+                                            ng-model="vm.loanContact.LanguagePreferenceSkey"></select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"><p><hr /></p></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4"><span class="label label-primary">Mailing Information </span></div>
+                                <div class="col-md-4">
+                                    <input type="button" value="Same As Contact Address" class="btn btn-primary" ng-click="vm.copyContactAddresss()">
+                                </div><div class="col-md-4">
+                                    <input type="checkbox" ng-model="vm.loanProperty.EmailCorrespondence"> Email Correspondence
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"><p><hr /></p></div>
+                            </div>
+                            <!--    Start Mailing Information    -->
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="mailCompanyName">
+                                    Company Name:
+                                </label>
+                                <div class="col-md-9">
+                                    <input type="text" id="mailCompanyName" name="mailCompanyName" class="form-control"
+                                           ng-model="vm.loanContact.MailCompanyName"
+                                           placeholder="Enter Company Name">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="mailName">
+                                    Mail Name:
+                                </label>
+                                <div class="col-md-9">
+                                    <input type="text" id="mailName" name="mailName" class="form-control"
+                                           ng-model="vm.loanContact.MailFirstName"
+                                           placeholder="Enter Mail First Name">
+                                </div>
+                            </div>
+
+                            <div class="form-group required">
+                                <label class="col-md-3 control-label">
+                                    First, Mid, Last Name
+                                </label>
+                                <div class="col-md-3">
+                                    <input type="text" id="mailFirstName" name="mailFirstName" class="form-control"
+                                           ng-model="vm.loanContact.MailingFirstName"
+                                           placeholder="Enter First Name" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" id="mailMiddleName" name="mailMiddleName" class="form-control"
+                                           ng-model="vm.loanContact.MailingMiddleName"
+                                           placeholder="Enter Middle Name" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" id="mailLastName" name="mailLastName" class="form-control"
+                                           ng-model="vm.loanContact.MailingLastName"
+                                           placeholder="Enter Last Name" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="mailAddress1">
+                                    Address 1:
+                                </label>
+                                <div class="col-md-9">
+                                    <input type="text" id="mailAddress1" contactAddress1="mailAddress1" class="form-control"
+                                           ng-model="vm.loanContact.MailAddress1"
+                                           placeholder="Enter Address 1">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="mailAddress2">
+                                    Address 2:
+                                </label>
+                                <div class="col-md-9">
+                                    <input type="text" id="mailAddress2" name="mailAddress2" class="form-control"
+                                           ng-model="vm.loanContact.MailAddress2"
+                                           placeholder="Enter Address 2">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">
+                                    City, State, Zip:
+                                </label>
+                                <div class="col-md-3">
+                                    <input type="text" id="mailCity" name="mailCity" class="form-control"
+                                           ng-model="vm.loanContact.MailCity"
+                                           placeholder="Enter City">
+                                </div>
+                                <div class="col-md-3">
+                                    <select id="mailState" name="mailState" class="form-control"
+                                            kendo-drop-down-list style="width: 100%;"
+                                            k-data-text-field="'state_name'"
+                                            k-data-value-field="'state_code'"
+                                            k-data-source="vm.states"
+                                            ng-model="vm.loanContact.MailStateCode" required></select>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" id="mailZip" name="mailZip" class="form-control"
+                                           ng-model="vm.loanContact.MailZipCode"
+                                           placeholder="Enter Zip">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="loan-contact-additional"
+                                 class="form-horizontal">
+
+
+
+                                <div class="form-group" ng-show="vm.loanContact.ContactTypeDescription === 'Borrower' || vm.loanContact.ContactTypeDescription === 'Co-Borrower'">
+                                    <label class="col-md-12" for="signatureUpload">
+                                        <input name="files"
+                                               type="file"
+                                               kendo-upload
+                                               k-options="vm.signatureUpload"
+                                               k-select="vm.onSelect" />
+                                    </label>
+                                    <!--<div class="col-md-7">
+                                        <img id="signatureImage" name="signatureImage"
+                                               ng-model="vm.loanContact.SignatureImage">
+                                    </div>-->
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="phone">
+                                        Home Phone #:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="phone" name="phone" class="form-control"
+                                               ng-model="vm.loanContact.HomePhoneNo"
+                                               placeholder="Enter Home Phone">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="workphone">
+                                        Work Phone #:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="workphone" name="workphone" class="form-control"
+                                               ng-model="vm.loanContact.WorkPhoneNo"
+                                               placeholder="Enter Work Phone">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cellPhone">
+                                        Cell Phone #:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="cellPhone" name="cellPhone" class="form-control"
+                                               ng-model="vm.loanContact.CellPhoneNo"
+                                               placeholder="Enter Cell Phone">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="faxPhone">
+                                        Fax Phone #:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="faxPhone" name="faxPhone" class="form-control"
+                                               ng-model="vm.loanContact.FaxPhoneNo"
+                                               placeholder="Enter Fax Phone">
+                                    </div>
+                                </div>
+
+                                <div ng-show="vm.loanContact.ContactTypeDescription === 'Borrower' || vm.loanContact.ContactTypeDescription === 'Co-Borrower'">
+                                    <div disable-all="vm.loanContact.ContactTypeDescription === 'Borrower' ||
+                                 vm.loanContact.ContactTypeDescription === 'Co-Borrower'||
+                                 vm.loanContact.ContactTypeDescription === 'Non-Borrowing Spouse'">
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="ssn">
+                                                SSN:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="ssn" name="ssn" class="form-control"
+                                                       ng-model="vm.loanContact.SSN"
+                                                       placeholder="Enter SSN">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="dob">
+                                                Birth Date:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input id="dob" name="dob" kendo-date-picker
+                                                       class="form-control"
+                                                       ng-model="vm.loanContact.BirthDate"
+                                                       style="width: 100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="dod">
+                                            Death Date:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input id="dod" name="dod" kendo-date-picker
+                                                   class="form-control"
+                                                   ng-model="vm.loanContact.DeathDate"
+                                                   style="width: 100%;" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="gender">
+                                            Gender:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select id="gender" name="gender" class="form-control"
+                                                    kendo-drop-down-list style="width: 100%;"
+                                                    ng-model="vm.loanContact.Gender"></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="maritalStatus">
+                                            Marital Status:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select id="maritalStatus" name="maritalStatus" class="form-control"
+                                                    kendo-drop-down-list style="width: 100%;"
+                                                    k-data-text-field="'marital_status_description'"
+                                                    k-data-value-field="'marital_status_skey'"
+                                                    k-data-source="vm.maritalStatus"
+                                                    ng-model="vm.loanContact.MaritalStatusSkey"></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="residencyStatus">
+                                            Residency Status:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select id="residencyStatus" name="residencyStatus" class="form-control"
+                                                    kendo-drop-down-list style="width: 100%;"
+                                                    k-data-text-field="'residency_status_description'"
+                                                    k-data-value-field="'residency_status_skey'"
+                                                    k-data-source="vm.residencyStatus"
+                                                    ng-model="vm.loanContact.ResidencyStatusSkey"></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="currentAge">
+                                            Current Age:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="currentAge" name="currentAge" class="form-control"
+                                                   ng-model="vm.loanContact.CurrentAge"
+                                                   placeholder="Enter Current Age">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="emergencyContact">
+                                        Emergency Contact:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" ng-model="vm.loanProperty.EmergencyContact">
+                                    </div>
+                                </div>
+
+                                <div class="form-group" ng-show="vm.loanContact.ContactTypeDescription === 'Non-Borrowing Spouse'">
+                                    <label class="col-md-3 control-label" for="maritalStatus">
+                                        Eligible eNBS:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <select id="eligibleEnbs" name="eligibleEnbs" class="form-control"
+                                                kendo-drop-down-list style="width: 100%;"
+                                                ng-model="vm.loanContact.EligibleEnbs"></select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <audit-information info="vm.loanContact"></audit-information>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

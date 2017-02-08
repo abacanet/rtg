@@ -1,0 +1,78 @@
+﻿<div layout="row">
+    <div flex="15" layout="column">
+        <md-content>
+            <md-card id="subNav" 
+                     md-theme="dark-grey" 
+                     md-theme-watch="">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">
+                            <ng-md-icon icon="menu"></ng-md-icon>
+                            <small>Navigation</small>
+                        </span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <md-list id="subMenu">
+                        <!--<md-subheader class="md-no-sticky">Loan Menu</md-subheader>-->
+                        <md-list-item ng-click="vm.subGo('home')" ng-class="{'activePage' : vm.model.subPage === 'dashboard' }">
+                            <ng-md-icon icon="dashboard"></ng-md-icon>
+                            <p><small>Item 1</small></p>
+                        </md-list-item>
+                        <md-list-item ng-click="vm.subGo('balances')">
+                            <ng-md-icon icon="account_balance"></ng-md-icon>
+                            <p><small>Item 2</small></p>
+                        </md-list-item>
+                        <md-list-item ng-click="vm.subGo('details')">
+                            <ng-md-icon icon="assessment"></ng-md-icon>
+                            <p><small>Item 3</small></p>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
+            </md-card>
+        </md-content>
+    </div>
+    <div flex="85" layout="column">
+        <md-content>
+            <div layout="row">
+                <md-card flex="100">
+                    <md-card-title class="card-form-header">
+                        <md-card-title-text>
+                            <span class="md-headline"><strong><em>Welcome, Jane Doe!</em></strong></span>
+                            <span class="md-subhead">
+                            </span>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
+
+            <div layout="row">
+                <div flex="50" layout="column"
+                     ng-include src="'/app/components/directives/home/partialViews/_loanDetailsHighlights.html'">
+                </div>
+                <div flex="50" layout="column">
+                    <md-card>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline dashboard-headline"><strong>Loan Charts</strong></span>
+                            </md-card-title-text>
+                            <md-card-avatar>
+                                <md-button class="md-icon-button">
+                                    <md-tooltip>View More</md-tooltip>
+                                    <ng-md-icon icon="input"></ng-md-icon>
+                                </md-button>
+                            </md-card-avatar>
+                        </md-card-title>
+                        <md-card-content>
+                            <hc-chart options="chartOptions">Placeholder for generic chart</hc-chart>
+                        </md-card-content>
+                    </md-card>
+                </div>
+            </div>
+            <div layout="row"
+                 ng-include src="'/app/components/directives/home/partialViews/_loanBalancesHighlights.html'">
+            </div>
+        </md-content>
+    </div>
+</div>

@@ -1,0 +1,436 @@
+﻿<style>
+    .k-edit-form-container {
+        width: auto;
+    }
+
+    .k-widget.k-window {
+    width: 500px;
+    height: 500px;
+}
+</style>
+<form id="loan-property" data-disable="false" data-toggle="validator" ng-submit="vm.saveProperty()" role="form"
+      class="form-horizontal">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Property Values
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-plus" ng-click="vm.winPropertyValue.open()" title="Add New Property Value"></i>
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div id="propertyValueGrid" kendo-grid="vm.propertyValueGrid" options="vm.propertyValueGridGridOptions">
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary" disable-all="true">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Property Address:
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                        <!--<i class="fa fa-fw fa-times removepanel clickable"></i>-->
+                    </span>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="address1">
+                            Address 1:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="address1" name="address1" class="form-control"
+                                   ng-model="vm.loanProperty.Address1"
+                                   placeholder="Enter Property Address 1">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="address2">
+                            Address 2:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="address2" name="address2" class="form-control"
+                                   ng-model="vm.loanProperty.Address2"
+                                   placeholder="Enter Property Address 2">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="city">
+                            City:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="city" name="city" class="form-control"
+                                   ng-model="vm.loanProperty.City"
+                                   placeholder="Enter City">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="state">
+                            State:
+                        </label>
+                        <div class="col-md-6">
+                            <select id="state" name="state" class="form-control"
+                                    kendo-drop-down-list style="width: 100%;"
+                                    ng-model="vm.loanProperty.State"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="zip">
+                            Zip:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="zip" name="zip" class="form-control"
+                                   ng-model="vm.loanProperty.ZipCode"
+                                   placeholder="Enter Zip">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="map">
+
+                        </label>
+                        <div class="col-md-6">
+                            <i class="fa fa-fw fa-map-marker"></i> <a href="http://mapquest.com">Map It</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Property Information:
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                        <!--<i class="fa fa-fw fa-times removepanel clickable"></i>-->
+                    </span>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="legalDescription">
+                            Legal Description:
+                        </label>
+                        <div class="col-md-6">
+                            <textarea id="legalDescription" name="legalDescription" class="form-control"
+                                      ng-model="vm.loanProperty.LegalDescription"
+                                      rows="2"
+                                      placeholder="Enter Legal Description"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group required">
+                        <label class="col-md-4 control-label" for="countyClerk">
+                            County Clerk:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="countyClerk" name="countyClerk" class="form-control"
+                                   ng-model="vm.loanProperty.CountyClerkName"
+                                   placeholder="Enter County Clerk Name"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="parcelNumber">
+                            Parcel #:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="parcelNumber" name="parcelNumber" class="form-control"
+                                   ng-model="vm.loanProperty.ParcelNumber"
+                                   placeholder="Enter Parcel Number">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="propertyType">
+                            Property Type:
+                        </label>
+                        <div class="col-md-6">
+                            <select id="propertyType" name="propertyType" class="form-control"
+                                    kendo-drop-down-list style="width: 100%;"
+                                    k-data-text-field="'property_type_category_description'"
+                                    k-data-value-field="'property_type_category_skey'"
+                                    k-data-source="vm.propertyType"
+                                    ng-model="vm.loanProperty.PropertyType" required></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="occupancyDate">
+                            Occupancy Date:
+                        </label>
+                        <div class="col-md-6">
+                            <input id="occupancyDate" name="occupancyDate" kendo-date-picker
+                                   class="form-control"
+                                   ng-model="vm.loanProperty.OccupancyDate"
+                                   k-ng-model="vm.loanProperty.OccupancyDate"
+                                   style="width: 100%;" />
+                            <input type="checkbox" ng-model="vm.loanProperty.OccupancyDate">
+                            Owner Occupied
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="vacancyDate">
+                            Vacancy Date:
+                        </label>
+                        <div class="col-md-6">
+                            <input id="vacancyDate" name="vacancyDate" kendo-date-picker
+                                   class="form-control"
+                                   ng-model="vm.loanProperty.VacancyDate"
+                                   k-ng-model="vm.loanProperty.VacancyDate"
+                                   style="width: 100%;" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Flood Zone Information
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                        <!--<i class="fa fa-fw fa-times removepanel clickable"></i>-->
+                    </span>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="floodZone">
+                            Flood Zone:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="floodZone" name="floodZone" class="form-control"
+                                   ng-model="vm.loanProperty.FloodZoneDescription"
+                                   placeholder="Enter Flood Zone">
+                        </div>
+                        <input type="checkbox" ng-model="vm.loanProperty.RequiresFloodInsuranceFlag">
+                        Flood Ins. Required
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="lifeOfLoanPolicy">
+                            Life Of Loan Policy:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="lifeOfLoanPolicy" name="lifeOfLoanPolicy" class="form-control"
+                                   ng-model="vm.loanProperty.LifeOfLoanPolicyFlag"
+                                   placeholder="Enter Life Of Loan Policy">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="floodCertNumber">
+                            Flood Certficate #:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="floodCertNumber" name="floodCertNumber"
+                                   class="form-control"
+                                   ng-model="vm.loanProperty.FloodCertificateNumber"
+                                   placeholder="Enter Flood Certficate Number">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="floodCertCompany">
+                            Flood Certficate Company:
+                        </label>
+                        <div class="col-md-6">
+                            <input type="text" id="floodCertCompany" name="floodCertCompany" class="form-control" ng-model="vm.loanProperty.FloodInsuranceCompanyName"
+                                   placeholder="Enter Flood Certficate Company">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Property Pictures
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                        <!--<i class="fa fa-fw fa-times removepanel clickable"></i>-->
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div id="picturesGrid" kendo-grid="vm.picturesGrid" options="vm.propertyPicturesGridOptions" style="padding:20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row">
+    <div class="col-md-12">
+        <audit-information info="vm.loanProperty"></audit-information>
+    </div>
+</div>
+
+
+<div kendo-window="vm.winPropertyValue" k-title="'Property Value'" k-options="vm.winPropertyValueOptions"
+     k-width="600" k-height="600" k-visible="false"
+     k-content="{ url: 'app/components/loan/views/property.value.html' }"
+     k-on-open="vm.winPropertyValueVisible = true" k-on-close="vm.winPropertyValueVisible = false">
+</div>
+
+<script type="text/x-kendo-template" id="valuesPopupTemplate">
+    <div class="row">
+        <div class="col-md-12">
+
+
+            <div class="form-group required">
+                <label class="col-md-4 control-label" for="valueDate">
+                    Value Date:
+                </label>
+                <div class="col-md-6">
+                    <input id="valueDate" name="valueDate" kendo-date-picker
+                           class="form-control"
+                           ng-model="vm.loanProperty.value.valueDate"
+                           k-ng-model="vm.loanProperty.value.valueDate"
+                           style="width: 100%;" />
+                </div>
+            </div>
+
+
+            <div class="form-group required">
+                <label class="col-md-4 control-label" for="valueType">
+                    Value Type:
+                </label>
+                <div class="col-md-6">
+                    <select id="valueType" name="valueType" class="form-control" kendo-drop-down-list style="width: 100%;" ng-model="vm.loanProperty.value.ValueType"></select>
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label class="col-md-4 control-label" for="valueSubType">
+                    Value Sub-Type:
+                </label>
+                <div class="col-md-6">
+                    <select id="valueSubType" name="valueSubType" class="form-control" kendo-drop-down-list style="width: 100%;" ng-model="vm.loanProperty.value.ValueSubType"></select>
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label class="col-md-4 control-label" for="estimatedValue">
+                    Estimated Value:
+                </label>
+                <div class="col-md-6">
+                    <input id="estimatedValue" name="estimatedValue" kendo-numeric-text-box ng-model="vm.loanProperty.value.EstimatedValue"
+                           k-format="'c'" k-decimals="2" />
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label class="col-md-4 control-label" for="repairedValue">
+                    Repaired Value:
+                </label>
+                <div class="col-md-6">
+                    <input id="repairedValue" name="repairedValue" kendo-numeric-text-box ng-model="vm.loanProperty.value.RepairedValue"
+                           k-format="'c'" k-decimals="2" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="status">
+                    Status:
+                </label>
+                <div class="col-md-6">
+                    <select id="status" name="status" kendo-drop-down-list class="form-control" style="width: 100%;" ng-model="vm.loanProperty.value.Status"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="valuator">
+                    Valuator:
+                </label>
+                <div class="col-md-6">
+                    <select id="valuator" name="valuator" kendo-drop-down-list class="form-control" style="width: 100%;" ng-model="vm.loanProperty.value.Valuator"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">
+        <div class="col-md-10">
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>
+    </div>-->
+</script>
+
+<script type="text/x-kendo-template" id="picturesTemplate">
+    <form name="picturesForm">
+        <div style="width: 500px; padding:20px;">
+            <div class="form-group">
+                <label for="propertyPictureDescription">
+                    Description:
+                </label>
+                <textarea id="propertyPictureDescription"
+                          name="propertyPictureDescription"
+                          class="form-control"
+                          data-bind="value: picture_description"
+                          rows="2"
+                          placeholder="Enter Legal Description" style="width:480px;"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <div class="form-group">
+                    <label>Attach Picture</label>
+                    <input name="propertyPictures"
+                           type="file"
+                           kendo-upload="vm.propertyPictureUploadControl"
+                           k-options="vm.propertyPictureFileUploadOptions" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        Active <input type="checkbox" id="propertyPictureStatus" data-bind="value: status" />
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+</script>

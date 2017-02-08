@@ -1,0 +1,289 @@
+﻿<md-card flex="65">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline dashboard-headline"><strong>Loan Balances</strong></span>
+        </md-card-title-text>
+        <md-card-avatar>
+            <md-button class="md-icon-button">
+                <md-tooltip>View More</md-tooltip>
+                <ng-md-icon icon="input"></ng-md-icon>
+            </md-button>
+        </md-card-avatar>
+    </md-card-title>
+    <md-card-content>
+        <div layout="row">
+            <div flex="50" layout="column">
+                <md-expansion-panel md-component-id="panelFour">
+
+                    <md-expansion-panel-collapsed>
+                        <div class="md-title">Principal Limit Calculation</div>
+                        <!--<div class="md-summary">Summary</div>-->
+                        <md-button class="md-icon-button" aria-label="toggle">
+                            <ng-md-icon icon="expand_less"></ng-md-icon>
+                        </md-button>
+                    </md-expansion-panel-collapsed>
+                    <md-expansion-panel-expanded>
+
+                        <md-expansion-panel-header>
+                            <div class="md-title">Principal Limit Calculation</div>
+                            <md-button class="md-icon-button" aria-label="toggle" ng-click="$panel.collapse()">
+                                <ng-md-icon icon="expand_more"></ng-md-icon>
+                            </md-button>
+                        </md-expansion-panel-header>
+
+                        <md-expansion-panel-content class="list-striped">
+                            <md-list>
+                                <md-list-item>
+                                    <p><small>Original Principal Limit</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.OriginalPrincipalLimit || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Current Principal Limit</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.CurrentPrincipalLimit || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Principal Balance</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.PrincipalBalance || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Interest Balance</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.InterestBalance || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>MIP/PMI Balance</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.MipPmiBalance || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Service Fee Balance</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.ServiceFeeBalance || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Loan Balance</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.LoanBalance || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>&mdash; Service Fee Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.ServiceFeeSetAside || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>&mdash; Repair Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.RepairSetAside || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>&mdash; First Year Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.FirstYearSetAside || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>&mdash; Credit Line Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.CreditLineSetAside || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>&mdash; Life Expectancy Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.LifeExpectancySetAside || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>&mdash; Net Principal Limit</small></p>
+                                    <span>{{vm.model.loanBalances.PrincipalLimitCalc.NetPrincipalLimit || 'N/A'}}</span>
+                                </md-list-item>
+                            </md-list>
+                        </md-expansion-panel-content>
+                    </md-expansion-panel-expanded>
+
+                </md-expansion-panel>
+            </div>
+            <div flex="50" layout="column" flex-offset="5">
+                <md-expansion-panel md-component-id="panelSeven">
+
+                    <md-expansion-panel-collapsed>
+                        <div class="md-title">Initial Disbursement Limit</div>
+                        <md-button class="md-icon-button" aria-label="toggle">
+                            <ng-md-icon icon="expand_less"></ng-md-icon>
+                        </md-button>
+                    </md-expansion-panel-collapsed>
+
+                    <md-expansion-panel-expanded>
+                        <md-expansion-panel-header>
+                            <div class="md-title">Initial Disbursement Limit</div>
+                            <md-button class="md-icon-button" aria-label="toggle" ng-click="$panel.collapse()">
+                                <ng-md-icon icon="expand_more"></ng-md-icon>
+                            </md-button>
+                        </md-expansion-panel-header>
+
+                        <md-expansion-panel-content class="list-striped">
+                            <md-list>
+                                <md-list-item>
+                                    <p><small>IDL</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.Idl || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Principal Balance & Init MIP</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.PrinBalAndInitMip || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Repair Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.RepairSetAside || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>First Year Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.FirstYearSetAside || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Other Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.OtherSetAside || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Initial Credit Line Set Aside</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.InitialCreditLisa || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>FirstYear LESA T&I</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.FirstYearLesaTaxAndIns || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>Initial Net Principal Limit</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.InitialNetPrincipalLimit || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small>IDL Expiration Date</small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.IdlExpirationDate || 'N/A'}}</span>
+                                </md-list-item>
+                                <md-list-item>
+                                    <p><small><strong>Net Growth</strong></small></p>
+                                    <span>{{vm.model.loanBalances.InitDisbLimit.NetGrowth || 'N/A'}}</span>
+                                </md-list-item>
+                            </md-list>
+                        </md-expansion-panel-content>
+                    </md-expansion-panel-expanded>
+                </md-expansion-panel>
+            </div>
+        </div>
+    </md-card-content>
+</md-card>
+
+<md-card flex="35">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline"><strong>Loan Additional Info</strong></span>
+        </md-card-title-text>
+        <md-card-avatar>
+            <md-button class="md-icon-button">
+                <md-tooltip>View More</md-tooltip>
+                <ng-md-icon icon="input"></ng-md-icon>
+            </md-button>
+        </md-card-avatar>
+    </md-card-title>
+    <md-card-content>
+        <md-expansion-panel md-component-id="panelFive">
+
+            <md-expansion-panel-collapsed>
+                <div class="md-title">Other Balances</div>
+                <md-button class="md-icon-button" aria-label="toggle">
+                    <ng-md-icon icon="expand_less"></ng-md-icon>
+                </md-button>
+            </md-expansion-panel-collapsed>
+
+            <md-expansion-panel-expanded>
+
+                <md-expansion-panel-header>
+                    <div class="md-title">Other Balances</div>
+                    <md-button class="md-icon-button" aria-label="toggle" ng-click="$panel.collapse()">
+                        <ng-md-icon icon="expand_more"></ng-md-icon>
+                    </md-button>
+                </md-expansion-panel-header>
+
+                <md-expansion-panel-content class="list-striped">
+                    <md-list>
+                        <md-list-item>
+                            <p><small>Tax & Insurance Withheld</small></p>
+                            <span>{{vm.model.loanBalances.OtherBalance.TaxInsuranceWithheld || 'N/A'}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p><small>IMIP Paid By Borrower</small></p>
+                            <span>{{vm.model.loanBalances.OtherBalance.ImipPaidByBorrower || 'N/A'}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p><small>IMIP Paid By Lender</small></p>
+                            <span>{{vm.model.loanBalances.OtherBalance.ImipPaidByLender || 'N/A'}}</span>
+                        </md-list-item>
+                    </md-list>
+                </md-expansion-panel-content>
+            </md-expansion-panel-expanded>
+
+        </md-expansion-panel>
+
+        <md-expansion-panel md-component-id="panelSix">
+
+            <md-expansion-panel-collapsed>
+                <div class="md-title">Life Expectancy Set Aside</div>
+                <md-button class="md-icon-button" aria-label="toggle">
+                    <ng-md-icon icon="expand_less"></ng-md-icon>
+                </md-button>
+            </md-expansion-panel-collapsed>
+
+            <md-expansion-panel-expanded>
+
+                <md-expansion-panel-header>
+                    <div class="md-title">Life Expectancy Set Aside</div>
+                    <md-button class="md-icon-button" aria-label="toggle" ng-click="$panel.collapse()">
+                        <ng-md-icon icon="expand_more"></ng-md-icon>
+                    </md-button>
+                </md-expansion-panel-header>
+
+                <md-expansion-panel-content class="list-striped">
+                    <md-list>
+                        <md-list-item>
+                            <p><small>Life Expectancy Set Aside Type</small></p>
+                            <span>{{vm.model.loanBalances.LifeExpectancySetAside.Type || 'N/A'}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p><small>Semmi-AnnualPayment</small></p>
+                            <span>{{vm.model.loanBalances.LifeExpectancySetAside.SemiannualAmount || 'N/A'}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p><small>Life Expectancy Payment Status</small></p>
+                            <span>{{vm.model.loanBalances.LifeExpectancySetAside.PaymentStatusDescription || 'N/A'}}</span>
+                        </md-list-item>
+                    </md-list>
+                </md-expansion-panel-content>
+
+            </md-expansion-panel-expanded>
+
+        </md-expansion-panel>
+
+        <md-expansion-panel md-component-id="panelEight">
+
+            <md-expansion-panel-collapsed>
+                <div class="md-title">Initial Credit Line Aside Information</div>
+                <md-button class="md-icon-button" aria-label="toggle">
+                    <ng-md-icon icon="expand_less"></ng-md-icon>
+                </md-button>
+            </md-expansion-panel-collapsed>
+
+            <md-expansion-panel-expanded>
+                <md-expansion-panel-header>
+                    <div class="md-title">Initial Credit Line Aside Information</div>
+                    <md-button class="md-icon-button" aria-label="toggle" ng-click="$panel.collapse()">
+                        <ng-md-icon icon="expand_more"></ng-md-icon>
+                    </md-button>
+                </md-expansion-panel-header>
+
+                <md-expansion-panel-content class="list-striped">
+                    <md-list>
+                        <md-list-item>
+                            <p><small>Current Gross Credit Line</small></p>
+                            <span>{{vm.model.loanBalances.CredLisaInfo.CurrentGrossCreditLine || 'N/A'}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p><small>Unsch. GL Disb. Balance</small></p>
+                            <span>{{vm.model.loanBalances.CredLisaInfo.UnschCredLineDisbBal || 'N/A'}}</span>
+                        </md-list-item>
+                        <md-list-item>
+                            <p><small>Current Net Credit Line</small></p>
+                            <span>{{vm.model.loanBalances.CredLisaInfo.CurrentNetCreditLine || 'N/A'}}</span>
+                        </md-list-item>
+                    </md-list>
+                </md-expansion-panel-content>
+            </md-expansion-panel-expanded>
+        </md-expansion-panel>
+    </md-card-content>
+</md-card>

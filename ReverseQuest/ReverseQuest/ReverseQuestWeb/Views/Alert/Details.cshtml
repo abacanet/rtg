@@ -1,0 +1,59 @@
+﻿@model ReverseQuestWeb.Models.app_alert
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>app_alert</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.reference_skey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reference_skey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alert_expiration_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alert_expiration_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alert_note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alert_note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modified_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modified_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modified_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modified_by)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

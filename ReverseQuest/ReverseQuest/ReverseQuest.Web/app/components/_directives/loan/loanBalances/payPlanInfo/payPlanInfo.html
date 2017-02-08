@@ -1,0 +1,227 @@
+﻿<md-card>
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Pay Plan Info</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+        <form name="payPlanInfoForm">
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Pay Plan Type</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               ng-class="{'long': (vm.model.PayPlanType.length > 15)}"
+                               aria-label="payPlanType"
+                               name="payPlanType"
+                               maxlength="30"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-model="vm.model.PayPlanType">
+                        <div ng-messages="payPlanInfoForm.payPlanType.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Monthly Payment</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="monthlyPayment"
+                               name="monthlyPayment"
+                               type="number"
+                               min="0"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.MonthlyPayment" />
+                        <div ng-messages="payPlanInfoForm.monthlyPayment.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Monthly Tax & Ins. Withheld</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="monthlyTaxAndInsWithheld"
+                               name="monthlyTaxAndInsWithheld"
+                               type="number"
+                               min="0"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.MonthlyTaxAndInsWithheld" />
+                        <div ng-messages="payPlanInfoForm.monthlyTaxAndInsWithheld.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>New Monthly Payment</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="netMonthlyPayment"
+                               name="netMonthlyPayment"
+                               type="number"
+                               min="0"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.NetMonthlyPayment" />
+                        <div ng-messages="payPlanInfoForm.netMonthlyPayment.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Remaining Payments</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="remainingPayments"
+                               name="remainingPayments"
+                               type="number"
+                               min="0"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^(\d)+$/"
+                               ng-model="vm.model.RemainingPayments" />
+                        <div ng-messages="payPlanInfoForm.remainingPayments.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Payment Status</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               ng-class="{'long': (vm.model.PaymentStatus.length > 15)}"
+                               aria-label="paymentStatus"
+                               name="paymentStatus"
+                               maxlength="30"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-model="vm.model.paymentStatus">
+                        <div ng-messages="payPlanInfoForm.PaymentStatus.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Maximum Claim</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="paymentStatus"
+                               name="maximumClaim"
+                               type="number"
+                               min="0"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.MaximumClaim" />
+                        <div ng-messages="payPlanInfoForm.maximumClaim.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Monthly Service Fee</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="paymentStatus"
+                               name="monthlyServiceFee"
+                               type="number"
+                               min="0"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.MonthlyServiceFee" />
+                        <div ng-messages="payPlanInfoForm.monthlyServiceFee.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="70" class="formLabel">
+                    <label><small>Print Statements</small></label>
+                </div>
+                <div layout="row" flex="30">
+                    <md-input-container flex class="smallerMargin">
+                        <md-checkbox class="md-primary"
+                                     aria-label="printStatements"
+                                     name="printStatements"
+                                     ng-disabled="false"
+                                     ng-required="false"
+                                     ng-model="vm.model.PrintStatements">
+                        </md-checkbox>
+                        <div ng-messages="payPlanInfoForm.printStatements.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="70" class="formLabel">
+                    <label><small>Prohibit All Correspondence</small></label>
+                </div>
+                <div layout="row" flex="30">
+                    <md-input-container flex class="smallerMargin">
+                        <md-checkbox class="md-primary"
+                                     aria-label="prohibitAllCorrespondence"
+                                     name="prohibitAllCorrespondence"
+                                     ng-disabled="false"
+                                     ng-required="false"
+                                     ng-model="vm.model.ProhibitAllCorrespondence">
+                        </md-checkbox>
+                        <div ng-messages="payPlanInfoForm.printStatements.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+        </form>
+    </md-card-content>
+</md-card>

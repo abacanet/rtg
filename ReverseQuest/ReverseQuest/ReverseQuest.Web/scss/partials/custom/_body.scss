@@ -1,0 +1,139 @@
+﻿/*
+ * Base structure
+ */
+body {
+    background-color: #f2efe7; /*#E3F2FD;*/
+}
+
+/*Remove Arrow within input fields*/
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+.align-text-right {
+    text-align: right;
+}
+
+/* Angular Material Begin*/
+md-list-item.activePage > div.md-button > button.md-button {
+    border-left: 4px solid rgb(255,138,101); /*#18ffe8*/
+}
+
+md-content.md-default-theme, md-content {
+    background-color: #f2efe7; /*#E3F2FD*/
+}
+
+md-card {
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 2px 2px 6px #b6b6b6;
+}
+
+md-input-container.smallerMargin {
+    margin: -5px 0;
+}
+
+md-input-container .md-input-message-animation {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+._md-datepicker-floating-label > md-datepicker .md-datepicker-input-container {
+    margin-bottom: -10px;
+}
+
+._md-datepicker-floating-label._md-datepicker-has-calendar-icon > label:not(.md-no-float):not(.md-container-ignore) {
+    left: 5px;
+    width: inherit;
+}
+
+md-card-title.card-form-header + md-card-content {
+    padding-top: 16px !important;
+}
+/* Angular Material End*/
+
+
+/* Overlay Begin */
+.shadow {
+    z-index: 1099;
+    left: 0;
+    top: 0;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .65);
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Overlay End */
+
+
+/* File Upload */
+
+.uploadDropZoneElement {
+    position: relative;
+    display: inline-block;
+    background-color: #f8f8f8;
+    border: 1px solid #c7c7c7;
+    width: 230px;
+    height: 63px;
+    text-align: center;
+}
+
+.uploadTextWrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.2em;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #000;
+}
+/* End File Upload */
+
+
+/* Scrollbar styling Begin*/
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0, 245, 255, 0.40);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 245, 255, 0.40);
+}
+/* Scrollbar styling End*/

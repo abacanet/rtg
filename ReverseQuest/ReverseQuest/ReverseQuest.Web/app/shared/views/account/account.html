@@ -1,0 +1,95 @@
+﻿<style>
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+        background-color: #fff;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: rgba(255,255,255,0.5);
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid #999;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 6px;
+        outline: 0;
+        -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+        box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    }
+
+    @media (min-width: 768px) {
+        .modal-dialog {
+            width: 600px;
+            margin: 200px auto;
+        }
+
+        .modal-content {
+            -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        }
+
+        .modal-sm {
+            width: 300px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .modal-lg {
+            width: 900px;
+        }
+    }
+</style>
+
+<div class="animated">
+    <div class="modal-content ">
+        <!--HEADER-->
+        <div class="modal-header">
+            <h3 ng-if="!vm.busy" class="text-bold">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                {{vm.formShown}}
+            </h3>
+            <h4 ng-if="vm.busy" class="text-bold loader">
+                {{vm.action}}...<i class="fa fa-spinner fa-pulse fa-fw"></i>
+            </h4>
+        </div>
+
+        <!--BODY-->
+        <div class="modal-body">
+            <!--LOGIN FORM-->
+            <div ng-show="vm.formShown === 'Login'"
+                 ng-include src="'/app/shared/views/account/_login.html'">
+            </div>
+
+            <!--REGISTER FORM-->
+            <div ng-show="vm.formShown === 'Request Access'"
+                 ng-include src="'/app/shared/views/account/_register.html'">
+            </div>
+        </div>
+
+        <!--FOOTER-->
+        <div ng-if="vm.formShown !== ''" class="modal-footer">
+            <span>
+                <button class="btn btn-info"
+                        ng-if="vm.formShown === 'Login'"
+                        ng-click="vm.cancel();">
+                    Cancel
+                </button>
+                <button class="btn btn-info"
+                        ng-if="vm.formShown === 'Request Access'"
+                        ng-disabled="vm.busy"
+                        ng-click="vm.showForm('Login')">
+                    Back
+                </button>
+                <button class="btn btn-info"
+                        ng-if="vm.formShown === 'Request Access'"
+                        ng-disabled="vm.busy"
+                        ng-click="vm.cancel()">
+                    Close
+                </button>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,381 @@
+﻿<div layout="row" flex>
+    <div layout="column" layout-align="space-between stretch">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Loan Search</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab>
+                        <md-tab-label>Loan&nbsp;<ng-md-icon icon="search"></ng-md-icon></md-tab-label>
+                        <md-tab-body>
+                            <div layout-padding>
+                                <!--parameters["avcLoanServicerSKeys"] as string,
+                                parameters["avcInvestorSKeys"] as string,
+                                parameters["avcLoanPoolSKeys"] as string,
+                                parameters["avcProductTypeSKeys"] as string,
+                                parameters["avcPaymentPlanTypes"] as string,
+                                parameters["avcArmTypes"] as string,
+                                parameters["avcRateIndexTypeSKeys"] as string,
+                                parameters["avcSpocsKey"] as string,
+
+                                parameters[""] as string,
+                                parameters["avcIncludeAlerts"] as string,
+                                parameters["avcExcludeAlerts"] as string,
+                                parameters["avcIncludeDocs"] as string,
+                                parameters["avcExcludeDocs"] as string,
+                                parameters["aiPageNumber"] as int?,
+                                parameters["aiNumberOfRecords"] as int?,
+                                parameters["avcSortColumn"] as string,
+                                parameters["avcSortOrder"] as string);-->
+
+                                <form name="searchForm" ng-submit="search()">
+                                    <md-button class="md-raised md-primary" ng-click="resetForm()">Reset</md-button>
+                                    <md-button class="md-raised md-primary" type="submit">Submit</md-button>
+                                    <md-input-container>
+                                        <label for="LoanSkey">Loan Skey</label>
+                                        <input aria-label="search"
+                                               name="search"
+                                               type="number"
+                                               placeholder="Enter sKey here"
+                                               ng-model="vm.model.searchParameters.aiLoanSKey">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="LoanNumber">Original Loan #</label>
+                                        <input type="text" name="LoanNumber" id="LoanNumber" placeholder="00000000000" ng-model="vm.model.searchParameters.avcOriginalLoanNumber">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="FHACaseNumber">FHA Case #</label>
+                                        <input type="text" name="FHACaseNumber" id="FHACaseNumber" placeholder="000-0000000" ng-model="vm.model.searchParameters.avcFhaCaseNumber">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="InvestorLoanNumber">Investor Loan #</label>
+                                        <input type="text" name="InvestorLoanNumber" id="InvestorLoanNumber" placeholder="0000000000" ng-model="vm.model.searchParameters.avcInvestorLoanNumber">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="PriorServicerLoanNumber">Prior Servicer Loan #</label>
+                                        <input type="text" name="PriorServicerLoanNumber" id="PriorServicerLoanNumber" placeholder="0000000000" ng-model="vm.model.searchParameters.avcPriorServicerLoanNumber">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label>Status</label>
+                                        <md-select ng-model="vm.model.searchParameters.avcLoanStatus" class="md-no-underline">
+                                            <md-option value="1010">ACTIVE</md-option>
+                                            <md-option value="5010">BANKRUPTCY</md-option>
+                                            <md-option value="8010">CLAIM</md-option>
+                                            <md-option value="3010">DEFAULT</md-option>
+                                            <md-option value="010">DELETED</md-option>
+                                            <md-option value="4010">FORECLOSURE</md-option>
+                                            <md-option value="9010">INACTIVE</md-option>
+                                            <md-option value="7010">REO</md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                    <div>
+                                        <md-input-container>
+                                            <label for="LoanSubStatus">Sub Status</label>
+                                            <md-select ng-model="vm.model.searchParameters.avcLoanSubStatusCodes" name="LoanSubStatus" id="LoanSubStatus" class="md-no-underline">
+                                                <md-option value="9016010">3rd Party Sale/FCL Sale</md-option>
+                                                <md-option value="1016010">Active</md-option>
+                                                <md-option value="9017010">Borrower Paid</md-option>
+                                                <md-option value="5012010">Chapter 11</md-option>
+                                                <md-option value="5013010">Chapter 12</md-option>
+                                                <md-option value="5014010">Chapter 13</md-option>
+                                                <md-option value="5011010">Chapter 7</md-option>
+                                                <md-option value="3025010">Conveyed Title</md-option>
+                                                <md-option value="3015010">Conveyed Title - eNBS</md-option>
+                                                <md-option value="8015010">CT 21 FCL/DIL - Filed</md-option>
+                                                <md-option value="8019010">CT 21 FCL/DIL - Paid</md-option>
+                                                <md-option value="8011010">CT 21 FCL/DIL - Pending</md-option>
+                                                <md-option value="8016010">CT 22 Assignment - Filed</md-option>
+                                                <md-option value="9011010">CT 22 Assignment - Paid</md-option>
+                                                <md-option value="8012010">CT 22 Assignment - Pending</md-option>
+                                                <md-option value="8017010">CT 23 Short Sale (Pre FCL) - Filed</md-option>
+                                                <md-option value="8020010">CT 23 Short Sale (Pre FCL) - Paid</md-option>
+                                                <md-option value="8013010">CT 23 Short Sale (Pre FCL) - Pending</md-option>
+                                                <md-option value="9012010">CT 23 Short Sale (Pre FCL) - PIF</md-option>
+                                                <md-option value="8018010">CT 24 Supplemental - Filed</md-option>
+                                                <md-option value="9013010">CT 24 Supplemental - Paid</md-option>
+                                                <md-option value="8014010">CT 24 Supplemental - Pending</md-option>
+                                                <md-option value="9018010">Death</md-option>
+                                                <md-option value="3026010">Death</md-option>
+                                                <md-option value="3016010">Death - eNBS</md-option>
+                                                <md-option value="010">Deleted</md-option>
+                                                <md-option value="3027010">DIL</md-option>
+                                                <md-option value="3017010">DIL - eNBS</md-option>
+                                                <md-option value="1018010">eNBS - Defered</md-option>
+                                                <md-option value="1017010">eNBS - Defered Pending</md-option>
+                                                <md-option value="4013010">Foreclosure Hold</md-option>
+                                                <md-option value="3021010">Insurance Default</md-option>
+                                                <md-option value="3011010">Insurance Default - eNBS</md-option>
+                                                <md-option value="4011010">Judicial Foreclosure</md-option>
+                                                <md-option value="9020010">Loan Transferred</md-option>
+                                                <md-option value="1012010">Missing Critical Docs</md-option>
+                                                <md-option value="4012010">Non- Judicial Foreclosure</md-option>
+                                                <md-option value="3024010">Occupancy Default</md-option>
+                                                <md-option value="3014010">Occupancy Default - eNBS</md-option>
+                                                <md-option value="1011010">Pending Documents</md-option>
+                                                <md-option value="1015010">Pending HERMIT Loan Setup</md-option>
+                                                <md-option value="1013010">Pending QC</md-option>
+                                                <md-option value="7012010">Post Claim</md-option>
+                                                <md-option value="7011010">Pre Claim</md-option>
+                                                <md-option value="9019010">Refinanced</md-option>
+                                                <md-option value="9014010">REO - Sale</md-option>
+                                                <md-option value="3029010">Repair Default</md-option>
+                                                <md-option value="1014010">Review Required</md-option>
+                                                <md-option value="3028010">Short Sale</md-option>
+                                                <md-option value="9015010">Short Sale</md-option>
+                                                <md-option value="3018010">Short Sale - eNBS</md-option>
+                                                <md-option value="3023010">T&I Default</md-option>
+                                                <md-option value="3013010">T&I Default - eNBS</md-option>
+                                                <md-option value="3022010">Taxes Default</md-option>
+                                                <md-option value="3012010">Taxes Default - eNBS</md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <md-input-container>
+                                        <label for="FirstName">First Name</label>
+                                        <input type="text" name="FirstName" id="FirstName" placeholder="Enter Contact First Name" ng-model="vm.model.searchParameters.avcContactFirstName">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="LastName">Last Name</label>
+                                        <input type="text" name="LastName" id="LastName" placeholder="Enter Contact Last Name" ng-model="vm.model.searchParameters.avcContactLastName">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="PhoneNumber">Phone Number</label>
+                                        <input type="text" name="PhoneNumber" id="PhoneNumber" placeholder="(555) 555-5555" ng-model="vm.model.searchParameters.avcContactPhoneNumber">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="ContactType">Contact Type</label>
+                                        <md-select name="ContactType" id="ContactType" class="md-no-underline" ng-model="vm.model.searchParameters.avcContactTypeSKeys">
+                                            <md-option value="137010">Alternate Contact</md-option>
+                                            <md-option value="136010">Appraiser</md-option>
+                                            <md-option value="3010">Attorney</md-option>
+                                            <md-option value="146010">Authorized Party</md-option>
+                                            <md-option value="101010">Automated Tax Department</md-option>
+                                            <md-option value="102010">Bankruptcy Department</md-option>
+                                            <md-option value="7010">Bankruptcy Trustee</md-option>
+                                            <md-option value="103010">Bidder</md-option>
+                                            <md-option value="1010">Borrower</md-option>
+                                            <md-option value="104010">Broker</md-option>
+                                            <md-option value="105010">Charities</md-option>
+                                            <md-option value="128010">City Commissioner</md-option>
+                                            <md-option value="106010">Clerk of the Courts</md-option>
+                                            <md-option value="2010">Co-Borrower</md-option>
+                                            <md-option value="107010">Code Enforcement</md-option>
+                                            <md-option value="108010">Community Redevelopment</md-option>
+                                            <md-option value="140010">Conservator</md-option>
+                                            <md-option value="135010">Contractor</md-option>
+                                            <md-option value="129010">County Commissioner</md-option>
+                                            <md-option value="109010">Data Processing</md-option>
+                                            <md-option value="143010">Debt Counselor</md-option>
+                                            <md-option value="110010">Demolition Contractor</md-option>
+                                            <md-option value="111010">Due Diligence</md-option>
+                                            <md-option value="147010">Entitled Non-Borrowing Spouse</md-option>
+                                            <md-option value="133010">Executor</md-option>
+                                            <md-option value="139010">Guardian</md-option>
+                                            <md-option value="126010">Handyman</md-option>
+                                            <md-option value="144010">HOA</md-option>
+                                            <md-option value="149010">Ineligible Non-Borrowing Spouse</md-option>
+                                            <md-option value="113010">Investor</md-option>
+                                            <md-option value="112010">Investor - EPA</md-option>
+                                            <md-option value="114010">Legal Division</md-option>
+                                            <md-option value="148010">Legal Owner</md-option>
+                                            <md-option value="115010">Management Co</md-option>
+                                            <md-option value="116010">Mayor</md-option>
+                                            <md-option value="117010">Miscellaneous</md-option>
+                                            <md-option value="118010">Neighbor</md-option>
+                                            <md-option value="142010">Non-Borrowing Spouse</md-option>
+                                            <md-option value="131110">Other</md-option>
+                                            <md-option value="138010">Payoff Requester</md-option>
+                                            <md-option value="6010">Petitioner</md-option>
+                                            <md-option value="130010">Planning & Zoning</md-option>
+                                            <md-option value="134010">Power Of Attorney</md-option>
+                                            <md-option value="119010">Property Appraiser</md-option>
+                                            <md-option value="120010">Prospective Buyer</md-option>
+                                            <md-option value="127010">Realtor</md-option>
+                                            <md-option value="121010">Rehabilitators</md-option>
+                                            <md-option value="8010">Relative</md-option>
+                                            <md-option value="145010">Skip Tracing</md-option>
+                                            <md-option value="122010">Tax Assessor</md-option>
+                                            <md-option value="125010">Tax Certificate Buyer</md-option>
+                                            <md-option value="123010">Tax Collector</md-option>
+                                            <md-option value="124010">Tax Deed Dept</md-option>
+                                            <md-option value="131010">Title Company</md-option>
+                                            <md-option value="141010">Trustee</md-option>
+                                            <md-option value="5010">Valuator</md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="BoardedDateFrom">Boarded Date From</label>
+                                        <input type="date" name="BoardedDateFrom" id="BoardedDateFrom" placeholder="Enter Boarded Date From" ng-model="vm.model.searchParameters.adtmBoardedDateFrom">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="BoardedDateFrom">Boarded Date To</label>
+                                        <input type="date" name="BoardedDateTo" id="BoardedDateTo" placeholder="Enter Boarded Date To" ng-model="vm.model.searchParameters.adtmBoardedDateTo">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="PropertyAddress">Property Address</label>
+                                        <input type="text" name="PropertyAddress" id="PropertyAddress" placeholder="Enter Property Address" ng-model="vm.model.searchParameters.avcPropertyAddress">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="PropertyCity">Property City</label>
+                                        <input type="text" name="PropertyCity" id="PropertyCity" placeholder="Enter City" ng-model="vm.model.searchParameters.avcPropertyCity">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label for="PropertyState">Property State</label>
+                                        <md-select name="PropertyState" id="PropertyState" ng-model="vm.model.searchParameters.avcPropertyStateCodes" class="md-no-underline">
+                                            <md-option value="AL10">Alabama</md-option>
+                                            <md-option value="AK10">Alaska</md-option>
+                                            <md-option value="AA10">All States</md-option>
+                                            <md-option value="AZ10">Arizona</md-option>
+                                            <md-option value="AR10">Arkansas</md-option>
+                                            <md-option value="AP10">Armed Forces Pacific</md-option>
+                                            <md-option value="AU10">Australia</md-option>
+                                            <md-option value="CA10">California</md-option>
+                                            <md-option value="AB10">Canada - Alberta</md-option>
+                                            <md-option value="BC10">Canada - British Columbia</md-option>
+                                            <md-option value="MB10">Canada - Manitoba</md-option>
+                                            <md-option value="NB10">Canada - New Brunswick</md-option>
+                                            <md-option value="NL10">Canada - Newfoundland/Labrador</md-option>
+                                            <md-option value="NT10">Canada - Northwest Territories</md-option>
+                                            <md-option value="NS10">Canada - Nova Scotia</md-option>
+                                            <md-option value="NU10">Canada - Nunavut</md-option>
+                                            <md-option value="ON10">Canada - Ontario</md-option>
+                                            <md-option value="PE10">Canada - Prince Edward Island</md-option>
+                                            <md-option value="QC10">Canada - Quebec</md-option>
+                                            <md-option value="SK10">Canada - Saskatchewan</md-option>
+                                            <md-option value="YT10">Canada - Yukon</md-option>
+                                            <md-option value="CO10">Colorado</md-option>
+                                            <md-option value="CT10">Connecticut</md-option>
+                                            <md-option value="DE10">Delaware</md-option>
+                                            <md-option value="DC10">District of Columbia</md-option>
+                                            <md-option value="EN10">England</md-option>
+                                            <md-option value="FL10">Florida</md-option>
+                                            <md-option value="FM10">FM</md-option>
+                                            <md-option value="FR10">France</md-option>
+                                            <md-option value="GA10">Georgia</md-option>
+                                            <md-option value="GR10">Germany</md-option>
+                                            <md-option value="GU10">Guam</md-option>
+                                            <md-option value="HI10">Hawaii</md-option>
+                                            <md-option value="ID10">Idaho</md-option>
+                                            <md-option value="IL10">Illinois</md-option>
+                                            <md-option value="IN10">Indiana</md-option>
+                                            <md-option value="IA10">Iowa</md-option>
+                                            <md-option value="IS10">Israel</md-option>
+                                            <md-option value="KS10">Kansas</md-option>
+                                            <md-option value="KY10">Kentucky</md-option>
+                                            <md-option value="LA10">Louisiana</md-option>
+                                            <md-option value="ME10">Maine</md-option>
+                                            <md-option value="MD10">Maryland</md-option>
+                                            <md-option value="MA10">Massachusetts</md-option>
+                                            <md-option value="MX10">Mexico</md-option>
+                                            <md-option value="MI10">Michigan</md-option>
+                                            <md-option value="MN10">Minnesota</md-option>
+                                            <md-option value="MS10">Mississippi</md-option>
+                                            <md-option value="MO10">Missouri</md-option>
+                                            <md-option value="MT10">Montana</md-option>
+                                            <md-option value="MP10">MP</md-option>
+                                            <md-option value="NE10">Nebraska</md-option>
+                                            <md-option value="NV10">Nevada</md-option>
+                                            <md-option value="NH10">New Hampshire</md-option>
+                                            <md-option value="NJ10">New Jersey</md-option>
+                                            <md-option value="NM10">New Mexico</md-option>
+                                            <md-option value="NY10">New York</md-option>
+                                            <md-option value="NC10">North Carolina</md-option>
+                                            <md-option value="ND10">North Dakota</md-option>
+                                            <md-option value="OH10">Ohio</md-option>
+                                            <md-option value="OK10">Oklahoma</md-option>
+                                            <md-option value="OR10">Oregon</md-option>
+                                            <md-option value="PA10">Pennsylvania</md-option>
+                                            <md-option value="PR10">Puerto Rico</md-option>
+                                            <md-option value="RI10">Rhode Island</md-option>
+                                            <md-option value="SC10">South Carolina</md-option>
+                                            <md-option value="SD10">South Dakota</md-option>
+                                            <md-option value="TN10">Tennessee</md-option>
+                                            <md-option value="TX10">Texas</md-option>
+                                            <md-option value="UD10">United States Virgin Islands</md-option>
+                                            <md-option value="XX10">Unknown</md-option>
+                                            <md-option value="UT10">Utah</md-option>
+                                            <md-option value="VN10">Venezuela</md-option>
+                                            <md-option value="VT10">Vermont</md-option>
+                                            <md-option value="VI10">Virgin Islands</md-option>
+                                            <md-option value="VA10">Virginia</md-option>
+                                            <md-option value="WA10">Washington</md-option>
+                                            <md-option value="WV10">West Virginia</md-option>
+                                            <md-option value="WI10">Wisconsin</md-option>
+                                            <md-option value="WY10">Wyoming</md-option>
+                                        </md-select>
+
+                                    </md-input-container>
+
+                                    <md-input-container>
+                                        <label for="PropertyZip">Property Zip Code</label>
+                                        <input type="text" name="PropertyZip" id="PropertyZip" placeholder="Enter Zip Code" ng-model="vm.model.searchParameters.avcPropertyZipCode">
+                                    </md-input-container>
+                                    <div>
+                                        <md-input-container>
+                                            <label for="BoardingType">Boarding Type</label>
+                                            <md-select name="BoardingType" id="BoardingType" class="md-no-underline" ng-model="vm.model.searchParameters.avcBoardingType">
+                                                <md-option value="Borrower">Borrower</md-option>
+                                                <md-option value="Co-Borrower">Co-Borrower</md-option>
+                                                <md-option value="eNBS">eNBS</md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <div>
+                                        <md-input-container>
+                                            <label for="CreditType">Credit Type</label>
+                                            <md-select name="CreditType" id="CreditType" class="md-no-underline" ng-model="vm.model.searchParameters.avcCreditType">
+                                                <md-option value="Borrower">Borrower</md-option>
+                                                <md-option value="Co-Borrower">Co-Borrower</md-option>
+                                                <md-option value="eNBS">eNBS</md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <md-button class="md-raised md-primary"  ng-click="resetForm()">Reset</md-button>
+                                    <md-button class="md-raised md-primary" type="submit">Submit</md-button>
+
+                                </form>
+                            </div>
+
+                        </md-tab-body>
+                    </md-tab>
+                    <md-tab>
+                        <md-tab-label>Note&nbsp;<ng-md-icon icon="search"></ng-md-icon></md-tab-label>
+                        <md-tab-body>
+                            <md-content class="md-padding">
+                                <h1 class="md-display-2">Tab Two</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                                <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                            </md-content>
+                        </md-tab-body>
+
+                    </md-tab>
+                    <md-tab>
+                        <md-tab-label>QC&nbsp;<ng-md-icon icon="search"></ng-md-icon></md-tab-label>
+                        <md-tab-body>
+                            <md-content class="md-padding">
+                                <h1 class="md-display-2">Tab Three</h1>
+                                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                            </md-content>
+                        </md-tab-body>
+                    </md-tab>
+                </md-tabs>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div layout="column" flex="80">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Loan Search Results</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <div kendo-grid="loanSearchGrid" options="loanSearchGridOptions"></div>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>

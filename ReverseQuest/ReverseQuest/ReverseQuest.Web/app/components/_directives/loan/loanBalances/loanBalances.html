@@ -1,0 +1,66 @@
+﻿<div layout="row">
+    <div layout="column" flex="25">
+        <div layout="row">
+            <div flex
+                 principal-limit-calc-directive
+                 model="vm.model.PrincipalLimitCalc">
+            </div>
+        </div>
+    </div>
+    <div layout="column" flex="25">
+        <div layout="row">
+            <div flex
+                 init-cred-lisa-directive
+                 model="vm.model.InitCredLisaInfo">
+            </div>
+        </div>
+        <div layout="row">
+            <div flex
+                 lesa-directive
+                 model="vm.model.LifeExpectancySetAside">
+            </div>
+        </div>
+        <div layout="row">
+            <div flex
+                 cred-lisa-directive
+                 model="vm.model.CredLisaInfo">
+            </div>
+        </div>
+    </div>
+    <div layout="column" flex="25">
+        <div layout="row">
+            <div flex layout="column" ng-show="vm.model.InitDisbLimit.IdlExpirationDate >= vm.model.today">
+                <md-card>
+                    <md-card-title class="card-form-header">
+                        <md-card-title-text>
+                            <span><strong>Loan Balance Distribution</strong></span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <hc-pie-chart title="" data="pieData">Placeholder for Pie Chart</hc-pie-chart>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div ng-show="vm.model.InitDisbLimit.IdlExpirationDate < vm.model.today"
+                 flex
+                 init-disb-limit-directive
+                 model="vm.model.InitDisbLimit">
+            </div>
+        </div>
+        <div layout="row">
+            <div flex
+                 other-balance-directive
+                 model="vm.model.OtherBalance">
+            </div>
+        </div>
+    </div>
+    <div layout="column" flex="25">
+        <div layout="row">
+            <div flex
+                 pay-plan-info-directive
+                 model="vm.model.PayPlanInfo">
+            </div>
+        </div>
+    </div>
+</div>

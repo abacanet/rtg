@@ -1,0 +1,55 @@
+﻿<div id="divInterestRateType">
+    <div id="windowInterestRateType" style="display:none">
+        <div id="MSInterestRateType">
+            <div class="demo-section k-content">
+                <select id="multiSelectInterestRateType" multiple="multiple"></select>
+            </div>
+            <script>
+        var InterestRateTypeDataSource = {
+            serverFiltering: false,
+            transport: {
+                read: {
+                    url: "http://localhost:53176/api/refInterestRateType/GetInterestRateTypes",
+                }
+            }
+        };
+        $(document).ready(function () {
+            $("#multiSelectInterestRateType").kendoMultiSelect({
+                height: 200,
+                placeholder: "Select Interest Rate Type...",
+                dataTextField: "InterestRate_type_description",
+                dataValueField: "InterestRate_type_skey",
+                autoBind: false,
+                autoClose: false,
+                dataSource: InterestRateTypeDataSource,
+                close: function (e) {
+                   // e.preventDefault();
+                }
+            });
+        });
+            </script>
+        </div>
+    </div>
+
+    <span id="btnInterestRateType" class="k-button hidden-on-narrow">Interest Rate Type</span>
+
+    <div class="responsive-message"></div>
+
+    <script>
+
+                $("#btnInterestRateType").click(function () {
+                    $("#windowInterestRateType").data("kendoWindow").open();
+                });
+
+                $(document).ready(function() {
+                    $("#windowInterestRateType").kendoWindow({
+                        visible: false,                        
+                        width: "630px",
+                        height: "315px",
+                        title: "Select Interest Rate Type",
+                        actions: ["Close"],
+                        content: "/html/InterestRateTypeMultiSelect.html",                        
+                    }).data("kendoWindow");
+                });
+    </script>
+</div>

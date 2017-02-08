@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseQuestWeb", "ReverseQuestWeb\ReverseQuestWeb.csproj", "{1BD8E5F2-12C4-4BE8-8B81-C144C97F9A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseQuestWeb.Tests", "ReverseQuestWeb.Tests\ReverseQuestWeb.Tests.csproj", "{9DCE2783-3BFD-4957-A663-49C10EABD9AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseQuest.Web", "ReverseQuest.Web\ReverseQuest.Web.csproj", "{CBF079D2-21F9-4D76-8DA9-D9D043BD89C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseQuest.Classes", "ReverseQuest.Classes\ReverseQuest.Classes.csproj", "{ED3F5F9A-0BD6-408D-AD74-F9DB5523DAE7}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSRS_Letters", "Reports\SSRS\SSRS_Letters\SSRS_Letters.rptproj", "{7BF78E24-8B2F-44A7-8C94-953E696F4904}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ReverseQuest.DB", "SQLServer\ReverseQuest\ReverseQuest.DB.sqlproj", "{7060A5AD-1AB4-4EE0-84F5-D845AA44C005}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugLocal|Any CPU = DebugLocal|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BD8E5F2-12C4-4BE8-8B81-C144C97F9A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD8E5F2-12C4-4BE8-8B81-C144C97F9A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD8E5F2-12C4-4BE8-8B81-C144C97F9A6C}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD8E5F2-12C4-4BE8-8B81-C144C97F9A6C}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{1BD8E5F2-12C4-4BE8-8B81-C144C97F9A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD8E5F2-12C4-4BE8-8B81-C144C97F9A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DCE2783-3BFD-4957-A663-49C10EABD9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DCE2783-3BFD-4957-A663-49C10EABD9AB}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DCE2783-3BFD-4957-A663-49C10EABD9AB}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{9DCE2783-3BFD-4957-A663-49C10EABD9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DCE2783-3BFD-4957-A663-49C10EABD9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF079D2-21F9-4D76-8DA9-D9D043BD89C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF079D2-21F9-4D76-8DA9-D9D043BD89C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF079D2-21F9-4D76-8DA9-D9D043BD89C0}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF079D2-21F9-4D76-8DA9-D9D043BD89C0}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{CBF079D2-21F9-4D76-8DA9-D9D043BD89C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF079D2-21F9-4D76-8DA9-D9D043BD89C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3F5F9A-0BD6-408D-AD74-F9DB5523DAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3F5F9A-0BD6-408D-AD74-F9DB5523DAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3F5F9A-0BD6-408D-AD74-F9DB5523DAE7}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3F5F9A-0BD6-408D-AD74-F9DB5523DAE7}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{ED3F5F9A-0BD6-408D-AD74-F9DB5523DAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3F5F9A-0BD6-408D-AD74-F9DB5523DAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.Debug|Any CPU.ActiveCfg = Debug
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.Debug|Any CPU.Build.0 = Debug
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.Debug|Any CPU.Deploy.0 = Debug
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.DebugLocal|Any CPU.ActiveCfg = DebugLocal
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.DebugLocal|Any CPU.Build.0 = DebugLocal
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.DebugLocal|Any CPU.Deploy.0 = DebugLocal
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.Release|Any CPU.ActiveCfg = Release
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.Release|Any CPU.Build.0 = Release
+		{7BF78E24-8B2F-44A7-8C94-953E696F4904}.Release|Any CPU.Deploy.0 = Release
+		{7060A5AD-1AB4-4EE0-84F5-D845AA44C005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7060A5AD-1AB4-4EE0-84F5-D845AA44C005}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{7060A5AD-1AB4-4EE0-84F5-D845AA44C005}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{7060A5AD-1AB4-4EE0-84F5-D845AA44C005}.DebugLocal|Any CPU.Deploy.0 = Debug|Any CPU
+		{7060A5AD-1AB4-4EE0-84F5-D845AA44C005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7060A5AD-1AB4-4EE0-84F5-D845AA44C005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7060A5AD-1AB4-4EE0-84F5-D845AA44C005}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://reversetg.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ReverseQuestWeb\\ReverseQuestWeb.csproj
+		SccProjectName1 = ReverseQuestWeb
+		SccLocalPath1 = ReverseQuestWeb
+		SccProjectUniqueName2 = ReverseQuestWeb.Tests\\ReverseQuestWeb.Tests.csproj
+		SccProjectName2 = ReverseQuestWeb.Tests
+		SccLocalPath2 = ReverseQuestWeb.Tests
+		SccProjectUniqueName3 = ReverseQuest.Web\\ReverseQuest.Web.csproj
+		SccProjectName3 = ReverseQuest.Web
+		SccLocalPath3 = ReverseQuest.Web
+		SccProjectUniqueName4 = ReverseQuest.Classes\\ReverseQuest.Classes.csproj
+		SccProjectName4 = ReverseQuest.Classes
+		SccLocalPath4 = ReverseQuest.Classes
+		SccProjectUniqueName5 = Reports\\SSRS\\SSRS_Letters\\SSRS_Letters.rptproj
+		SccProjectName5 = Reports/SSRS/SSRS_Letters
+		SccLocalPath5 = Reports\\SSRS\\SSRS_Letters
+		SccProjectUniqueName6 = SQLServer\\ReverseQuest\\ReverseQuest.DB.sqlproj
+		SccProjectName6 = SQLServer/ReverseQuest
+		SccLocalPath6 = SQLServer\\ReverseQuest
+	EndGlobalSection
+EndGlobal

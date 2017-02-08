@@ -1,0 +1,40 @@
+﻿<div layout-xs="column" layout="row">
+
+    <div flex-xs flex-gt-xs="30">
+        <div loan-rate-directive
+             model="vm.model.LoanRate">
+        </div>
+    </div>
+
+    <div flex-xs flex-gt-xs="40">
+        <div layout="row">
+            <div flex
+                 loan-recording-directive
+                 model="vm.model.LoanRecording">
+            </div>
+        </div>
+        <div layout="row">
+            <div flex
+                 other-info-directive
+                 model="vm.model.OtherInformation">
+            </div>
+        </div>
+    </div>
+
+    <div flex-xs flex-gt-xs="30">
+        <div layout="row">
+            <div flex
+                 loan-filing-directive
+                 model="vm.model.LoanFiling">
+            </div>
+        </div>
+        <div layout="row">
+            <div flex
+                 prior-servicer-info-directive
+                 model="vm.model.PriorServicerInfo">
+            </div>
+        </div>
+    </div>
+
+</div>
+

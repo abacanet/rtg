@@ -1,0 +1,76 @@
+body {
+  /*line-height: 125%;
+  padding-top: 46px;*/
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.form-control {
+  height: auto !important;
+}
+
+ul.list-unstyled {
+  li {
+    margin-bottom: 1rem;
+  }
+  li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*input.ng-pristine { border-color: #ffffff !important; }
+input.ng-dirty.ng-valid { border-color: #29b473 !important; }
+input.ng-dirty.ng-invalid { border-color: #e05a5a !important; }*/
+/*input.ng-dirty.ng-valid ~ span.ok { color:green; display:inline; }
+input.ng-dirty.ng-invalid ~ span.ko { color:red; display:inline; }*/
+
+.glean-site-wrapper {
+  background-color: #000000;
+}
+
+.alert {
+  font-family:"Brawler", serif !important;
+}
+
+.content-wrap {
+  height: 100vh !important;
+  min-height: 600px;
+  background:  linear-gradient(
+                  rgba(0, 0, 0, 0.55),
+                  rgba(0, 0, 0, 0.55)
+  ), url(../images/index-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden !important;
+}
+
+.content {
+  position: relative;
+  top: 0;
+  padding: 1rem !important;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+header.home h1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: #fff;
+}
+
+header.home h5 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.modal {
+  z-index: 10000;
+}

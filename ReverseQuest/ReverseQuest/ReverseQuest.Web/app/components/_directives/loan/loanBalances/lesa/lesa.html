@@ -1,0 +1,76 @@
+﻿<md-card>
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Life Expectancy Set Aside</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+        <form name="lisaForm">
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>LESA Type</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               ng-class="{'long': (vm.model.Type.length > 15)}"
+                               aria-label="lesaType"
+                               name="lesaType"
+                               maxlength="30"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-model="vm.model.Type">
+                        <div ng-messages="lisaForm.lesaType.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Life Expect Pay State</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               ng-class="{'long': (vm.model.PaymentStatusDescription.length > 15)}"
+                               aria-label="lifeExpectPayStat"
+                               name="lifeExpectPayStat"
+                               maxlength="30"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-model="vm.model.PaymentStatusDescription">
+                        <div ng-messages="lisaForm.lifeExpectPayStat.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Semmi-Annual Payment</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="semiAnnualPayment"
+                               name="semiAnnualPayment"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.SemiannualAmount" />
+                        <div ng-messages="lisaForm.semiAnnualPayment.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

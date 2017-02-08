@@ -1,0 +1,369 @@
+﻿<style>
+
+    #gridParent,
+    #balanceGrid {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+        height: 100%; /* DO NOT USE !important for setting the Grid height! */
+    }
+
+
+</style>
+<span kendo-notification="notificiationToast" k-options="notificiationToastOptions"></span>
+<script id="notificationTemplate" type="text/x-kendo-template">
+    <div class="upload-success">
+        <h3>#= kValue #</h3>
+    </div>
+</script>
+<div></div>
+<!--<div class="row">-->
+
+    <!--<div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">-->
+                <h3 class="panel-title">
+                    Loan Balance Transactions
+                </h3>
+                <!--<span class="pull-right hidden-xs">
+                    <i class="fa fa-fw fa-plus" ng-click="vm.addNewTransaction()" title="Add New Transaction"></i>
+                    <i class="fa fa-fw fa-chevron-up clickable"></i>
+                </span>
+            </div>
+            <div class="panel-body">-->
+                <div class="row" id="gridParent">
+
+                    <div class="col-md-11">
+                   
+                            <div id="balanceGrid" kendo-grid="vm.balanceGrid" options="vm.balanceGridOptions"></div>
+                        </div>
+                    
+                    <div class="col-md-1">
+                        <div class="btn-group-vertical" role="group">
+                            <button class="btn btn-primary" ng-click="vm.winNewTransaction.open().center()">Add</button>
+                            <button class="btn btn-primary" ng-click="vm.winNewTransaction.open().center()">View</button>
+                            <button class="btn btn-primary">Adjust</button>
+                            <button class="btn btn-primary">Print</button>
+                            <button class="btn btn-primary" ng-click="vm.winTransferFunds.open().center()">Transfer</button>
+                            <button class="btn btn-primary" ng-click="vm.winTransferFunds.open().center()">Reclass</button>
+                        </div>
+                    </div>
+                </div>
+            <!--</div>-->
+        <!--</div>
+
+    </div>
+</div>-->
+
+
+
+<div kendo-window="vm.winNewTransaction" k-title="'Transaction Details'" k-options="vm.winNewTransactionOptions"
+     k-visible="false"
+     k-width="700" k-height="700"
+     k-on-open="vm.winNewTransactionVisible = true" k-on-close="vm.winNewTransactionVisible = false">
+
+    <form class="form-horizontal">
+        <!--<form id="loan-transaction" role="form" data-disable="false"
+          data-toggle="validator" ng-submit="vm.saveContact()">-->
+        <fieldset>
+            <legend>Transaction Details</legend>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="transactionType">
+                    Type:
+                </label>
+                <div class="col-sm-7">
+                    <select id="transactionType" name="transactionType" class="form-control"
+                            kendo-drop-down-list
+                            style="width: 100%;"
+                            ng-model="vm.loanTransaction.transactionTypeSkey"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="transactionDate">
+                    Transaction Date:
+                </label>
+                <div class="col-sm-7">
+                    <input id="transactionDate" name="transactionDate" kendo-date-picker
+                           class="form-control"
+                           ng-model="vm.loanTransaction.TransactionDate"
+                           style="width: 100%;" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="effectiveDate">
+                    Effective Date:
+                </label>
+                <div class="col-sm-7">
+                    <input id="effectiveDate" name="effectiveDate" kendo-date-picker
+                           class="form-control"
+                           ng-model="vm.loanTransaction.EffectiveDate"
+                           style="width: 100%;" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="principalAmount">
+                    Principal Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="interest">
+                    Interest Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="mip">
+                    MIP/PMI Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="serviceFee">
+                    Service Fee Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Corporate Advances</legend>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="Borrower">
+                    Borrower Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="Investor">
+                    Investor Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="RMS">
+                    RMS Expense Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="Suspense">
+                    Suspense Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="row">
+            <div class="col-md-8">
+                <fieldset>
+                    <legend>Audit Information</legend>
+                    <audit-information info="vm.loanProperty"></audit-information>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <button type="submit" class="btn btn-primary pull-right">Save</button>
+                <button type="button" class="btn btn-danger pull-right" ">Cancel</button>
+            </div>
+        </div>
+        <!--</form>-->
+    </form>
+</div>
+
+
+
+
+
+<div kendo-window="vm.winTransferFunds" k-title="'Tranfer Funds'" k-options="vm.winTransferFundsOptions"
+     k-visible="false"
+     k-width="500" k-height="500"
+     k-on-open="vm.winTransferFundsVisible = true" k-on-close="vm.winTransferFundsVisible = false">
+
+    <form class="form-horizontal">
+        <!--<form id="loan-transaction" role="form" data-disable="false"
+          data-toggle="validator" ng-submit="vm.saveContact()">-->
+        <fieldset>
+            <legend>Transaction Information</legend>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="transactionType">
+                    Type:
+                </label>
+                <div class="col-sm-7">
+                    <select id="transferType" name="transferType" class="form-control"
+                            kendo-drop-down-list
+                            style="width: 100%;"
+                            ng-model="vm.loanTransaction.transferTypeSkey"></select>
+                </div>
+            </div>
+          
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="effectiveDate">
+                    Effective Date:
+                </label>
+                <div class="col-sm-7">
+                    <input id="transferEffectiveDate" name="transferEffectiveDate" kendo-date-picker
+                           class="form-control"
+                           ng-model="vm.loanTransaction.TransferEffectiveDate"
+                           style="width: 100%;" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="principalAmount">
+                    Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="transferSource">
+                    Source:
+                </label>
+                <div class="col-sm-7">
+                    <select id="transferSource" name="transferSource" class="form-control"
+                            kendo-drop-down-list
+                            style="width: 100%;"
+                            ng-model="vm.loanTransaction.transferSourceSkey"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="transactionDestination">
+                    Destination:
+                </label>
+                <div class="col-sm-7">
+                    <select id="transactionDestination" name="transactionDestination" class="form-control"
+                            kendo-drop-down-list
+                            style="width: 100%;"
+                            ng-model="vm.loanTransaction.TransactionDestination"></select>
+                </div>
+            </div>
+        </fieldset>
+       
+        <div class="row">
+            <div class="col-md-10">
+                <button type="submit" class="btn btn-primary pull-right">Save</button>
+                <button type="button" class="btn btn-danger pull-right" ">Cancel</button>
+            </div>
+        </div>
+        <!--</form>-->
+    </form>
+</div>
+
+
+
+
+
+<!--<div kendo-window="vm.winReclassDisbursement" k-title="'Tranfer Funds'" k-options="vm.winReclassDisbursementOptions"
+     k-visible="false"
+     k-width="500" k-height="500"
+     k-on-open="vm.winReclassDisbursementVisible = true" k-on-close="vm.winReclassDisbursementVisible = false">
+
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>Transaction Information</legend>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="transactionType">
+                    Type:
+                </label>
+                <div class="col-sm-7">
+                    <select id="transferType" name="transferType" class="form-control"
+                            kendo-drop-down-list
+                            style="width: 100%;"
+                            ng-model="vm.loanTransaction.transferTypeSkey"></select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="effectiveDate">
+                    Effective Date:
+                </label>
+                <div class="col-sm-7">
+                    <input id="transferEffectiveDate" name="transferEffectiveDate" kendo-date-picker
+                           class="form-control"
+                           ng-model="vm.loanTransaction.TransferEffectiveDate"
+                           style="width: 100%;" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="principalAmount">
+                    Amount:
+                </label>
+                <div class="col-sm-7">
+                    <input kendo-numeric-text-box k-format="'c'" k-ng-model="vm.loanTransaction.d" style="width: 100%;" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="transferSource">
+                    Source:
+                </label>
+                <div class="col-sm-7">
+                    <select id="transferSource" name="transferSource" class="form-control"
+                            kendo-drop-down-list
+                            style="width: 100%;"
+                            ng-model="vm.loanTransaction.transferSourceSkey"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="transactionDestination">
+                    Destination:
+                </label>
+                <div class="col-sm-7">
+                    <select id="transactionDestination" name="transactionDestination" class="form-control"
+                            kendo-drop-down-list
+                            style="width: 100%;"
+                            ng-model="vm.loanTransaction.TransactionDestination"></select>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="row">
+            <div class="col-md-10">
+                <button type="submit" class="btn btn-primary pull-right">Save</button>
+                <button type="button" class="btn btn-danger pull-right" ">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>-->

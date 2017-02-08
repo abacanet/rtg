@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseQuest.Common", "ReverseQuest.Common\ReverseQuest.Common.csproj", "{117841E2-7DFB-49D6-A2A7-831FE0AE71FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseQuest.API", "ReverseQuest.API\ReverseQuest.API.csproj", "{D2EF1227-15B2-4A59-BD48-621759C12B45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseQuest.Data", "ReverseQuest.Data\ReverseQuest.Data.csproj", "{1FAB862D-A28E-4F49-AEE1-BD4925103AF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseQuest.Domain", "ReverseQuest.Domain\ReverseQuest.Domain.csproj", "{8267A9E5-4396-42B0-9AF8-89A1D7FCED68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{117841E2-7DFB-49D6-A2A7-831FE0AE71FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{117841E2-7DFB-49D6-A2A7-831FE0AE71FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{117841E2-7DFB-49D6-A2A7-831FE0AE71FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{117841E2-7DFB-49D6-A2A7-831FE0AE71FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2EF1227-15B2-4A59-BD48-621759C12B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EF1227-15B2-4A59-BD48-621759C12B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EF1227-15B2-4A59-BD48-621759C12B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EF1227-15B2-4A59-BD48-621759C12B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FAB862D-A28E-4F49-AEE1-BD4925103AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FAB862D-A28E-4F49-AEE1-BD4925103AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FAB862D-A28E-4F49-AEE1-BD4925103AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FAB862D-A28E-4F49-AEE1-BD4925103AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8267A9E5-4396-42B0-9AF8-89A1D7FCED68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8267A9E5-4396-42B0-9AF8-89A1D7FCED68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8267A9E5-4396-42B0-9AF8-89A1D7FCED68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8267A9E5-4396-42B0-9AF8-89A1D7FCED68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://reversetg.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ReverseQuest.Common\\ReverseQuest.Common.csproj
+		SccProjectName1 = ReverseQuest.Common
+		SccLocalPath1 = ReverseQuest.Common
+		SccProjectUniqueName2 = ReverseQuest.API\\ReverseQuest.API.csproj
+		SccProjectName2 = ReverseQuest.API
+		SccLocalPath2 = ReverseQuest.API
+		SccProjectUniqueName3 = ReverseQuest.Data\\ReverseQuest.Data.csproj
+		SccProjectName3 = ReverseQuest.Data
+		SccLocalPath3 = ReverseQuest.Data
+		SccProjectUniqueName4 = ReverseQuest.Domain\\ReverseQuest.Domain.csproj
+		SccProjectName4 = ReverseQuest.Domain
+		SccLocalPath4 = ReverseQuest.Domain
+	EndGlobalSection
+EndGlobal

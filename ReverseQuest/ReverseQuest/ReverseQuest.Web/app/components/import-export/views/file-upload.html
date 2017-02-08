@@ -1,0 +1,33 @@
+﻿<ng-form name="fileUpload">
+    <div class="form-group">
+        <i class="fa fa-fw fa-caret-square-o-down"></i> Attach Files <ng-icon icon="attachment"></ng-icon>
+
+        <h3>Files maybe .xml or txt files</h3>
+
+
+        <div class="row">
+            <div class="col-lg-4">
+                <input name="files"
+                       type="file"
+                       kendo-upload="vm.uploadControl"
+                       k-options="vm.loanBoardingFileUploadOptions"
+                       k-select="vm.onSelect" />
+            </div>
+            <div class="col-lg-4">
+                <div class="uploadDropZoneElement">
+                    <div class="uploadTextWrapper">
+                        <p><ng-md-icon icon="attachment"></ng-md-icon> Drop files here to attach</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <b>{{vm.loanBoarding.BatchSkey}}</b>
+                <b>{{vm.uploadResponse}}</b>
+                <b>{{vm.boardingResult}}</b>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" ng-click="vm.save()">Save</button>
+    <button class="btn btn-danger">Cancel</button>
+</ng-form>
+

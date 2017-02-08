@@ -1,0 +1,131 @@
+﻿<md-card>
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Credit Line Set Aside</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+        <form name="creditLisaInfoForm">
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Original Credit Line</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="originalCreditLine"
+                               name="originalCreditLine"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-required="false"
+                               ng-disabled="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.OriginalCreditLine" />
+                        <div ng-messages="creditLisaInfoForm.originalCreditLine.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Current Plan Orig. Credit Line</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="currentPlanOrigCredLine"
+                               name="currentPlanOrigCredLine"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.CurrentPlanOrigCredLine" />
+                        <div ng-messages="creditLisaInfoForm.currentPlanOrigCredLine.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Current Gross Credit Line</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="currentGrossCreditLine"
+                               name="currentGrossCreditLine"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.CurrentGrossCreditLine" />
+                        <div ng-messages="creditLisaInfoForm.currentGrossCreditLine.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Unsch Cred Line Disb Bal</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="unschCredLineDisbBal"
+                               name="unschCredLineDisbBal"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.UnschCredLineDisbBal" />
+                        <div ng-messages="creditLisaInfoForm.unschCredLineDisbBal.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Current Net Credit Line</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="currentNetCreditLine"
+                               name="currentNetCreditLine"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.CurrentNetCreditLine" />
+                        <div ng-messages="creditLisaInfoForm.currentNetCreditLine.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

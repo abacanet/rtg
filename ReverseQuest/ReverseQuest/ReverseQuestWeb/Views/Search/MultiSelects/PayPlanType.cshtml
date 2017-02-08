@@ -1,0 +1,25 @@
+﻿<div id="divPayPlanType">
+    <div id="windowPayPlanType" style="display:none"></div>
+
+    <span id="btnPayPlanType" class="k-button hidden-on-narrow">Pay Plan Type</span>
+
+    <div class="responsive-message"></div>
+
+    <script>
+
+                $("#btnPayPlanType").click(function () {
+                    $("#windowPayPlanType").data("kendoWindow").open();
+                });
+
+                $(document).ready(function() {
+                    $("#windowPayPlanType").kendoWindow({
+                        visible: false,                        
+                        width: "630px",
+                        height: "315px",
+                        title: "Select Pay Plan Type",
+                        actions: ["Close"],
+                        content: "/html/PayPlanTypeMultiSelect.html",                        
+                    }).data("kendoWindow");
+                });
+    </script>
+</div>

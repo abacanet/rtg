@@ -1,0 +1,106 @@
+﻿@model IEnumerable<ReverseQuestWeb.Models.sec_user>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fax_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.show_critical_alerts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.show_in_select_list)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.client_skey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_group_skey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_login_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_password_change_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.locked_flag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status_skey)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.first_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.last_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fax_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.show_critical_alerts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.show_in_select_list)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client_skey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_group_skey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.last_login_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.last_password_change_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.locked_flag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status_skey)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=Html.Encode(item.user_id.Replace(".", "|")) }) |
+            @Html.ActionLink("Details", "Details", new { id=Html.Encode(item.user_id.Replace(".", "|")) }) |
+            @Html.ActionLink("Delete", "Delete", new { id=Html.Encode(item.user_id.Replace(".", "|")) })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FAB862D-A28E-4F49-AEE1-BD4925103AF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReverseQuest.Data</RootNamespace>
+    <AssemblyName>ReverseQuest.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\app_alert.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_batch_header.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_check.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_contact_master.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_disbursement.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_hmbs_paytransaction_reversed.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_hmbs_pool.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_hmbs_pool_loan.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_hmbs_subscriber.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_hmbs_transaction.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_loan_bank_account.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_loan_master.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_loan_rate.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_loan_remit.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_loan_remit_header.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_next_skey.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_next_skey_batch.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_next_skey_loan.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_next_skey_transaction.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_next_skey_workflow.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_note.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_payment_plan.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_payoff_request.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_property_master.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_property_value.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_qc_contact.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_qc_criteria_activity.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_qc_instance.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_qc_large.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_rate_index.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_transaction_balance.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_transaction_growth.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_transaction_setaside.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_workflow_instance.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\app_workflow_task_activity.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ft_GetIDLAvailableBalances_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ft_GetIDLBalances_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ft_GetLoanBoardingValidationMapping_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ft_GetSecurityMaskInformation_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ft_ParseToTable_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\log_loan_boarding_message.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\log_message.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\map_loan_sub_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\map_note_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\map_servicing_step.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\map_servicing_step_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\map_servicing_step_result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\map_servicing_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_age_equivalency.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_alert_severity.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_alert_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_app_parameter.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_arm_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_auto_job.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_auto_note.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_bankruptcy_district.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_bank_routing.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_batch_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_batch_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_business_day.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_client.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_contact_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_county_clerk.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_default_reason.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_default_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_denial_reason.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_disbursement_payee_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_disbursement_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_document_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_document_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_eboutique_loan_status_maintenance.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_email_template.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_flood_zone.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_growth_method.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_custodian.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_issuer.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_transaction_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_transaction_code.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_investor.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_investor_bank_account.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_investor_disbursement_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_language_preference.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_LESA_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_boarding_validation_mapping.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_boarding_validation_rules.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_channel.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_originator.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_pool.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_servicer.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_sub_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_log_message_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_map_interest_rate_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_map_servicer_document_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_marital_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_mime_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_note_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_note_type_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_payment_plan_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_payment_plan_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_payment_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_arm_rate_index_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_payment_plan_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_type_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_type_servicing.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_property_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_property_type_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_property_value_sub_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_property_value_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_qc_criteria.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_qc_criteria_product.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_qc_document_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_qc_sub_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_rate_index_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_remit_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_remit_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_reporting_period.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_residency_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_rff_group.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_rff_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_search_column.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_search_window.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_ssrs_report.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_ssrs_report_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_state.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_status.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_tax_authority.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_tax_authority_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_tax_note_code.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_tax_payment.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_adjustment_reason.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_code.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_column.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_origin.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_source.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_vendor.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_vendor_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_category_client_config.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_conflict.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_client_config.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_result_xref.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_trigger.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_type.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_type_client_config.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_type_default_reason.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReverseQuestModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReverseQuestModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReverseQuestModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReverseQuestModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReverseQuestModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Securitydata.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_control.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_data_group.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_data_group_investor.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_data_group_report.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_data_group_report_category.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_data_mask.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_module.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_role.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_role_control.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_role_data_mask.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_role_import_export.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_role_table_maintenance.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_role_user.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_user.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_web_page.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_workflow_data_group.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sec_workflow_data_group_config.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stg_loan_boarding.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stg_ssrs_print_vendor_import.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stg_ssrs_queue.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\su.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\temp_tc.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\temp_wt.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tmp_servicer.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanAlert_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanBalances_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanBankAccount_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanContact_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanDetails_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanDisbursements_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanNotes_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanPaymentPlans_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanPropertyValues_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanProperty_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetDetailsLoanRemittances_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetListLoanBoardingResult_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetLoanBoardingStatus_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetResultsLoanNoteSearch_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetResultsLoanQCSearch_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetResultsLoanSearch_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListAlertTypeActive_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListAlertTypeAll_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListContactTypeActive_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListContactTypeAll_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListInvestorActive_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListInvestorAll_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListLoanPoolActive_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListLoanPoolAll_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListLoanServicerActive_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListNoteTypeActive_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListNoteTypeAll_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListNoteTypeCategoryActive_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListNoteTypeCategoryAll_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListStateActive_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetSelectListStateAll_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_GetStandardLoanHeaderInformation_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_SSRSACHDirectDepositRequest_Result.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\v_formservicer.cs">
+      <DependentUpon>ReverseQuestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Interface\IBaseRepository.cs" />
+    <Compile Include="Repositories\LoanBoardingResultRepository.cs" />
+    <Compile Include="Repositories\LoanBoardingStatusRepository.cs" />
+    <Compile Include="Repositories\LoanNotesDetailsRepository.cs" />
+    <Compile Include="Repositories\LoanNoteInsertRepository.cs" />
+    <Compile Include="Repositories\LoanPropertyInsertRepository.cs" />
+    <Compile Include="Repositories\LoanPropertyValueDeleteRepository.cs" />
+    <Compile Include="Repositories\LoanNotesUpdateRepository.cs" />
+    <Compile Include="Repositories\LoanPropertyValueUpdateRepository.cs" />
+    <Compile Include="Repositories\LoanPropertyValuesDetailsRepository.cs" />
+    <Compile Include="Repositories\LoanPropertyUpdateRepository.cs" />
+    <Compile Include="Repositories\LoanPropertyDetailsRepository.cs" />
+    <Compile Include="Repositories\LoanContactInsertRepository.cs" />
+    <Compile Include="Repositories\LoanContactUpdateRepository.cs" />
+    <Compile Include="Repositories\GetNextSystemKeyRepository.cs" />
+    <Compile Include="Repositories\Interface\IRepositoryForPrimitiveTypes.cs" />
+    <Compile Include="Repositories\Interface\IRepository.cs" />
+    <Compile Include="Repositories\Interface\IRepositoryAsync.cs" />
+    <Compile Include="Repositories\LoanContactDetailsRepository.cs" />
+    <Compile Include="Repositories\LoanHeaderRepository.cs" />
+    <Compile Include="Repositories\LoanNotesSearchRepository.cs" />
+    <Compile Include="Repositories\LoanQCSearchRepository.cs" />
+    <Compile Include="Repositories\ProcessLoanBoardingFileRepository.cs" />
+    <Compile Include="Repositories\LoanSearchRepository.cs" />
+    <Compile Include="Repositories\LoanDetailsRepository.cs" />
+    <Compile Include="Repositories\LoanBalanceRepository.cs" />
+    <Compile Include="Repositories\LoanMasterRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Models\ReverseQuestModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ReverseQuestModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ReverseQuestModel.edmx.diagram">
+      <DependentUpon>ReverseQuestModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\ReverseQuestModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReverseQuestModel.edmx</DependentUpon>
+      <LastGenOutput>ReverseQuestModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ReverseQuestModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReverseQuestModel.edmx</DependentUpon>
+      <LastGenOutput>ReverseQuestModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

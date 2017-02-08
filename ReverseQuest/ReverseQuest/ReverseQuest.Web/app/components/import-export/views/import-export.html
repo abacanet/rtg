@@ -1,0 +1,49 @@
+﻿
+<style>
+    .k-upload-selected {
+        display: none !important;
+    }
+
+    .k-clear-selected {
+        display: none !important;
+    }
+
+        #uploadTabStrip > .k-content {
+        overflow: visible;
+      }
+</style>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Loan Boarding</h3>
+                <span class="pull-right hidden-xs">
+                    <i class="fa fa-fw fa-chevron-up clickable"></i>
+                    <i class="fa fa-fw fa-times removepanel clickable"></i>
+                </span>
+            </div>
+            <div class="panel-body">
+                <div id="uploadTabStrip" kendo-tab-strip="vm.tabStrip" k-content-urls="[ '/app/components/import-export/views/general-information.html', '/app/components/import-export/views/file-upload.html']">
+                    <!-- tab list -->
+                    <ul>
+                        <li class="k-state-active">General Information</li>
+                        <li>File Upload</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div kendo-dialog="vm.confirmationDialog" k-title="'Continue?'" k-options="vm.confirmationDialogOptions" k-on-open="vm.confirmationDialogVisible = true"
+     k-on-close="vm.confirmationDialogVisible = false" k-width="350" k-height="150"
+     k-modal="true" k-visible="false">
+    <p>Would you like to save these records to the database?<p>
+</div>
+
+<!--<script>
+    var tabStrip = $("#uploadTabStrip").kendoTabStrip().data("kendoTabStrip");
+    tabStrip.enable(tabStrip.tabGroup.children().eq(1), false);
+   // tabStrip.enable(tabStrip.tabGroup.children().eq(0), true);
+</script>-->

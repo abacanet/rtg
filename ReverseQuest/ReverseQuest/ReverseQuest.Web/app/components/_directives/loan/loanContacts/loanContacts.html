@@ -1,0 +1,229 @@
+﻿<div layout="row">
+    <div flex="50" layout="column">
+        <div loan-recording-directive
+             model="vm.model.LoanRecording">
+        </div>
+    </div>
+    <div flex="50" layout="column">
+        <div loan-rate-directive
+             model="vm.model.LoanRate">
+        </div>
+    </div>
+</div>
+
+<div layout="row">
+    <div loan-filing-directive
+         model="vm.model.LoanFiling">
+    </div>
+    <div other-info-directive
+         model="vm.model.OtherInformation">
+    </div>
+    
+    <div prior-servicer-info-directive
+         model="vm.model.PriorServicerInfo">
+    </div>
+</div>
+
+
+<div class="loan-info">
+    <div class="col-sm-5">
+        <div class="table-responsived">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Contact Type</th>
+                        <th>Contact Name</th>
+                        <th>Value Sub Type</th>
+                        <th>Est. value</th>
+                        <th>Rep Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Browser</td>
+                        <td>Franke little</td>
+                        <td>Pitt</td>
+                        <td>35</td>
+                        <td>New York</td>
+                    </tr>
+                    <tr>
+                        <td>Browser</td>
+                        <td>Franke little</td>
+                        <td>Pitt</td>
+                        <td>35</td>
+                        <td>New York</td>
+                    </tr>
+                    <tr>
+                        <td>Browser</td>
+                        <td>Franke little</td>
+                        <td>Pitt</td>
+                        <td>35</td>
+                        <td>New York</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!---col-sm-5----->
+    <div class="col-sm-7">
+        <div class="loan-information">
+            <h5>Property Address</h5>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Company Name</label>
+                    <input class="col-sm-5" type="text" id="company-name" name="company-name">
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Home Phone #</label>
+                    <input class="col-sm-3" type="text" id="home-phone" name="home-phone">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Contact Name</label>
+                    <input class="col-sm-5" type="text" id="contact-name" name="contact-name">
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Work Phone #</label>
+                    <input class="col-sm-3" type="text" id="work-phone" name="work-phone">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Address1</label>
+                    <input class="col-sm-5" type="text" id="address1" name="address1">
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Cell Phone #</label>
+                    <input class="col-sm-3" type="text" id="cell-phone" name="cell-phone">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Address2</label>
+                    <input class="col-sm-5" type="text" id="address2" name="address2">
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Fax Phone #</label>
+                    <input class="col-sm-3" type="text" id="fax-phone" name="fax-phone">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">City, State, Zip</label>
+                    <div class="city-area col-sm-5">
+                        <div class="row">
+                            <input id="laon-skey" class="col-sm-6" name="city" type="text">
+                            <select class="col-sm-2" name="state" type="state">
+                                <option>State</option>
+                                <option>State</option>
+                                <option>State</option>
+                                <option>State</option>
+                            </select>
+                            <input id="laon-skey" class="col-sm-4" name="zip" type="zip">
+                        </div>
+                    </div>
+
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; SSN</label>
+
+                    <input class="col-sm-3" type="text" id="ssn" name="ssn">
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Email</label>
+                    <input class="col-sm-5" type="email" id="email" name="email">
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Birth Date</label>
+                    <input class="col-sm-3" type="text" id="birth-date" name="birth-date">
+                </div>
+            </div>
+        </div>
+        <div class="loan-information">
+
+            <h5>Mailing Information</h5>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-5" for="email">Email All Correspondence</label>
+
+                    <input class="col-sm-2" type="checkbox" id="Correspondence" name="Correspondence">
+
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Gender</label>
+
+                    <input class="col-sm-3" type="text" id="gender" name="gender">
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Company Name</label>
+
+                    <input class="col-sm-5" type="text" id="company-name" name="company-name">
+
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Merital Status</label>
+
+                    <input class="col-sm-3" type="text" id="merital-status" name="merital-status">
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Mail Name</label>
+
+                    <input class="col-sm-5" type="text" id="mail-name" name="mail-name">
+
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Residency Status</label>
+
+                    <input class="col-sm-3" type="text" id="Residency-status" name="Residency-status">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Address1</label>
+
+                    <input class="col-sm-5" type="text" id="address1-emailinfo" name="address1-emailinfo">
+
+                    <label class="col-sm-2" for="email">&nbsp; &nbsp; Current Age</label>
+
+                    <input class="col-sm-3" type="text" id="current-age" name="current-age">
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">Address2</label>
+
+                    <input class="col-sm-5" type="text" id="address2-emailinfo" name="address2-emailinfo">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2" for="email">City, State, Zip</label>
+                    <div class="city-area col-sm-5">
+                        <div class="row">
+                            <input id="laon-skey" class="col-sm-6" name="city" type="city">
+                            <select class="col-sm-2" name="state" type="state">
+                                <option>State</option>
+                                <option>State</option>
+                                <option>State</option>
+                                <option>State</option>
+                            </select>
+                            <input id="laon-skey" class="col-sm-4" name="zip" type="zip">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="loan-information">
+            <h5>Audit Information</h5>
+            <div class="col-sm-10">
+                <div class="form-group ">
+                    <label class="col-sm-2" for="email">Create Date</label>
+                    <input class="col-sm-4" type="text" id="create-date" name="create-date">
+                    <label class="col-sm-2" for="email"> &nbsp; &nbsp;  &nbsp;Create By</label>
+                    <input class="col-sm-4" type="text" id="create-by" name="create-by">
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <div class="form-group ">
+                    <label class="col-sm-2" for="email">Change Date</label>
+                    <input class="col-sm-4" type="text" id="change-date" name="change-date">
+                    <label class="col-sm-2" for="email"> &nbsp; &nbsp;  &nbsp;change By</label>
+                    <input class="col-sm-4" type="text" id="change-by" name="change-by">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

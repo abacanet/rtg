@@ -1,0 +1,218 @@
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <!--section starts-->
+    <h1>
+        Loans Details
+    </h1>
+    <ol class="breadcrumb">
+        <li>
+            <a ui-sref="/">
+                <i class="fa fa-fw fa-home"></i> Dashboard
+            </a>
+        </li>
+        <li>
+            <a ui-sref="loan.search">Loan</a>
+        </li>
+        <li>
+            Loan Detail
+        </li>
+    </ol>
+</section>
+<!--section ends-->
+<section class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            
+
+            <form name="loanDetailForm" class="form-horizontal" ng-submit="vm.submitHandler()">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <i class="fa fa-fw fa-file-text-o"></i> Search Criteria
+                        </h3>
+                        <span class="pull-right hidden-xs">
+                            <i class="fa fa-fw fa-chevron-up clickable"></i>
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-3">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label for="search" class="control-label col-md-5">
+                                        Loan Skey
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" aria-label="LoanSkey" name="LoanSkey" placeholder="00000" ng-model="vm.searchParams.aiLoanSKey" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="LoanNumber" class="control-label col-md-5">
+                                        Original Loan#
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="LoanNumber" id="LoanNumber" placeholder="00000000000" ng-model="vm.searchParams.avcOriginalLoanNumber" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="FHACaseNumber" class="control-label col-md-5">
+                                        FHA Case#
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="FHACaseNumber" id="FHACaseNumber" placeholder="000-0000000" ng-model="vm.searchParams.avcFhaCaseNumber" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ContactType" class="control-label col-md-5">
+                                        Credit Type
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <select name="ContactType" id="ContactType" class="form-control"
+                                                ng-model="vm.searchParams.avcCreditType"
+                                                ng-options="contactType as contactType.name for contactType in vm.contactTypes track by contactType.id"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label for="BoardingType" class="control-label col-md-5">
+                                        SPOC
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <select name="Spoc" id="Spoc" class="form-control"
+                                                ng-model="vm.searchParams.avcSpocsKey"
+                                                ng-options="spoc as spoc.name for spoc in vm.spocs track by spoc.id"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="InvestorLoanNumber" class="control-label col-md-5">
+                                        Investor Loan#
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="InvestorLoanNumber" id="InvestorLoanNumber" placeholder="0000000000" ng-model="vm.searchParams.avcInvestorLoanNumber" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="BoardingType" class="control-label col-md-5">
+                                        Boarding Type
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <select name="BoardingType" id="BoardingType" class="form-control"
+                                                ng-model="vm.searchParams.avcBoardingType"
+                                                ng-options="boardingType as boardingType.name for boardingType in vm.boardingTypes track by boardingType.id"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PriorServicerLoanNumber" class="control-label col-md-5">
+                                        Prior Serv Loan #
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="PriorServicerLoanNumber" id="PriorServicerLoanNumber" placeholder="0000000000" ng-model="vm.searchParams.avcPriorServicerLoanNumber" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label for="FirstName" class="control-label col-md-5">
+                                        First Name
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="FirstName" id="FirstName" placeholder="Enter Contact First Name" ng-model="vm.searchParams.avcContactFirstName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="LastName" class="control-label col-md-5">
+                                        Last Name
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="LastName" id="LastName" placeholder="Enter Contact Last Name" ng-model="vm.searchParams.avcContactLastName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PhoneNumber" class="control-label col-md-5">
+                                        Phone#
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-fw fa-phone"></i>
+                                        </span>
+                                        <input type="text" name="PhoneNumber" id="PhoneNumber" placeholder="(555) 555-5555" ng-model="vm.searchParams.avcContactPhoneNumber" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="BoardedDateFrom" class="control-label col-md-5">
+                                        Boarded Date
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-fw fa-calendar"></i>
+                                        </div>
+                                        <input type="text" name="BoardedDateFrom" id="BoardedDateFrom" placeholder="YYYY-MM-DD to YYYY-MM-DD" ng-model="vm.searchParams.adtmBoardedDateFrom" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label for="PropertyAddress" class="control-label col-md-5">
+                                        Propty. Address
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="PropertyAddress" id="PropertyAddress" placeholder="Enter Property Address" ng-model="vm.searchParams.avcPropertyAddress" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PropertyCity" class="control-label col-md-5">
+                                        Propty. City
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="PropertyCity" id="PropertyCity" placeholder="Enter City" ng-model="vm.searchParams.avcPropertyCity" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PropertyState" class="control-label col-md-5">
+                                        Propty. State
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <select name="PropertyState" id="PropertyState"
+                                                ng-model="vm.model.searchParams.avcPropertyStateCodes" class="form-control"
+                                                ng-options="state as state.state_name for state in vm.states track by state.state_code"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PropertyZip" class="control-label col-md-5">
+                                        Propty. Zip
+                                    </label>
+                                    <div class="input-group col-md-7">
+                                        <input type="text" name="PropertyZip" id="PropertyZip" placeholder="Enter Zip Code" ng-model="vm.searchParams.avcPropertyZipCode" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</section>
+<!-- /.content -->
+

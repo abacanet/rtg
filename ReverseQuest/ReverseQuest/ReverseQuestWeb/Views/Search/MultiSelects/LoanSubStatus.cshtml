@@ -1,0 +1,26 @@
+﻿<div id="divLoanSubStatus">
+    <div id="windowLoanSubStatus" style="display:none"></div>
+
+    <span id="btnLoanSubStatus" class="k-button hidden-on-narrow">Loan Sub Status</span>
+
+    <div class="responsive-message"></div>
+
+    <script>
+                $("#btnLoanSubStatus").click(function () {
+                    $("#windowLoanSubStatus").data("kendoWindow").open();
+                });
+
+                $(document).ready(function() {
+                    $("#windowLoanSubStatus").kendoWindow({
+                        visible: false,
+                        
+                        width: "630px",
+                        height: "315px",
+                        title: "Select Loan Sub Satus",
+                        actions: ["Close"],
+                        content: "/html/LoanSubStatusMultiSelect.html",                        
+
+                    }).data("kendoWindow");
+                });
+    </script>
+</div>

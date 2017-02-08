@@ -1,0 +1,310 @@
+﻿<div class="row" id="LoanSearchRow">
+   
+        <div class="col-md-2">
+            <div class="nav-menu-border">
+                <nav class="navbar nav-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active" [routerLink]="['/Search']">
+                            <a class="nav-link" href=""><small>Loans</small></a>
+                        </li>
+                        <li class="nav-item" [routerLink]="['/LoanModule/notesearch']">
+                            <a class="nav-link" href=""><small>Notes</small></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><small>QC Search</small></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="nav-menu-body">
+                    <form id="form" method="GET">
+                        <div class="form-group">
+                            <label for="LoanSkey">Loan Skey</label>
+                            <input type="text" class="form-control" name="LoanSkey" id="LoanSkey" placeholder="00000000000">
+                        </div>
+                        <div class="form-group">
+                            <label for="LoanNumber">Original Loan #</label>
+                            <input type="text" class="form-control" name="LoanNumber" id="LoanNumber" placeholder="00000000000">
+                        </div>
+                        <div class="form-group">
+                            <label for="FHACaseNumber">FHA Case #</label>
+                            <input type="text" class="form-control" name="FHACaseNumber" id="FHACaseNumber" placeholder="000-0000000">
+                        </div>
+                        <div class="form-group">
+                            <label for="PriorServicerLoanNumber">Prior Servicer Loan #</label>
+                            <input type="text" class="form-control" name="PriorServicerLoanNumber" id="PriorServicerLoanNumber" placeholder="0000000000">
+                        </div>
+                        <div class="form-group">
+                            @Html.Partial("MultiSelects/LoanStatus")
+                        </div>
+                        <div class="form-group">
+                            @Html.Partial("MultiSelects/LoanSubStatus")
+                        </div>                        
+                        @Html.Partial("MultiSelects/ContactType")
+                        <div class="form-group">
+                            <label for="BoardedDateFrom">Boarded Date From</label>
+                            <input type="date" class="form-control" name="BoardedDateFrom" id="BoardedDateFrom" placeholder="Enter Boarded Date From">
+                        </div>
+                        <div class="form-group">
+                            <label for="BoardedDateFrom">Boarded Date To</label>
+                            <input type="date" class="form-control" name="BoardedDateTo" id="BoardedDateTo" placeholder="Enter Boarded Date To">
+                        </div>
+                        <div class="form-group">
+                            <label for="PropertyAddress">Property Address</label>
+                            <input type="text" class="form-control" name="PropertyAddress" id="PropertyAddress" placeholder="Enter Property Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="PropertyCity">Property City</label>
+                            <input type="text" class="form-control" name="PropertyCity" id="PropertyCity" placeholder="Enter City">
+                        </div>
+                        <div class="form-group">
+                            <label for="PropertyZip">Property Zip Code</label>
+                            <input type="text" class="form-control" name="PropertyZip" id="PropertyZip" placeholder="Enter Zip Code">
+                        </div>                        
+                        <div class="form-group">
+                            @Html.Partial("MultiSelects/ProductType")
+                        </div>
+                        <div class="form-group">
+                            @Html.Partial("MultiSelects/InterestRateType")
+                        </div>
+                        <div class="form-group">
+                            @Html.Partial("MultiSelects/PayPlanType")
+                        </div>
+                        <div class="form-group">
+                            @Html.Partial("MultiSelects/CreditType")
+                        </div>
+                        <div class="form-group">
+                            @Html.Partial("MultiSelects/BoardingType")
+                        </div>
+
+                        <button type="reset">Reset</button>
+                        <button type="submit">Submit</button>
+                        </form>
+</div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="pull-left">
+                <h4>
+                    Loan Search
+                </h4>
+            </div>
+            <div class="pull-right">
+                <nav class="navbar navbar-light bg-faded ">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-floppy-o fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-undo fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-eraser fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-barcode fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-upload fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-print fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-sign-out fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-barcode fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-barcode fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-barcode fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="fa fa-barcode fa-lg"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div style="margin: 40px;"></div>
+            <div style="overflow:auto;">
+                @(Html.Kendo().Grid<ReverseQuestWeb.Models.LoanSearch>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.loan_skey).Title("Loan SKey");
+          columns.Bound(c => c.original_loan_number).Title("Original Loan #");
+          columns.Bound(c => c.fha_case_number).Title("FHA Case #");
+          columns.Bound(c => c.prior_servicer_loan_number).Title("Prior Servicer Loan #");
+          //columns.Bound(c => c.investor_loan_number).Title("Investor Title Number");
+          columns.Bound(c => c.loan_status).Title("Loan Status");
+          columns.Bound(c => c.loan_sub_status).Title("Loan Sub Status");
+          columns.Bound(c => c.borrower_first_name).Title("Bor. First Name");
+          columns.Bound(c => c.borrower_last_name).Title("Bor. Last Name");
+          columns.Bound(c => c.coborrower_first_name).Title("CoBorrower First Name");
+          columns.Bound(c => c.coborrower_last_name).Title("CoBorrower Last Name");
+          columns.Bound(c => c.borrower_phone_number).Title("Borrower Phone #");
+          columns.Bound(c => c.enbs_first_name).Title("eNBS First Name");
+          columns.Bound(c => c.enbs_last_name);
+          columns.Bound(c => c.property_address1).Title("Property Street Address");
+          //columns.Bound(c => c.property_address2);
+          columns.Bound(c => c.property_city).Title("City");
+          columns.Bound(c => c.property_county).Title("County");
+          columns.Bound(c => c.property_state).Title("State");
+          columns.Bound(c => c.property_zipcode).Title("Zip");
+          columns.Bound(c => c.servicer_name).Title("Servicer Name");//.ClientTemplate("<span style=\"width:200px;\">#=kendo.toString(Servicer)#</span> ");
+          columns.Bound(c => c.investor_name).Title("Investor Name");
+          columns.Bound(c => c.loan_pool_description).Title("Loan Pool");
+          columns.Bound(c => c.product_type_description).Title("Product Type");
+          columns.Bound(c => c.payment_plan_type_description).Title("Payment Plan");
+          columns.Bound(c => c.arm_type_description).Title("ARM Type");
+          columns.Bound(c => c.rate_index_type_description).Title("Rate Index Type");
+          columns.Bound(c => c.SPOC);
+          columns.Bound(c => c.boarded_by).Title("Boarded By");
+          columns.Bound(c => c.boarded_date).ClientTemplate("#= kendo.toString(boarded_date, \"MM/dd/yyyy\") #").Title("Boarded Date");// .toString(new Date(2000, 10, 6), "d");//.Width(250);
+          columns.Bound(c => c.boarding_type_description).Title("Boarding Type");
+          columns.Bound(c => c.credit_type_description).Title("Credit Type");
+          columns.Bound(c => c.mers_min_number).Title("MERS Min #");
+      }).HtmlAttributes(new { style = "text-align: center;" })
+      //.ToolBar(toolbar =>
+      //{
+      //    toolbar.Excel();
+      //    toolbar.Pdf();
+      //})
+
+      .Pageable()
+      .Navigatable()
+      .Selectable(selectable =>
+      {
+          selectable.Mode(GridSelectionMode.Multiple);
+          selectable.Type(GridSelectionType.Row);
+      })
+      .Sortable(sortable =>
+      {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Resizable(resize => resize.Columns(true))
+     .Reorderable(reorder => reorder.Columns(true))
+
+     .Events(events => events
+            .Change("onChange")
+        //    .DataBound("onDataBound")
+        //    .DataBinding("onDataBinding")
+        //    .Sort("onSorting")
+        //    .Filter("onFiltering")
+        //    .Group("onGrouping")
+        //    .Page("onPaging")
+        )
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Read(read => read.Action("LoanSearches_Read", "Search").Data("getFilterCriteria"))
+      )
+                )
+            </div>
+        </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#LoanSkey").kendoMaskedTextBox({
+            mask: "9999999"
+        });
+        $("#LoanNumber").kendoMaskedTextBox({
+            mask: "9999999999"
+        });
+        $("#FHACaseNumber").kendoMaskedTextBox({
+            mask: "999-9999999"
+        });
+        $("#PhoneNumber").kendoMaskedTextBox({
+            mask: "(999) 000-0000"
+        });
+        $("#PriorServicerLoanNumber").kendoMaskedTextBox({
+            mask: "CCCCCCCCCCCCCCC"
+        });
+        //$("#credit_card").kendoMaskedTextBox({
+        //    mask: "0000 0000 0000 0000"
+        //});
+
+        //$("#ssn").kendoMaskedTextBox({
+        //    mask: "000-00-0000"
+        //});
+
+        $("#PropertyZip").kendoMaskedTextBox({
+            mask: "L0L 0LL"
+        });
+    });
+
+
+
+
+
+    function onChange(arg) {
+        var ri = -1;
+
+        var selected = $.map(this.select(), function (item) {
+            ri = $(item).context.rowIndex-1;
+            return $(item).text();
+        });
+        console.log();
+        
+        window.open("/" + arg.sender._data[ri].loan_skey+"/LoanModule/LoanDetails", "_blank");
+    }
+
+    function getParam(name, url) {
+        if (!url) {
+            url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " ").replace("_",""));
+    }
+    function phoneFix(replaceVal) {
+        if (!replaceVal) return null;
+        //if (!results[2]) return '';
+        return replaceVal.replace("(", "").replace(")", "").replace(" ", "").replace("-","");
+    }
+
+    function getFilterCriteria() {
+        
+        
+        let params  = {
+            Skey: getParam('LoanSkey'),
+            LoanNumber: getParam('LoanNumber'),
+            FHACaseNumber: getParam('FHACaseNumber'),
+            PriorServicerLoanNumber: getParam('PriorServicerLoanNumber'),
+            FirstName : getParam('FirstName'),
+            LastName: getParam('LastName'),
+            PhoneNumber: phoneFix(getParam('PhoneNumber')),
+            BoardedDateFrom: getParam('BoardedDateFrom'),
+            BoardedDateTo: getParam('BoardedDateTo'),
+            PropertyAddress: getParam('PropertyAddress'),
+            PropertyCity: getParam('PropertyCity'),
+            PropertyZip: getParam('PropertyZip'),
+            PropertyState: ""
+        }
+        //int? Skey, int? LoanNumber, string FHACaseNumber
+       // alert(params.LoanNumber == "");
+        document.getElementById("LoanSkey").value = params.Skey == null ? "" : params.Skey;
+        document.getElementById("LoanNumber").value = params.LoanNumber == null ? "" : params.LoanNumber;
+        document.getElementById("FHACaseNumber").value = params.FHACaseNumber == null ? "" : params.FHACaseNumber;
+        document.getElementById("PriorServicerLoanNumber").value = params.PriorServicerLoanNumber == null ? "" : params.PriorServicerLoanNumber;
+        document.getElementById("FirstName").value = params.FirstName == null ? "" : params.FirstName;
+        document.getElementById("LastName").value = params.LastName == null ? "" : params.LastName;
+        document.getElementById("PhoneNumber").value = params.PhoneNumber == null ? "" : params.PhoneNumber;
+        document.getElementById("BoardedDateFrom").value = params.BoardedDateFrom == null ? "" : params.BoardedDateFrom;
+        document.getElementById("BoardedDateTo").value = params.BoardedDateTo == null ? "" : params.BoardedDateTo;
+        document.getElementById("PropertyAddress").value = params.PropertyAddress == null ? "" : params.PropertyAddress;
+        document.getElementById("PropertyCity").value = params.PropertyCity == null ? "" : params.PropertyCity;
+        document.getElementById("PropertyZip").value = params.PropertyZip == null ? "" : params.PropertyZip;
+        return params;
+
+}
+</script>
+<style>
+   .k-button{
+       display: block !important;
+   }
+</style>

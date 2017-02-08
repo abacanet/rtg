@@ -1,0 +1,12 @@
+[
+  {
+    "outputFile": "scss/pure-drawer/pure-drawer.css",
+    "inputFile": "scss/pure-drawer/pure-drawer.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "scss/font-awesome-4.7.0/scss/font-awesome.css",
+    "inputFile": "scss/font-awesome-4.7.0/scss/font-awesome.scss",
+    "sourceMap": false
+  }
+]

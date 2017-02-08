@@ -1,0 +1,25 @@
+﻿<div id="divInvestorLenderName">
+    <div id="windowInvestorLenderName" style="display:none"></div>
+
+    <span id="btnInvestorLenderName" class="k-button hidden-on-narrow">Investor Lender Name</span>
+
+    <div class="responsive-message"></div>
+
+    <script>
+
+                $("#btnInvestorLenderName").click(function () {
+                    $("#windowInvestorLenderName").data("kendoWindow").open();
+                });
+
+                $(document).ready(function() {
+                    $("#windowInvestorLenderName").kendoWindow({
+                        visible: false,                        
+                        width: "630px",
+                        height: "315px",
+                        title: "Select Investor / Lender",
+                        actions: ["Close"],
+                        content: "/html/InvestorLenderNameMultiSelect.html",                        
+                    }).data("kendoWindow");
+                });
+    </script>
+</div>

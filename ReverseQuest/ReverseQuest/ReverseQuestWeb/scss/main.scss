@@ -1,0 +1,48 @@
+@import "partials/_da-rules";
+
+// VARIABLES
+@import "partials/variables/_colors";
+@import "partials/variables/z-index-library";
+
+// Custom CSS
+@import "partials/custom/_global";
+@import "partials/custom/_typography";
+@import "partials/custom/_nav";
+@import "partials/custom/_buttons";
+@import "partials/custom/_body.scss";
+@import "partials/custom/_footer";
+@import "partials/custom/_welcome.scss";
+@import "partials/custom/_sidebar.scss";
+
+@import "partials/custom/_helpers";
+
+.k-header.k-grid-toolbar{
+    background: #0078d7;
+}
+
+.k-widget k-grid
+{
+    margin-top: 37px;
+}
+
+.k-grid td {
+  padding: 0.1em 0.1em; 
+  white-space: nowrap;
+}
+
+.k-grid tbody tr{
+    height: 50px;
+}
+
+.form-group{
+    margin: 0px;
+}
+.form-control{
+    padding: 0px;
+}
+.form-group > label{
+    margin: 0px;
+}
+.nav-menu-body{
+    padding: 1rem 1rem;
+}

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Payment Statement", "Payment Statement.rptproj", "{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.Debug|Default.ActiveCfg = Debug
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.Debug|Default.Build.0 = Debug
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.Debug|Default.Deploy.0 = Debug
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.DebugLocal|Default.Build.0 = DebugLocal
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.Release|Default.ActiveCfg = Release
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.Release|Default.Build.0 = Release
+		{D031CDB0-60DF-45BE-B78A-6D0DEF4478A8}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://reversetg.visualstudio.com/
+		SccProjectUniqueName0 = Payment\u0020Statement.rptproj
+		SccProjectName0 = .
+		SccAuxPath0 = https://reversetg.visualstudio.com
+		SccLocalPath0 = .
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ReverseQuest">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=Rtg-dev-db-1.southcentralus.cloudapp.azure.com;Initial Catalog=ReverseQuest</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>e876284a-37a0-437f-ab7d-36e18187c877</DataSourceID>
+</RptDataSource>

@@ -1,0 +1,82 @@
+﻿<md-card>
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Initial Credit Line Set Aside Info</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+        <form name="initCredLisaInfoForm">
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>IDL Current Gross Credit Line</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="idlCurrentGrossCreditLine"
+                               name="idlCurrentGrossCreditLine"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.IdlCurrentGrossCreditLine" />
+                        <div ng-messages="initCredLisaInfoForm.idlCurrentGrossCreditLine.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>IDL Unsch CL Disb Bal</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="idlUnschClDisbBal"
+                               name="idlUnschClDisbBal"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.IdlUnschClDisbBal" />
+                        <div ng-messages="initCredLisaInfoForm.idlUnschClDisbBal.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>IDL Unsch CL Disb Bal</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="idlCurrentNetCreditLine"
+                               name="idlCurrentNetCreditLine"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.IdlCurrentNetCreditLine" />
+                        <div ng-messages="initCredLisaInfoForm.idlCurrentNetCreditLine.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

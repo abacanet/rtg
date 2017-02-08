@@ -1,0 +1,114 @@
+﻿<md-card id="ld">
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Loan Filing</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+        <form name="loanfilingForm">
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>HERMIT Skey</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="maxFromClosingRate"
+                               name="hermitSkey"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-required="false"
+                               ng-pattern="/^(\d)+$/"
+                               ng-model="vm.model.HermitSkey" />
+                        <div ng-messages="loanfilingForm.hermitSkey.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Loan Manager</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="loanManager"
+                               name="loanManager"
+                               maxlength="30"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-model="vm.model.LoanManager">
+                        <div ng-messages="loanfilingForm.loanManager.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>SPOC</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="spoc"
+                               name="spoc"
+                               maxlength="30"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-model="vm.model.Spoc" />
+                        <div ng-messages="loanfilingForm.spoc.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Pay Off Date</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-datepicker name="payOffDate"
+                                       ng-model="vm.model.PayOffDate"
+                                       ng-disabled="false"
+                                       ng-required="false"
+                                       md-hide-icons="calendar"
+                                       md-placeholder="Enter date"
+                                       md-min-date="minDate"
+                                       md-max-date="maxDate"
+                                       md-date-filter="businessDaysOnly">
+                        </md-datepicker>
+                        <div ng-messages="loanfilingForm.payOffDate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            <div ng-message="filtered">Business Days Only!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Mers Min#</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="mersMinNum"
+                               name="mersMinNum"
+                               maxlength="30"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-model="vm.model.MersMinNum">
+                        <div ng-messages="loanfilingForm.mersMinNum.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

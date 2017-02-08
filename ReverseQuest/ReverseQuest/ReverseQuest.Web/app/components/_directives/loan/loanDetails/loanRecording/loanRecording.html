@@ -1,0 +1,213 @@
+﻿<md-card id="ld">
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Loan Recording</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <form name="loanRecordingForm" role="form" novalidate>
+        <md-card-content>
+            <div layout="row">
+                <div layout="column" flex="55">
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>Closing/Signed Date</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <md-datepicker name="closeSignedDate"
+                                               ng-model="vm.model.ClosingSignedDate"
+                                               ng-disabled="true"
+                                               ng-required="false"
+                                               md-hide-icons="calendar"
+                                               md-placeholder="Enter date"
+                                               md-min-date="minDate"
+                                               md-max-date="maxDate"
+                                               md-date-filter="businessDaysOnly">
+                                </md-datepicker>
+                                <div ng-messages="loanRecordingForm.closeSignedDate.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                    <div ng-message="filtered">Business Days Only!</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>Funded Date</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <md-datepicker name="fundedDate"
+                                               ng-model="vm.model.FundedDate"
+                                               ng-required="false"
+                                               ng-disabled="true"
+                                               md-hide-icons="calendar"
+                                               md-placeholder="Enter date"
+                                               md-min-date="minDate"
+                                               md-max-date="maxDate"
+                                               md-date-filter="businessDaysOnly"></md-datepicker>
+                                <div ng-messages="loanRecordingForm.fundedDate.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                    <div ng-message="filtered">Business Days Only!</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>MIC Date</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <md-datepicker name="micDate"
+                                               ng-model="vm.model.MicDate"
+                                               ng-required="false"
+                                               md-hide-icons="calendar"
+                                               md-placeholder="Enter date"
+                                               md-min-date="minDate"
+                                               md-max-date="maxDate"
+                                               md-date-filter="businessDaysOnly"></md-datepicker>
+                                <div ng-messages="loanRecordingForm.micDate.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                    <div ng-message="filtered">Business Days Only!</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>STORM Sent Date</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <md-datepicker name="stormSentDate"
+                                               ng-model="vm.model.StormSentDate"
+                                               ng-disabled="true"
+                                               ng-required="false"
+                                               md-hide-icons="calendar"
+                                               md-placeholder="Enter date"
+                                               md-min-date="minDate"
+                                               md-max-date="maxDate"
+                                               md-date-filter="businessDaysOnly"></md-datepicker>
+                                <div ng-messages="loanRecordingForm.stormSentDate.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                    <div ng-message="filtered">Business Days Only!</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>FHA Case# Assigned Date</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <md-datepicker name="fhaCaseAssignedDate"
+                                               ng-model="vm.model.FhaCaseNumAssignedDate"
+                                               ng-required="false"
+                                               ng-disabled="true"
+                                               md-hide-icons="calendar"
+                                               md-placeholder="Enter date"
+                                               md-min-date="minDate"
+                                               md-max-date="maxDate"
+                                               md-date-filter="businessDaysOnly"></md-datepicker>
+                                <div ng-messages="loanRecordingForm.fhaCaseAssignedDate.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                    <div ng-message="filtered">Business Days Only!</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>Recorded Date</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <md-datepicker name="recordedDate"
+                                               ng-model="vm.model.RecordedDate"
+                                               ng-disabled="true"
+                                               ng-required="false"
+                                               md-hide-icons="calendar"
+                                               md-placeholder="Enter date"
+                                               md-min-date="minDate"
+                                               md-max-date="maxDate"
+                                               md-date-filter="businessDaysOnly"></md-datepicker>
+                                <div ng-messages="loanRecordingForm.recordedDate.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                    <div ng-message="filtered">Business Days Only!</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+                <div layout="column" flex="40" flex-offset="5">
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>ADP Code - Sect of Act</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <input class="align-text-right"
+                                       ng-class="{'long': (vm.model.AdpCodeSectOfAcct.length > 15)}"
+                                       aria-label="loanManager"
+                                       name="adpCode"
+                                       maxlength="56"
+                                       ng-required="false"
+                                       ng-model="vm.model.AdpCodeSectOfAcct">
+                                <div ng-messages="loanRecordingForm.adpCode.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>1st Pg. Rec. Fee Amt</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <input class="align-text-right"
+                                       aria-label="firstPgRecFeeAmt"
+                                       name="firstPgRecFeeAmt"
+                                       type="number"
+                                       min="0"
+                                       max="4999"
+                                       ng-disabled="true"
+                                       ng-required="true"
+                                       ng-pattern="/^(\d)+$/"
+                                       ng-model="vm.model.FirstPgRecFeeAmt" />
+                                <div ng-messages="loanRecordingForm.firstPgRecFeeAmt.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                            <label><small>Addtl Pg Fee Amt#</small></label>
+                        </div>
+                        <div layout="row" flex="60" flex-offset="5">
+                            <md-input-container flex class="smallerMargin">
+                                <input class="align-text-right"
+                                       aria-label="addtlPgFeeAmt"
+                                       name="addtlPgFeeAmt"
+                                       type="number"
+                                       min="0"
+                                       max="4999"
+                                       ng-disabled="true"
+                                       ng-required="false"
+                                       ng-pattern="/^(\d)+$/"
+                                       ng-model="vm.model.AddtlPgFeeAmt" />
+                                <div ng-messages="loanRecordingForm.addtlPgFeeAmt.$error" multiple md-auto-hide="false">
+                                    <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-card-content>
+    </form>
+</md-card>

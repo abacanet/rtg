@@ -1,0 +1,64 @@
+﻿<div layout-xs="column" layout="row">
+
+    <div flex-xs flex-gt-xs="{{vm.model.subPage === 'search' ? 0 : 15}}" 
+         ng-if="vm.model.subPage !== 'search'">
+        <md-content>
+            <md-card id="subNav"
+                        md-theme="dark-grey"
+                        md-theme-watch="">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">
+                            <ng-md-icon icon="menu"></ng-md-icon>
+                            <small>Navigation</small>
+                        </span>
+                        <md-divider></md-divider>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <md-list id="subMenu">
+                        <!--<md-subheader class="md-no-sticky">Loan Menu</md-subheader>-->
+                        <md-list-item ng-click="vm.subGo('search')" ng-class="{'activePage' : vm.model.subPage === 'search' }">
+                            <ng-md-icon icon="search"></ng-md-icon>
+                            <p><small>Search</small></p>
+                        </md-list-item>
+                        <md-list-item ng-click="vm.subGo('details')" ng-class="{'activePage' : vm.model.subPage === 'details' }">
+                            <ng-md-icon icon="assessment"></ng-md-icon>
+                            <p><small>Details</small></p>
+                        </md-list-item>
+                        <md-list-item ng-click="vm.subGo('balances')" ng-class="{'activePage' : vm.model.subPage === 'balances' }">
+                            <ng-md-icon icon="account_balance"></ng-md-icon>
+                            <p><small>Balances</small></p>
+                        </md-list-item>
+                        
+                    </md-list>
+                </md-card-content>
+            </md-card>
+        </md-content>
+    </div>
+
+    <div flex-xs flex-gt-xs="{{vm.model.subPage === 'search' ? 100 : 85}}" layout="column">
+        <md-content>
+            <div ng-if="vm.model.initLoanSearchPage">
+                <div ng-show="vm.model.subPage === 'search'"
+                        loan-search-directive
+                        model="vm.model.loanSearch"
+                        gotoloandetail="vm.subGo('details')">
+                </div>
+            </div>
+            <div ng-if="vm.model.initLoanBalancesPage">
+                <div ng-show="vm.model.subPage === 'balances'"
+                        loan-balances-directive
+                        model="vm.model.loanBalances">
+                </div>
+            </div>
+            <div ng-if="vm.model.initLoanDetailsPage">
+                <div ng-show="vm.model.subPage === 'details'"
+                        loan-details-directive
+                        model="vm.model.loanDetails">
+                </div>
+            </div>
+        </md-content>
+    </div>
+
+</div>

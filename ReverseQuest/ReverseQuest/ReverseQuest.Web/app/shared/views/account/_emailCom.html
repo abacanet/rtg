@@ -1,0 +1,24 @@
+﻿<div class="row clearfix rm-margin" ng-if="vm.formShown === 'confirmation'">
+
+    <div class="col-sm-12">
+        <form id="emailConfirmationForm" name="emailConfirmationForm" novalidate>
+            <h3>
+                Confirm your Email
+                <br />
+                <small>
+                    Check your email. We sent an email confirmation code to <strong>{{vm.email}}</strong>.
+                </small>
+            </h3>
+            <hr />
+            <div ng-if="vm.errorMessage"><span class="field-validation-error">{{vm.errorMessage}}</span></div>
+            <div>Email Confirmation Code</div>
+            <div class="form-group full-width"><input name="emailConfirmationCode" class="form-control" type="text" ng-model="vm.emailConfirmationCode" required /></div>
+            <hr />
+            <button class="btn btn-sm btn-primary btn-link-nc text-center" ng-click="vm.resendConfirmationCode()">Resend Confirmation Code</button>
+            <span class="text-info loader" ng-show="vm.resendingBusy"><small><strong>sending...<i class="fa fa-cog fa-spin"></i></strong></small></span>
+            <hr />
+            <span ng-show="vm.resendConfirmationCodeMessage">{{vm.resendConfirmationCodeMessage}}</span>
+        </form>
+    </div>
+
+</div>

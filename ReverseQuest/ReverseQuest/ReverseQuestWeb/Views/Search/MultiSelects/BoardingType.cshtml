@@ -1,0 +1,58 @@
+﻿<div id="divBoardingType">
+    <div id="windowBoardingType" style="display:none">
+        <div id="MSBoardingType">
+            <div class="demo-section k-content">
+                <select id="multiSelectBoardingType" multiple="multiple"></select>
+            </div>
+            <script>
+        var BoardingTypeDataSource = {
+            //   type: "json",
+            serverFiltering: false,
+            transport: {
+                read: {
+                    url: "http://localhost:53176/api/refBoardingType/GetBoardingTypes",
+                }
+            }
+        };
+        $(document).ready(function () {
+            $("#multiSelectBoardingType").kendoMultiSelect({
+                height: 200,
+                placeholder: "Select Boarding Type...",
+                dataTextField: "Boarding_type_description",
+                dataValueField: "Boarding_type_skey",
+                autoBind: false,
+                autoClose: false,
+                dataSource: BoardingTypeDataSource,
+                close: function (e) {
+                   // e.preventDefault();
+                }
+            });
+        });
+            </script>
+        </div>
+
+
+    </div>
+
+    <span id="btnBoardingType" class="k-button hidden-on-narrow">Boarding Type</span>
+
+    <div class="responsive-message"></div>
+
+    <script>
+
+                $("#btnBoardingType").click(function () {
+                    $("#windowBoardingType").data("kendoWindow").open();
+                });
+
+                $(document).ready(function() {
+                    $("#windowBoardingType").kendoWindow({
+                        visible: false,                        
+                        width: "630px",
+                        height: "315px",
+                        title: "Select Boarding Type",
+                        actions: ["Close"],
+                        content: "/html/BoardingTypeMultiSelect.html",                        
+                    }).data("kendoWindow");
+                });
+    </script>
+</div>

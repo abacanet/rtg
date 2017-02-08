@@ -1,0 +1,25 @@
+﻿<div id="divProductType">
+    <div id="windowProductType" style="display:none"></div>
+
+    <span id="btnProductType" class="k-button hidden-on-narrow">Product Type</span>
+
+    <div class="responsive-message"></div>
+
+    <script>
+
+                $("#btnProductType").click(function () {
+                    $("#windowProductType").data("kendoWindow").open();
+                });
+
+                $(document).ready(function() {
+                    $("#windowProductType").kendoWindow({
+                        visible: false,                        
+                        width: "630px",
+                        height: "315px",
+                        title: "Select Product Type",
+                        actions: ["Close"],
+                        content: "/html/ProductTypeMultiSelect.html",                        
+                    }).data("kendoWindow");
+                });
+    </script>
+</div>

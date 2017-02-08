@@ -1,0 +1,1543 @@
+﻿<style>
+/*global changes css*/
+.left-side {
+    width : 240px;
+}
+.sidebar {
+    width : 240px;
+}
+.right-side {
+    margin-left      : 240px;
+    background-color : #eee;
+}
+@media screen and (min-width : 992px) {
+
+    /*Right side strech mode*/
+    .right-side.strech {
+        margin-left : 0;
+    }
+    /* Left side collapse */
+    .left-side.collapse-left {
+        left : -240px;
+    }
+}
+/*Give content full width on xs screens*/
+
+@media screen and (max-width : 992px) {
+    .right-side {
+        margin-left : 0;
+    }
+    .row-offcanvas-left {
+        left : 240px;
+    }
+    .row-offcanvas-left .sidebar-offcanvas {
+        left : -240px;
+    }
+}
+/*page level*/
+body > .header .navbar .sidebar-toggle {
+    margin-left : 0;
+}
+.panel {
+    border-radius : 5px;
+}
+.panel-white {
+    color : #fff;
+}
+.tiles-row .tile-bottom {
+    margin-bottom : 21px;
+}
+.widget .item {
+    margin         : 0;
+    border-spacing : 0;
+    border         : 0;
+    width          : 38%;
+    float          : left;
+    padding        : 3px 0;
+}
+/*sales visits and income widgets*/
+
+.canvas-interactive-wrapper1, .canvas-interactive-wrapper2,
+.canvas-interactive-wrapper3, .canvas-interactive-wrapper4 {
+    position : relative;
+}
+.canvas-interactive-wrapper1 canvas, .canvas-interactive-wrapper2 canvas,
+.canvas-interactive-wrapper3 canvas, .canvas-interactive-wrapper4 canvas {
+    position      : absolute;
+    display       : block;
+    top           : 0;
+    bottom        : 0;
+    border-radius : 5px;
+    height        : 135px;
+    width         : 100%;
+}
+.canvas-interactive-wrapper1 .cta-wrapper1, .canvas-interactive-wrapper2 .cta-wrapper2,
+.canvas-interactive-wrapper3 .cta-wrapper3, .canvas-interactive-wrapper4 .cta-wrapper4 {
+    position        : relative;
+    display         : inline-block;
+    border          : solid 1px transparent;
+    z-index         : 1;
+    text-decoration : none;
+    color           : #222;
+    transition      : border .3s;
+    width           : 100%;
+}
+.widget-count {
+    width         : 62%;
+    float         : left;
+    padding       : 9px 0;
+    border-radius : 0 5px 5px 0;
+}
+@media (max-width : 1200px) {
+    .tile-bottom {
+        margin-bottom : 15px;
+    }
+    .widget-count {
+        padding : 16px 0;
+    }
+}
+.progress-bar-white {
+    background-color : #86c653;
+}
+.item-under {
+    padding : 15px 34px;
+    color   : #000;
+
+}
+.item-icon {
+    width : 1%;
+}
+.icon-color {
+    background-color : #F5F5F5;
+}
+.widget-icon {
+    display          : inline-block;
+    line-height      : 77px;
+    text-align       : center;
+    font-size        : 36px;
+    color            : #fff;
+    border-radius    : 38px;
+    width            : 75px;
+    height           : 75px;
+    margin           : 23px 15px;
+    background-color : rgba(255, 255, 255, .4);
+}
+.progress-item {
+    margin : 20px 21px 0 76px;
+}
+.fa-size {
+    font-size : 43px;
+}
+.count-box {
+    font-size : 3em;
+}
+.item-label {
+    margin-bottom : 6px;
+}
+.item-label .title {
+    font-size   : 16px;
+    font-weight : 600;
+}
+.content-header h1 {
+    font-size   : 40px;
+    line-height : 1.5;
+}
+.index-header {
+    margin     : -10px;
+    text-align : center;
+    color      : #fff;
+    height     : 160px;
+}
+.inner-bg {
+    padding : 31px 0;
+}
+.sec-mar {
+    margin-top : 30px;
+}
+h2 small {
+    color : #fff;
+}
+/*tab1*/
+
+.stat-chart {
+    padding : 19px;
+}
+#chart6 svg {
+    height : 300px;
+}
+#chart6 .nv-group {
+    fill-opacity : 0.8 !important;
+}
+#home .text-muted {
+    color : #555;
+}
+#chart6 svg .nv-groups .nv-group {
+    fill-opacity : 0.1 !important;
+}
+.nvd3 .nv-axis .nv-axisMaxMin text {
+    font-weight : 400;
+    color       : #ccc !important;
+}
+.nvd3 text {
+    font : 400 12px open sans;
+    fill : #696969;
+}
+/*progressbar*/
+
+.progress-stats {
+    height : 8px;
+}
+/*panel tabs css start */
+.panel-padding {
+    padding : 4px;
+}
+.tabbable-custom > .nav-tabs {
+    border : 0;
+    margin : 0;
+    top    : 0;
+}
+.bg-info {
+    background-color : #48CFAD;
+    color            : #ebf4e4;
+}
+.bg-success {
+    background-color: #A0D468;
+    color: #ebf4e4;
+}
+
+.bg-primary {
+    color: #fff;
+    background-color: #4FC1E9;
+}
+
+.bg-warning {
+    background-color: #FFCE54;
+}
+
+.bg-danger {
+    background-color: #FD9883;
+}
+
+.label {
+    font-weight: 100;
+}
+
+.bottom-pad {
+    margin-bottom: 6px;
+}
+
+.flotLegend {
+    margin-bottom: 10px;
+}
+
+.flotChart {
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+
+.list-statistics {
+    margin-bottom: 0;
+}
+
+.list-statistics .list-group-item {
+    height: 55px;
+    line-height: 50px;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.progress.progress-sm {
+    height: 5px;
+    margin-top: 5px;
+}
+
+#tooltip {
+    clear: both;
+    z-index: 100;
+    background-color: #736e6e !important;
+    padding: 5px !important;
+    color: #fff;
+}
+
+#tooltip .label {
+    clear: both;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.nav-float > li > a {
+    position: relative;
+    display: block;
+    padding: 6px 18px;
+}
+
+#basicFlotLegend .legendLabel {
+    padding-left: 4px;
+    padding-right: 6px;
+}
+
+#basicFlotLegend1 .legendLabel {
+    padding-left: 4px;
+    padding-right: 6px;
+}
+
+.nav-tabs > li {
+    float: left;
+    margin-bottom: 0;
+}
+#placeholder {
+    padding: 14px !important;
+    margin-left: 2%;
+}
+#placeholder .flot-text .flot-x-axis {
+    left: -4px !important;
+}
+#placeholder .flot-text .flot-y-axis {
+    top: -7px !important;
+    left: -13px !important;
+}
+
+#donut .pieLabel div {
+    font-size: 12px !important;
+}
+
+#donut #pieLabel4 div {
+    padding-top: 1px !important;
+}
+
+#donut #pieLabel2 div, #donut #pieLabel1 div {
+    padding-left: 24px !important;
+}
+
+#donut #pieLabel3 div {
+    padding-top: 16px !important;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #fff;
+    margin-top: -20px;
+}
+
+/*tabs css ends*/
+
+/*server*/
+
+.server-load {
+    padding-top: 5px;
+}
+
+.server-stat {
+    width: 33.33%;
+}
+
+.server-stat p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.server-stat span {
+    color: #777;
+}
+
+.server-buttons {
+    margin-top: 30px;
+}
+
+.server-cache, .server-reset {
+    width: 94%;
+    border-radius: 3px;
+
+}
+
+.server-reset {
+    margin-left: 6%;
+}
+
+/*chart*/
+#flotchart2 {
+    width: 100%;
+    height: 123px;
+    margin-top: 75px;
+}
+
+@media screen and (max-width: 992px) {
+    #flotchart2 {
+        height: 200px;
+    }
+}
+
+/*server ends*/
+
+/*revenue bar chart*/
+.revenue-panel {
+    height: 360px;
+}
+@media screen and (max-width: 992px) {
+    .revenue-panel {
+        height: 429px;
+    }
+}
+#revenue-chart {
+    height: 270px;
+}
+
+.ct-series-a .ct-bar {
+    stroke: #428bca;
+}
+
+.ct-series-b .ct-bar {
+    stroke: #4FC1E9;
+}
+
+.panel-widget .revenue {
+    padding: 2px 15px;
+
+}
+
+.revenue .rev-divider {
+    border-right: 1px solid #efefef;
+}
+
+.ct-perfect-fourth1 > svg {
+    top: 10px;
+    left: 23px;
+}
+.ct-perfect-fourth1
+{
+    height: 250px;
+}
+/*grid*/
+.ct-grid {
+    stroke-dasharray: 1px;
+
+}
+@media screen and (max-width: 992px) {
+    #revenue-chart {
+        height: 338px;
+    }
+    .ct-perfect-fourth1 {
+        height: 286px;
+        margin-top: 18px;
+    }
+}
+
+/*tasks to do*/
+
+.checkbox .striked {
+    left: 17px;
+}
+
+.checkbox-info {
+
+}
+
+.todotext {
+    margin: 10px 0 0 20px;
+}
+.todolist_list {
+    border-bottom: 1px solid #efefef;
+    display: inline-block;
+    width: 100%;
+}
+.todolist_list:last-child {
+    border-bottom: 0;
+}
+.todolist_list{
+    min-height: 42px;
+}
+.todolist_list .showbtns {
+    opacity: 0;
+}
+
+.todolist_list:hover .showbtns {
+    opacity: 1;
+}
+
+#todoedit {
+    color: #418bca;
+    padding-right: 3px;
+}
+
+.todoedit,
+.todoedit:hover {
+    color: #418bca !important;
+    text-decoration: none;
+}
+
+#tododelete {
+    color: #F00;
+    padding-left: 3px;
+}
+
+.tododelete,
+.tododelete:hover {
+    color: #F00 !important;
+    text-decoration: none;
+}
+
+.todolist_list > form {
+    background: #fff;
+    margin: 0 !important;
+    padding-top: 3px;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #ca0002;
+}
+
+.todoitemcheck {
+    float: left;
+    margin-left: 5px;
+    margin-right: 8px;
+}
+
+.btn.save_todo {
+    display: none;
+}
+
+.editinglist {
+    background-color: #efefef;
+}
+
+.custom_textbox1, .todoitembtns {
+    min-height: 44px;
+}
+
+.todoitembtns {
+    padding: 11px;
+}
+
+.todolist_list #custom_textbox, .todolist_list .add_button, .todolist_list .save_todo {
+    border-radius: 3px;
+}
+.form-inline .form-group{
+    width: 63%;
+}
+.form-inline #custom_textbox{
+    width: 95%;
+}
+/*tasks ends*/
+
+/*projects status*/
+.graph {
+    height: 280px;
+}
+
+#hero-bar svg rect {
+    width: 36px;
+    fill: #428bca;
+}
+.chart_leftpad{
+    padding-left: 9%;
+}
+
+/*projects status ends*/
+
+/*browser interest*/
+
+.basic-list img {
+    height: 24px;
+    margin-right: 12px;
+}
+
+.basic-list {
+    padding: 0 17px;
+    margin-bottom: 0;
+}
+
+.basic-list li {
+    display: block;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 11px 0;
+}
+
+.basic-list li:last-child {
+    border-bottom: 0;
+}
+
+.basic-list li:last-child img {
+    margin: 0 16px 0 7px;
+}
+
+.basic-list .right {
+    display: inline-block;
+    padding: 3px 6px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.panel-widget .panel-heading {
+    border-bottom: 1px solid #ddd;
+}
+
+/*browser interest ends*/
+
+/*sociaL widgets*/
+
+.social-tiles .google {
+    background: #D54B3D;
+    border-radius: 5px 0 0 0;
+}
+
+.social-tiles .google .overlay {
+    border-radius: 5px 0 0 0;
+}
+
+.social-tiles .facebook {
+    background: #3C5A98;
+    border-radius: 0 5px 0 0;
+}
+
+.social-tiles .facebook .overlay {
+    border-radius: 0 5px 0 0;
+}
+
+.social-tiles .twitter {
+    background: #1B9AE7;
+}
+
+.social-tiles .linkedin {
+    background: #0077B5;
+}
+
+.social-tiles .youtube {
+    background: #E32C28;
+    border-radius: 0 0 0 5px;
+}
+
+.social-tiles .youtube .overlay {
+    border-radius: 0 0 0 5px;
+}
+
+.social-tiles .dribbble {
+    background: #EA4C89;
+    border-radius: 0 0 5px 0;
+}
+
+.social-tiles .dribbble .overlay {
+    border-radius: 0 0 5px 0;
+}
+
+.social-widgets {
+    margin-bottom: 20px;
+}
+
+.social-tiles .social {
+    min-height: 118px;
+    width: 50%;
+    float: left;
+}
+
+.social-tiles .social i {
+    color: #fff;
+    font-size: 40px;
+    padding: 14px 0 0 17px;
+}
+
+@media (max-width: 567px) {
+    .social-tiles .social i {
+        padding: 14px 55px 0 11px;
+    }
+
+    .social-tiles .social {
+        height: 143px;
+    }
+
+    .social .visible-cont {
+        margin: 18px 20px 0 0 !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    .social-tiles .social {
+        max-height: 150px;
+        width: 33.33%;
+        float: left;
+    }
+
+    .social-tiles .facebook, .social-tiles .facebook .overlay {
+        border-radius: 0;
+    }
+
+    .social-tiles .twitter, .social-tiles .twitter .overlay {
+        border-radius: 0 5px 0 0;
+    }
+
+    .social-tiles .linkedin, .social-tiles .linkedin .overlay {
+        border-radius: 0 0 0 5px;
+    }
+
+    .social-tiles .youtube, .social-tiles .youtube .overlay {
+        border-radius: 0;
+    }
+}
+
+/*overlay css*/
+.social-tiles .social {
+    position: relative;
+    display: block;
+}
+
+.social .visible-cont {
+    margin: 45px 20px 0 0;
+    color: #fff;
+}
+
+.visible-cont span {
+    font-size: 32px;
+}
+
+ .social-tiles span.overlay {
+    visibility: hidden;
+    transition: all .5s linear;
+    -o-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    bottom: 0;
+    color: #fff;
+    padding-top: 10px;
+}
+
+ .social-tiles .social:hover span.overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+ .social-tiles .social span.overlay span {
+    font-size: 50px;
+}
+@media screen and (max-width: 346px) {
+    .social-tiles .social span.overlay span {
+        font-size: 43px;
+    }
+    .social-tiles .social:hover span.overlay {
+        padding-top: 29px;
+    }
+}
+/*world map*/
+#world-map-markers {
+    width: 100%;
+    height: 300px;
+}
+
+.jvectormap-zoomin,
+.jvectormap-zoomout {
+    padding: 4px 13px 13px 5px;
+    left: 95%;
+}
+@media (max-width: 425px) {
+    .jvectormap-zoomin,
+    .jvectormap-zoomout {
+        left: 93%;
+    }
+}
+
+.zero-padding {
+    padding: 0;
+}
+
+.stat-details {
+    padding: 0;
+    background: #313e4b;
+    color: #fff;
+    min-height: 300px;
+}
+
+.stat-head {
+    padding: 6px 30px 0 25px;
+}
+
+.stat-icon {
+    font-size: 18px;
+    padding-right: 8px;
+}
+.maps-row{
+    padding-bottom: 15px;
+}
+@media (max-width: 324px)
+{
+    .task_panel
+    {
+        margin-top: 20px;
+    }
+}
+
+</style>
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="index-header">
+        <div class="inner-bg">
+            <div class="header-section">
+                <div class="row">
+                    <div class="col-md-4 col-lg-6 hidden-xs hidden-sm">
+                        <h1>Welcome <span class="hidden-md">To Dashboard</span></h1>
+                    </div>
+                    <div class="col-md-8 col-lg-6">
+                        <div class="row text-center">
+                            <div class="col-xs-4 col-sm-3">
+                                <h2>
+                                    <strong>97.3k</strong>
+                                    <br>
+                                    <small>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        Great
+                                    </small>
+                                </h2>
+                            </div>
+                            <div class="col-xs-4 col-sm-3">
+                                <h2 class="animation-hatch">
+                                    <strong>197k</strong>
+                                    <br>
+                                    <small>
+                                        <i class="fa fa-heart-o"></i>
+                                        Likes
+                                    </small>
+                                </h2>
+                            </div>
+                            <div class="col-xs-4 col-sm-3">
+                                <h2 class="animation-hatch">
+                                    <strong>211</strong>
+                                    <br>
+                                    <small>
+                                        <i class="fa fa-calendar-o"></i>
+                                        Events
+                                    </small>
+                                </h2>
+                            </div>
+                            <div class="col-sm-3 hidden-xs">
+                                <h2 class="animation-hatch">
+                                    <strong>28°C</strong>
+                                    <br>
+                                    <small>
+                                        <i class="fa fa-map-marker"></i>
+                                        Canada
+                                    </small>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--section ends-->
+<section class="content sec-mar">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row tiles-row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 tile-bottom">
+                    <div class="canvas-interactive-wrapper1">
+                        <canvas id="canvas-interactive1"></canvas>
+                        <div class="cta-wrapper1">
+                            <div class="widget" data-count=".num" data-from="0" data-to="99.9" data-suffix="%" data-duration="2">
+                                <div class="item">
+                                    <div class="widget-icon pull-left icon-color animation-fadeIn">
+                                        <i class="fa fa-fw fa-shopping-cart fa-size"></i>
+                                    </div>
+                                </div>
+                                <div class="widget-count panel-white">
+                                    <div class="item-label text-center">
+                                        <div id="count-box" class="count-box">119</div>
+                                        <span class="title">Today Sales</span>
+                                    </div>
+                                    <div class="text-center">
+                                        <span><i class="fa fa-level-up" aria-hidden="true"></i></span>
+                                        <strong>12 more Sales</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 tile-bottom">
+                    <div class="widget" data-count=".num" data-from="0" data-to="512" data-duration="3">
+                        <div class="canvas-interactive-wrapper2">
+                            <canvas id="canvas-interactive2"></canvas>
+                            <div class="cta-wrapper2">
+                                <div class="item">
+                                    <div class="widget-icon pull-left icon-color animation-fadeIn">
+                                        <i class="fa fa-fw fa-paw fa-size"></i>
+                                    </div>
+                                </div>
+                                <div class="widget-count panel-white">
+                                    <div class="item-label text-center">
+                                        <div id="count-box2" class="count-box">316</div>
+                                        <span class="title">Daily Visits</span>
+                                    </div>
+                                    <div class="text-center">
+                                        <span><i class="fa fa-level-up" aria-hidden="true"></i></span>
+                                        <strong>60 Bounce Rate</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 tile-bottom">
+                    <div class="widget" data-suffix="k" data-count=".num" data-from="0" data-to="310" data-duration="4" data-easing="false">
+                        <div class="canvas-interactive-wrapper3">
+                            <canvas id="canvas-interactive3"></canvas>
+                            <div class="cta-wrapper3">
+                                <div class="item">
+                                    <div class="widget-icon pull-left icon-color animation-fadeIn">
+                                        <i class="fa fa-fw fa-usd fa-size"></i>
+                                    </div>
+                                </div>
+                                <div class="widget-count panel-white">
+                                    <div class="item-label text-center">
+                                        <div id="count-box3" class="count-box">544</div>
+                                        <span class="title">Total income</span>
+                                    </div>
+                                    <div class="text-center">
+                                        <span><i class="fa fa-level-up" aria-hidden="true"></i></span>
+                                        <strong>120 more income</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 tile-bottom">
+                    <div class="widget">
+                        <div class="canvas-interactive-wrapper4">
+                            <canvas id="canvas-interactive4"></canvas>
+                            <div class="cta-wrapper4">
+                                <div class="item">
+                                    <div class="widget-icon pull-left icon-color animation-fadeIn">
+                                        <i class="fa fa-bar-chart-o fa-size"></i>
+                                    </div>
+                                </div>
+                                <div class="widget-count panel-white">
+                                    <div class="item-label text-center">
+                                        <div id="count-box4" class="count-box">1598</div>
+                                        <span class="title">Total Sales</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default1">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Site Activity</h3>
+                    <ul class="nav nav-tabs nav-float pull-right" role="tablist">
+                        <li class="active">
+                            <a href="#home" role="tab" data-toggle="tab">Stats</a>
+                        </li>
+                        <li>
+                            <a href="#profile" role="tab" data-toggle="tab">Sales</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="home">
+                            <div class="row">
+                                <div class="col-md-8 col-xs-12 stat-chart">
+                                    <div id="chart6" class='with-3d-shadow with-transitions'>
+                                        <svg></svg>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-12">
+                                    <h4>Stats</h4>
+                                    <div class="task-item">
+                                        Total Sold
+                                        <small class="pull-right text-muted">40%</small>
+                                        <div class="progress progress-sm">
+                                            <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;" class="progress-bar progress-bar-primary">
+                                                <span class="sr-only">40% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-item">
+                                        Product Delivered
+                                        <small class="pull-right text-muted">60%</small>
+                                        <div class="progress progress-sm">
+                                            <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" class="progress-bar progress-bar-success">
+                                                <span class="sr-only">60% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-item">
+                                        Sale Reports
+                                        <small class="pull-right text-muted">55%</small>
+                                        <div class="progress progress-sm">
+                                            <div role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;" class="progress-bar progress-bar-info">
+                                                <span class="sr-only">55% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-item">
+                                        New Projects
+                                        <small class="pull-right text-muted">66%</small>
+                                        <div class="progress progress-sm">
+                                            <div role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%;" class="progress-bar progress-bar-warning">
+                                                <span class="sr-only">66% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-item">
+                                        New Users
+                                        <small class="pull-right text-muted">90%</small>
+                                        <div class="progress progress-sm">
+                                            <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;" class="progress-bar progress-bar-danger">
+                                                <span class="sr-only">90% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-item">
+                                        Total Income
+                                        <small class="pull-right text-muted">50%</small>
+                                        <div class="progress progress-sm">
+                                            <div role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;" class="progress-bar progress-bar-primary">
+                                                <span class="sr-only">50% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-12 col-xs-12 sales-tab">
+                                    <div id="basicFlotLegend"></div>
+                                    <div id="placeholder" style="width:100%; height: 291px"></div>
+                                </div>
+                                <div class="col-lg-4 col-md-12 col-xs-12">
+                                    <div id="donut" style="width:94%; height: 300px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-sm-6">
+            <div class="panel panel-widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Dedicated Server Load</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="server-load">
+                        <div class="server-stat pull-left text-center">
+                            <p>312 GB</p>
+                            <span>Usage</span>
+                        </div>
+                        <div class="server-stat pull-left text-center">
+                            <p>500 GB</p>
+                            <span>Space</span>
+                        </div>
+                        <div class="server-stat pull-left text-center">
+                            <p>62.4%</p>
+                            <span>CPU</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="flotchart2"></div>
+                    </div>
+                    <div class="col-md-12 server-buttons">
+                        <div class="col-xs-6 zero-padding">
+                            <button class="btn btn-block btn-danger server-cache">Purge Cache</button>
+                        </div>
+                        <div class="col-xs-6 zero-padding">
+                            <button class="btn btn-block btn-default server-reset">Reset Server</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 revenue-panel">
+            <div class="panel panel-widget">
+                <div class="panel-heading revenue">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="col-md-6 col-xs-6 rev-divider">
+                                <h4>$365.76</h4>
+                                <small>Gross Revenue</small>
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <h4>$245.34</h4>
+                                <small>Net Revenue</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body" id="revenue-chart">
+                    <div class="ct-chart1 ct-perfect-fourth ct-perfect-fourth1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-12 task_panel">
+            <div class="panel panel-widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Tasks </h3>
+                </div>
+                <div class="panel-body">
+                    <form class="row list_of_items">
+                        <div class="todolist_list showactions">
+                            <div class="col-md-9 col-sm-9 col-xs-8 nopadmar custom_textbox1">
+                                <div class="todoitemcheck checkbox checkbox-info">
+                                    <input type="checkbox" class="striked styled">
+                                    <label>
+                                    </label>
+                                </div>
+                                <div class="todotext  todoitemjs"> Advertisement</div>
+                            </div>
+                            <div class="col-md-2  col-sm-2 col-xs-3 todoitembtns">
+                                <a href="#" class="tododelete redcolor pull-right">
+                                    <i class="fa fa-times showbtns" aria-hidden="true"></i>
+                                </a>
+                                <span class="striks pull-right showbtns">|</span>
+                                <a href="#" class="todoedit  pull-right">
+                                    <i class="fa fa-pencil showbtns" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="un-do pull-right" hidden>
+                                    <i class="fa fa-repeat showbtns" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="todolist_list showactions">
+                            <div class="col-md-9 col-sm-9 col-xs-8 nopadmar custom_textbox1">
+                                <div class="todoitemcheck checkbox checkbox-info">
+                                    <input type="checkbox" class="striked">
+                                    <label>
+                                    </label>
+                                </div>
+                                <div class="todotext  todoitemjs">Get-together</div>
+                            </div>
+                            <div class="col-md-2  col-sm-2 col-xs-3 todoitembtns">
+                                <a href="#" class="tododelete redcolor pull-right">
+                                    <i class="fa fa-times showbtns" aria-hidden="true"></i>
+                                </a>
+                                <span class="striks pull-right showbtns">|</span>
+                                <a href="#" class="todoedit pull-right">
+                                    <i class="fa fa-pencil showbtns" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="un-do pull-right" hidden>
+                                    <i class="fa fa-repeat showbtns" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="todolist_list showactions">
+                            <div class="col-md-9 col-sm-9 col-xs-8 nopadmar custom_textbox1">
+                                <div class="todoitemcheck checkbox checkbox-info">
+                                    <input type="checkbox" class="striked">
+                                    <label>
+                                    </label>
+                                </div>
+                                <div class="todotext  todoitemjs"> Test Crew Meet</div>
+                            </div>
+                            <div class="col-md-2  col-sm-2 col-xs-3 todoitembtns">
+                                <a href="#" class="tododelete redcolor pull-right">
+                                    <i class="fa fa-times showbtns" aria-hidden="true"></i>
+                                </a>
+                                <span class="striks pull-right showbtns">|</span>
+                                <a href="#" class="todoedit pull-right">
+                                    <i class="fa fa-pencil showbtns" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="un-do pull-right" hidden>
+                                    <i class="fa fa-repeat showbtns" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="todolist_list showactions">
+                            <div class="col-md-9 col-sm-9 col-xs-8 nopadmar custom_textbox1">
+                                <div class="todoitemcheck checkbox checkbox-info">
+                                    <input type="checkbox" class="striked">
+                                    <label>
+                                    </label>
+                                </div>
+                                <div class="todotext  todoitemjs">Technical</div>
+                            </div>
+                            <div class="col-md-2  col-sm-2 col-xs-3 todoitembtns">
+                                <a href="#" class="tododelete redcolor pull-right">
+                                    <i class="fa fa-times showbtns" aria-hidden="true"></i>
+                                </a>
+                                <span class="striks pull-right showbtns">|</span>
+                                <a href="#" class="todoedit pull-right">
+                                    <i class="fa fa-pencil showbtns" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="un-do pull-right" hidden>
+                                    <i class="fa fa-repeat showbtns" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="todolist_list showactions">
+                            <div class="col-md-9 col-sm-9 col-xs-8 nopadmar custom_textbox1">
+                                <div class="todoitemcheck checkbox checkbox-info">
+                                    <input type="checkbox" class="striked">
+                                    <label>
+                                    </label>
+                                </div>
+                                <div class="todotext  todoitemjs">Non-Technical</div>
+                            </div>
+                            <div class="col-md-2  col-sm-2 col-xs-3 todoitembtns">
+                                <a href="#" class="tododelete redcolor pull-right">
+                                    <i class="fa fa-times showbtns" aria-hidden="true"></i>
+                                </a>
+                                <span class="striks pull-right showbtns">|</span>
+                                <a href="#" class="todoedit pull-right">
+                                    <i class="fa fa-pencil showbtns" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="un-do pull-right" hidden>
+                                    <i class="fa fa-repeat showbtns" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="todolist_list adds task add_new">
+                        <form role="form" id="main_input_box" class="form-inline">
+                            <div class="form-group pull-left">
+                                <label class="control-label sr-only" for="custom_textbox">Add Task</label>
+                                <input id="custom_textbox" name="item" type="text" required placeholder="Add list item here" class="form-control" />
+                            </div>
+                            <span>
+                                <input type="submit" value="Add Task"
+                                       class="btn btn-primary add_button add_task" />
+                                <input type="button" value="Save" class="btn btn-info save_todo" />
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="panel panel-widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Project Status</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="hero-bar" class="graph"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="panel panel-widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Browser Interest</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="basic-list">
+                        <li>
+                            <img src="img/chrome.png" alt="chrome">Google Chrome
+                            <span class="right label label-success pull-right">42.8%</span>
+                        </li>
+                        <li>
+                            <img src="img/firefox.png" alt="firefox">Firefox
+                            <span class="right label label-danger pull-right">16.9%</span>
+                        </li>
+                        <li>
+                            <img src="img/safari.png" alt="safari">Safari
+                            <span class="right label label-primary pull-right">15.5%</span>
+                        </li>
+                        <li>
+                            <img src="img/opera.png" alt="opera">Opera
+                            <span class="right label label-info pull-right">11.8%</span>
+                        </li>
+                        <li>
+                            <img src="img/Ie.png" alt="Internet Explorer">Internet Explorer
+                            <span class="right label label-danger pull-right">3.2%</span>
+                        </li>
+                        <li>
+                            <img src="img/mobile.png" alt="mobile">Mobile
+                            <span class="right label label-warning pull-right">3%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-12 social-widgets">
+            <div class="social-tiles">
+                <div class="social google">
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                    <span class="visible-cont pull-right text-center"><span>6.3k</span><br>Connected</span>
+                    <span class="overlay text-center"><span>6.3k</span><br>Connected</span>
+                </div>
+                <div class="social facebook">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <span class="visible-cont pull-right text-center"><span>5.7k</span><br>Likes</span>
+                    <span class="overlay text-center"><span>5.7k</span><br>Likes</span>
+                </div>
+                <div class="social twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <span class="visible-cont pull-right text-center"><span>3.3k</span><br>Followers</span>
+                    <span class="overlay text-center"><span>3.3k</span><br>Followers</span>
+                </div>
+                <div class="social linkedin">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <span class="visible-cont pull-right text-center"><span>2.3k</span><br>Connected</span>
+                    <span class="overlay text-center"><span>2.3k</span><br>Connected</span>
+                </div>
+                <div class="social youtube">
+                    <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                    <span class="visible-cont pull-right text-center"><span>7.3k</span><br>Hits</span>
+                    <span class="overlay text-center"><span>7.3k</span><br>Hits</span>
+                </div>
+                <div class="social dribbble">
+                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                    <span class="visible-cont pull-right text-center"><span>100</span><br>Shots</span>
+                    <span class="overlay text-center"><span>100</span><br>Shots</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row maps-row">
+        <div class="col-md-12">
+            <div class="col-md-8 col-xs-12 zero-padding">
+                <div id="world-map-markers"></div>
+            </div>
+            <div class="col-md-4 col-xs-12 stat-details">
+                <div class="stat-head">
+                    <h4>Statistics:</h4>
+                    <p>Status: Live</p>
+                    <p><i class="fa fa-map-marker stat-icon" aria-hidden="true"></i>48 Counties, 698 Cities</p>
+                    <div>
+                        <p><i class="fa fa-thumbs-o-up stat-icon" aria-hidden="true"></i> 2,543</p>
+                        <small>Desktop Visits</small>
+                        <small class="pull-right text-muted">75%</small>
+                        <div class="progress progress-stats">
+                            <div role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;" class="progress-bar progress-bar-danger">
+                                <span class="sr-only">75% Complete (success)</span>
+                            </div>
+                        </div>
+                        <small>Tab Visits</small>
+                        <small class="pull-right text-muted">8%</small>
+                        <div class="progress progress-stats">
+                            <div role="progressbar" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100" style="width: 8%;" class="progress-bar progress-bar-primary">
+                                <span class="sr-only">8% Complete (success)</span>
+                            </div>
+                        </div>
+                        <small>Mobile Visits</small>
+                        <small class="pull-right text-muted">17%</small>
+                        <div class="progress progress-stats">
+                            <div role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100" style="width: 17%;" class="progress-bar progress-bar-warning">
+                                <span class="sr-only">17% Complete (success)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="right">
+        <div id="slim2">
+            <div class="rightsidebar-right">
+                <div class="rightsidebar-right-content">
+                    <h5 class="rightsidebar-right-heading rightsidebar-right-heading-first text-uppercase text-xs">
+                        <i class="menu-icon  fa fa-fw fa-paw"></i> Contacts
+                    </h5>
+                    <ul class="list-unstyled margin-none">
+                        <li class="rightsidebar-contact-wrapper">
+                            <a class="rightsidebar-contact" href="#">
+                                <img src="img/authors/avatar1.jpg" height="20" width="20" alt="avatar-image" class="img-circle pull-right">
+                                <i class="fa fa-circle text-xs text-primary"></i> Alanis
+                            </a>
+                        </li>
+                        <li class="rightsidebar-contact-wrapper">
+                            <a class="rightsidebar-contact" href="#">
+                                <img src="img/authors/avatar.jpg" height="20" width="20" alt="avatar-image" class="img-circle pull-right">
+                                <i class="fa fa-circle text-xs text-primary"></i> Rolando
+                            </a>
+                        </li>
+                        <li class="rightsidebar-contact-wrapper">
+                            <a class="rightsidebar-contact" href="#">
+                                <img src="img/authors/avatar2.jpg" height="20" width="20" alt="avatar-image" class="img-circle pull-right">
+                                <i class="fa fa-circle text-xs text-primary"></i> Marlee
+                            </a>
+                        </li>
+                        <li class="rightsidebar-contact-wrapper">
+                            <a class="rightsidebar-contact" href="#">
+                                <img src="img/authors/avatar3.jpg" height="20" width="20" alt="avatar-image" class="img-circle pull-right">
+                                <i class="fa fa-circle text-xs text-warning"></i> Marlee
+                            </a>
+                        </li>
+                        <li class="rightsidebar-contact-wrapper">
+                            <a class="rightsidebar-contact" href="#">
+                                <img src="img/authors/avatar4.jpg" height="20" width="20" alt="avatar-image" class="img-circle pull-right">
+                                <i class="fa fa-circle text-xs text-danger"></i> Kamryn
+                            </a>
+                        </li>
+                        <li class="rightsidebar-contact-wrapper">
+                            <a class="rightsidebar-contact" href="#">
+                                <img src="img/authors/avatar5.jpg" height="20" width="20" alt="avatar-image" class="img-circle pull-right">
+                                <i class="fa fa-circle text-xs text-muted"></i> Cielo
+                            </a>
+                        </li>
+                        <li class="rightsidebar-contact-wrapper">
+                            <a class="rightsidebar-contact" href="#">
+                                <img src="img/authors/avatar7.jpg" height="20" width="20" alt="avatar-image" class="img-circle pull-right">
+                                <i class="fa fa-circle text-xs text-muted"></i> Charlene
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h5 class="rightsidebar-right-heading text-uppercase text-xs">
+                        <i class="fa fa-fw fa-tasks"></i> Tasks
+                    </h5>
+                    <ul class="list-unstyled m-t-25">
+                        <li>
+                            <div>
+                                <p>
+                                    <strong>Task 1</strong>
+                                    <small class="pull-right text-muted">40% Complete</small>
+                                </p>
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 40%">
+                                        <span class="sr-only">40% Complete (success)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>
+                                    <strong>Task 2</strong>
+                                    <small class="pull-right text-muted">20% Complete</small>
+                                </p>
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                        <span class="sr-only">20% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>
+                                    <strong>Task 3</strong>
+                                    <small class="pull-right text-muted">60% Complete</small>
+                                </p>
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 60%">
+                                        <span class="sr-only">60% Complete (warning)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>
+                                    <strong>Task 4</strong>
+                                    <small class="pull-right text-muted">80% Complete</small>
+                                </p>
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 80%">
+                                        <span class="sr-only">80% Complete (danger)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <h5 class="rightsidebar-right-heading text-uppercase text-xs">
+                        <i class="fa fa-fw fa-group"></i> Recent Updates
+                    </h5>
+                    <div>
+                        <ul class="list-unstyled">
+                            <li class="rightsidebar-notification">
+                                <a href="#">
+                                    <i class="fa fa-comment fa-fw text-primary"></i> New Comment
+                                </a>
+                            </li>
+                            <li class="rightsidebar-notification">
+                                <a href="#">
+                                    <i class="fa fa-twitter fa-fw text-success"></i> 3 New Followers
+                                </a>
+                            </li>
+                            <li class="rightsidebar-notification">
+                                <a href="#">
+                                    <i class="fa fa-envelope fa-fw text-info"></i> Message Sent
+                                </a>
+                            </li>
+                            <li class="rightsidebar-notification">
+                                <a href="#">
+                                    <i class="fa fa-tasks fa-fw text-warning"></i> New Task
+                                </a>
+                            </li>
+                            <li class="rightsidebar-notification">
+                                <a href="#">
+                                    <i class="fa fa-upload fa-fw text-danger"></i> Server Rebooted
+                                </a>
+                            </li>
+                            <li class="rightsidebar-notification">
+                                <a href="#">
+                                    <i class="fa fa-warning fa-fw text-primary"></i> Server Not Responding
+                                </a>
+                            </li>
+                            <li class="rightsidebar-notification">
+                                <a href="#">
+                                    <i class="fa fa-shopping-cart fa-fw text-success"></i> New Order Placed
+                                </a>
+                            </li>
+                            <li class="rightsidebar-notification">
+                                <a href="#">
+                                    <i class="fa fa-money fa-fw text-info"></i> Payment Received
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#right -->
+</section>
+<!-- /.content -->
+<!-- global js -->
+<div id="qn"></div>
+
+<!-- begining of page level js -->
+<script src="../../../../js/backstretch.js"></script>
+<!--sales tiles-->
+<script src="../../../../bower_components/CoutUpCircle/jquery.countupcircle.min.js"></script>
+<script src="../../../../bower_components/granIm.js/dist/granim.min.js"></script>
+<!-- end of sales tiles -->
+<!-- Flot tab2-->
+<script src="../../../../bower_components/flotchart/jquery.flot.js"></script>
+<script src="../../../../bower_components/flotchart/jquery.flot.resize.js"></script>
+<script src="../../../../bower_components/flotchart/jquery.flot.time.js"></script>
+<script src="../../../../bower_components/flotchart/jquery.flot.symbol.js"></script>
+<script src="../../../../bower_components/flotchart/jquery.flot.pie.js"></script>
+<script src="../../../../bower_components/flotchart/jquery.flot.stack.js"></script>
+<script src="../../../../bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+<script src="../../../../bower_components/flot-spline/js/jquery.flot.spline.min.js"></script>
+
+<!-- end of flot tab2 -->
+<script src="../../../../bower_components/chartist/dist/chartist.min.js"></script>
+<!--morris donut-->
+<script src="../../../../bower_components/morris.js/morris.min.js"></script>
+<script src="../../../../bower_components/d3/d3.min.js"></script>
+<script src="../../../../bower_components/nvd3/build/nv.d3.min.js"></script>
+<script src="../../../../js/custom_js/stream_layers.js"></script>
+<!--maps-->
+<script src="../../../../bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../../../../bower_components/bower-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- end of maps -->
+<script src="../../../../js/dashboard1.js"></script>
+<!-- end of page level js -->

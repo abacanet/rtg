@@ -1,0 +1,261 @@
+﻿<div id="tab2" class="tab-pane active in">
+    <div class="row">
+        <form name="searchForm" class="form-horizontal" ng-submit="vm.submitHandler()">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="fa fa-fw fa-file-text-o"></i> Search Criteria
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-3">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="search" class="control-label col-md-5">
+                                    Note Contains
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" aria-label="NoteText" name="NoteText" ng-model="vm.searchParams.avcNoteText" class="form-control">
+                                </div>
+                            </div>     
+                            <div class="form-group">
+                                <label for="search" class="control-label col-md-5">
+                                    Loan Skey
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" aria-label="LoanSkey" name="LoanSkey" placeholder="00000" ng-model="vm.searchParams.aiLoanSKey" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="LoanNumber" class="control-label col-md-5">
+                                    Original Loan#
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <input type="text" name="LoanNumber" id="LoanNumber" placeholder="00000000000" ng-model="vm.searchParams.avcOriginalLoanNumber" class="form-control">
+                                </div>
+                            </div>
+                                                   
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="BoardedDateFrom" class="control-label col-md-5">
+                                    Date Created
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-fw fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="CreatedDate" id="CreatedDate" placeholder="YYYY-MM-DD to YYYY-MM-DD" ng-model="vm.searchParams.adtmCreatedDateFrom" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ContactType" class="control-label col-md-5">
+                                    High Importance
+                                </label>
+                                <div class="input-group col-md-7">
+                                    <select name="HighImportanceFlag" id="HighImportanceFlag" ng-model="vm.searchParams.avcHighImportanceFlag" class="form-control">
+                                        <option value=""></option>
+                                        <option value="Included">Included</option>
+                                        <option value="Excluded">Excluded</option>
+                                        <option value="Only">Only</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Created By
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple ng-model="vm.searchParams.avcCreatedBy" style="width:100%">
+                                        <option ng-repeat="contactType in vm.contactTypes" value="{{contactType.Skey}}">{{contactType.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Note Type
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple ng-model="vm.searchParams.avcNoteTypeSkeys" style="width:100%">
+                                        <option ng-repeat="contactType in vm.contactTypes" value="{{contactType.Skey}}">{{contactType.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Note Type Category
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple ng-model="vm.searchParams.avcNoteTypeCategorySkeys" style="width:100%">
+                                        <option ng-repeat="contactType in vm.contactTypes" value="{{contactType.Skey}}">{{contactType.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="fa fa-fw fa-file-text-o"></i> Advance Search Criteria
+                    </h3>
+                    <span class="pull-right hidden-xs">
+                        <i class="fa fa-fw fa-chevron-up clickable"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="row-sm-3 col-md-4">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Loan Status
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%"
+                                            ng-model="vm.searchParams.avcLoanStatus"
+                                            ng-options="loanStatus as loanStatus.loan_status_description for loanStatus in vm.loanStatuses track by loanStatus.loan_status_code">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Loan Sub-Status
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%"
+                                            ng-model="vm.searchParams.avcLoanSubStatusCodes"
+                                            ng-options="loanSubStatus as loanSubStatus.loan_sub_status_description for loanSubStatus in vm.loanSubStatuses track by loanSubStatus.loan_sub_status_code">
+                                    </select>
+                                </div>
+                            </div>
+                            
+                  
+                        </div>
+                    </div>
+
+
+                    <div class="row-sm-3 col-md-4">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Investor Names
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%"
+                                            ng-model="vm.searchParams.avcInvestorSKeys"
+                                            ng-options="investor as investor.investor_name for investor in vm.investors track by investor.investor_skey">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Investor Pools
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%"
+                                            ng-model="vm.searchParams.avcLoanPoolSKeys"
+                                            ng-options="investorPool as investorPool.loan_pool_short_description for investorPool in vm.investorPools track by investorPool.loan_pool_skey">
+                                    </select>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="row-sm-3 col-md-4">
+                        <div class="form-body">
+
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Servicer Names
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple style="width:100%"
+                                            ng-model="vm.searchParams.avcLoanServicerSKeys"
+                                            ng-options="servicer as servicer.servicer_name for servicer in vm.servicers track by servicer.loan_servicer_skey">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FirstName" class="col-md-4 control-label">
+                                    Product Types
+                                </label>
+                                <div class="input-group col-md-8">
+                                    <select class="form-control multi-select" multiple ng-model="vm.searchParams.avcProductTypeSKeys" style="width:100%">
+                                        <option ng-repeat="productType in vm.productTypes" value="{{productType.Skey}}">{{productType.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-offset-10 col-md-12">
+                        <button type="submit" class="btn btn-primary">
+                            Retrieve
+                        </button>
+                        &nbsp;
+                        <button type="reset" class="btn btn-default bttn_reset">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+        </form>
+    </div>
+    <div class="row">
+        <div id="grid" kendo-grid="loanSearchGrid" options="vm.loanSearchGridOptions" ng-dblclick="vm.viewDetails()"></div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+
+        $(".multi-select").select2({
+            theme: "bootstrap"
+        });
+
+        $('#CreatedDate').daterangepicker({
+            "showDropdowns": true,
+            "alwaysShowCalendars": true
+        }, function (start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+
+        $(".fa-chevron-up").eq(1).trigger('click');
+
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+

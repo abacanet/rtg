@@ -1,0 +1,118 @@
+﻿<md-card id="ld">
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Other Information</span>
+        </md-card-title-text>
+    </md-card-title>
+
+
+    <md-card-content>
+        <form name="otherInfoForm" layout="row">
+            <div layout="column" flex="55">
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Loan Originator</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   ng-class="{'long': (vm.model.LoanOriginator.length > 15)}"
+                                   aria-label="loanOriginator"
+                                   name="loanOriginator"
+                                   maxlength="30"
+                                   ng-disabled="false"
+                                   ng-required="false"
+                                   ng-model="vm.model.LoanOriginator">
+                            <div ng-messages="otherInfoForm.loanOriginator.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Boarding Type</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   ng-class="{'long': (vm.model.BoardingType.length > 15)}"
+                                   aria-label="boardingType"
+                                   name="boardingType"
+                                   maxlength="30"
+                                   ng-disabled="false"
+                                   ng-required="false"
+                                   ng-model="vm.model.BoardingType">
+                            <div ng-messages="otherInfoForm.boardingType.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Boarded Date</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <md-datepicker name="boardedDate"
+                                           ng-model="vm.model.BoardedDate"
+                                           ng-required="false"
+                                           md-hide-icons="calendar"
+                                           md-placeholder="Enter date"
+                                           md-min-date="minDate"
+                                           md-max-date="maxDate"
+                                           md-date-filter="businessDaysOnly"></md-datepicker>
+                            <div ng-messages="otherInfoForm.boardedDate.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                                <div ng-message="filtered">Business Days Only!</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+            <div layout="column" flex="40" flex-offset="5">
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Loan Channel</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   ng-class="{'long': (vm.model.LoanChannel.length > 15)}"
+                                   aria-label="loanChannel"
+                                   name="loanChannel"
+                                   maxlength="30"
+                                   ng-required="false"
+                                   ng-disabled="false"
+                                   ng-model="vm.model.LoanChannel">
+                            <div ng-messages="otherInfoForm.loanChannel.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Credit Type</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   ng-class="{'long': (vm.model.CreditType.length > 15)}"
+                                   aria-label="creditType"
+                                   name="creditType"
+                                   maxlength="30"
+                                   ng-required="false"
+                                   ng-disabled="false"
+                                   ng-model="vm.model.CreditType">
+                            <div ng-messages="otherInfoForm.creditType.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

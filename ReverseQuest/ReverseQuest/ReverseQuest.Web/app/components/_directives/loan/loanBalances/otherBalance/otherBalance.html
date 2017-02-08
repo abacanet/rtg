@@ -1,0 +1,81 @@
+﻿<md-card>
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Other Balances</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+        <form name="otherBalancesForm">
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Tax & Ins Withheld</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="taxInsuranceWitheld"
+                               name="taxInsuranceWitheld"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.TaxInsuranceWitheld" />
+                        <div ng-messages="otherBalancesForm.taxInsuranceWitheld.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>IMIP Paid By Borrower</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="imipPaidByBorrower"
+                               name="imipPaidByBorrower"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.ImipPaidByBorrower" />
+                        <div ng-messages="otherBalancesForm.imipPaidByBorrower.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>IMIP Paid By Lender</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="imipPaidByLender"
+                               name="imipPaidByLender"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.ImipPaidByLender" />
+                        <div ng-messages="otherBalancesForm.imipPaidByLender.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

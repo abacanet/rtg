@@ -1,0 +1,149 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form name="loanBoardingGeneralForm" data-toggle="validator" role="form" class="form-horizontal">
+
+            <div class="form-group required">
+                <label class="col-md-2 control-label">
+                    Servicer
+                </label>
+              
+                <div class="col-md-3">
+                    <select id="state" name="state" class="form-control"
+                            kendo-drop-down-list style="width: 100%;"
+                            k-data-text-field="'servicer_name'"
+                            k-data-value-field="'loan_servicer_skey'"
+                            k-data-source="vm.servicers"
+                            ng-model="vm.loanBoarding.Servicer" required></select>
+                </div>
+            
+            </div>
+
+
+            <div class="form-group required">
+                <label class="col-md-2 control-label">
+                    Investor
+                </label>
+
+                <div class="col-md-3">
+                    <select id="investor" name="investor" class="form-control"
+                            kendo-drop-down-list style="width: 100%;"
+                            k-data-text-field="'investor_name'"
+                            k-data-value-field="'investor_skey'"
+                            k-data-source="vm.investors"
+                            ng-model="vm.loanBoarding.Investor" required></select>
+                </div>
+
+            </div>
+
+            <div class="form-group required">
+                <label class="col-md-2 control-label">
+                    Investor Pool
+                </label>
+
+                <div class="col-md-3">
+                    <select id="investorPool" name="investorPool" class="form-control"
+                            kendo-drop-down-list style="width: 100%;"
+                            k-data-text-field="'loan_pool_short_description'"
+                            k-data-value-field="'loan_pool_skey'"
+                            k-data-source="vm.investorPools"
+                            ng-model="vm.loanBoarding.InvestorPool" required></select>
+                </div>
+
+            </div>
+
+
+            <div class="form-group required">
+                <label class="col-md-2 control-label">
+                    Property Type
+                </label>
+
+                <div class="col-md-3">
+                    <select id="collateralCategory" name="collateralCategory" class="form-control"
+                            kendo-drop-down-list style="width: 100%;"
+                            k-data-text-field="'property_type_category_description'"
+                            k-data-value-field="'property_type_category_skey'"
+                            k-data-source="vm.propertyType"
+                            ng-model="vm.loanBoarding.CollateralCategory" required></select>
+                </div>
+            </div>
+
+            <div class="form-group required">
+                <label class="col-md-2 control-label">
+                    Boarding Type
+                </label>
+
+                <div class="col-md-3">
+                    <select id="boardingType" name="boardingType" class="form-control"
+                            kendo-drop-down-list style="width: 100%;"
+                            k-data-text-field="'Name'"
+                            k-data-value-field="'Name'"
+                            k-data-source="vm.boardingTypes"
+                             k-value-primitive="true"
+                            k-on-change="vm.onBoardingTypeChange();"
+                            ng-model="vm.loanBoarding.BoardingType"
+                             required></select>
+                </div>
+            </div>
+
+            <div class="form-group required"  ng-show="vm.loanBoarding.BoardingType === 'Transfer Loan'">
+                <label class="col-md-2 control-label">
+                    Prior Servicer
+                </label>
+
+                <div class="col-md-3">
+                    <select id="priorServicer" name="priorServicer" class="form-control"
+                            kendo-drop-down-list style="width: 100%;"
+                            k-data-text-field="'servicer_name'"
+                            k-data-value-field="'loan_servicer_skey'"
+                            k-data-source="vm.servicers"
+                            ng-model="vm.loanBoarding.PriorServicer" ng-required="vm.loanBoarding.BoardingType === 'Transfer Loan'"></select>
+                </div>
+            </div>
+
+            <!--<div class="form-group">
+                <label for="boardingType" class="control-label">Boarding Type</label>
+                <div class="input-group select2-bootstrap-prepend">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"
+                                data-select2-open="single-prepend-text">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <select id="boardingType" class="form-control"
+                            ng-model="vm.loanBoarding.BoardingType"
+                            style="width:50%"
+                            
+                            required>
+                        <option value="">Select Boarding Type...</option>
+                        <option ng-repeat="item in vm.investorPools track by $index" ng-value="item.Skey">
+                            {{item.LongDescription}}
+                        </option>
+         
+                    </select>
+                </div>
+            </div>-->
+
+            <!--<div class="form-group" ng-show="vm.loanBoarding.BoardingType === 'Transfer Loan'">
+                <label for="priorServicer" class="control-label">Prior Servicer</label>
+                <div class="input-group select2-bootstrap-prepend">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"
+                                data-select2-open="single-prepend-text">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <select id="priorServicer" class="form-control"
+                            ng-model="vm.loanBoarding.PriorServicer"
+                            style="width:50%"
+                            ng-required="vm.loanBoarding.BoardingType === 'Transfer Loan'">
+                        <option value="">Select Prior Servicer...</option>
+                        <option ng-repeat="item in vm.servicers track by $index" ng-value="item.loan_servicer_skey">
+                            {{item.servicer_name}}
+                        </option>
+                    </select>
+                </div>
+            </div>-->
+            <button class="btn btn-primary" type="submit" ng-click="vm.next(loanBoardingGeneralForm)">Next</button>
+        </form>
+    </div>
+</div>

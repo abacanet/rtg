@@ -1,0 +1,96 @@
+﻿<md-card id="ld">
+    <div layout-xs="column">
+        <md-card-title class="card-form-header">
+            <md-card-title-text>
+                <span>Prior Servicer Info</span>
+            </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content>
+            <form name="priorServicerinfoForm">
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Name</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   ng-class="{'long': (vm.model.Name.length > 15)}"
+                                   aria-label="name"
+                                   name="name"
+                                   maxlength="30"
+                                   ng-required="false"
+                                   ng-disabled="false"
+                                   ng-model="vm.model.Name">
+                            <div ng-messages="priorServicerinfoForm.name.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Phone</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   ng-class="{'long': (vm.model.Phone.length > 15)}"
+                                   aria-label="phone"
+                                   name="phone"
+                                   maxlength="30"
+                                   ng-required="false"
+                                   ng-disabled="false"
+                                   ng-model="vm.model.Phone">
+                            <div ng-messages="priorServicerinfoForm.phone.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Loan#</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   aria-label="loanNum"
+                                   name="loanNum"
+                                   type="number"
+                                   min="0"
+                                   max="4999"
+                                   ng-required="false"
+                                   ng-disabled="false"
+                                   ng-pattern="/^(\d)+$/"
+                                   ng-model="vm.model.LoanNumber" />
+                            <div ng-messages="priorServicerinfoForm.loanNum.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                        <label><small>Sub-Status</small></label>
+                    </div>
+                    <div layout="row" flex="60" flex-offset="5">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   ng-class="{'long': (vm.model.SubStatus.length > 15)}"
+                                   aria-label="subStatus"
+                                   name="subStatus"
+                                   maxlength="30"
+                                   ng-required="false"
+                                   ng-disabled="false"
+                                   ng-model="vm.model.SubStatus">
+                            <div ng-messages="priorServicerinfoForm.subStatus.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </form>
+        </md-card-content>
+    </div>
+</md-card>

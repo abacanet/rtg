@@ -1,0 +1,452 @@
+﻿<md-card id="ld">
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Loan Rates</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+        <form name="loanRatesForm" role="form" novalidate>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Exp. Intrest Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="expInterestRate"
+                               name="expInterestRate"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-required="true"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.ExpectedInterestRate" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.expInterestRate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>MIP/PMI Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="mipPMIRate"
+                               name="mipPMIRate"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-readonly="true"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.MipRate" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.mipPMIRate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Rate At Closing</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="rateAtClosing"
+                               name="rateAtClosing"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.InterestRateAtClosing" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.rateAtClosing.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Margin</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="margin"
+                               name="margin"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.Margin" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.margin.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Arm Type</small></label>
+                </div>
+                <div layout="row" flex="55" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               ng-class="{'long': (vm.model.ArmType.length > 15)}"
+                               aria-label="armType"
+                               name="armType"
+                               maxlength="30"
+                               ng-required="false"
+                               ng-disabled="true"
+                               ng-model="vm.model.ArmType">
+                        <div ng-messages="loanRatesForm.armType.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Rate Index Type</small></label>
+                </div>
+                <div layout="row" flex="55" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               ng-class="{'long': (vm.model.RateIndexTypeSkey.length > 15)}"
+                               aria-label="rateIndexType"
+                               name="rateIndexType"
+                               maxlength="30"
+                               ng-required="false"
+                               ng-disabled="true"
+                               ng-model="vm.model.RateIndexTypeSkey">
+                        <div ng-messages="loanRatesForm.rateIndexType.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Current Int/Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="currentIntRate"
+                               name="currentIntRate"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-required="false"
+                               ng-disabled="true"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.CurrentInterestRate" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.currentIntRate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex class="smallerMargin" flex-offset="5">
+                        <input class="align-text-right"
+                               aria-label="currentIntIndex"
+                               name="currentIntIndex"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.CurrentRateIndex" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.currentIntIndex.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Previous Int/Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="previousIntRate"
+                               name="previousIntRate"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-required="false"
+                               ng-disabled="true"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.PreviousInterestRate" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.previousIntRate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex class="smallerMargin" flex-offset="5">
+                        <input class="align-text-right"
+                               aria-label="previousIntIndex"
+                               name="previousIntIndex"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-required="false"
+                               ng-disabled="true"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.PreviousRateIndex" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.previousIntIndex.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Next Int/Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="nextIntRate"
+                               name="nextIntRate"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-required="false"
+                               ng-disabled="true"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.NextInterestRate" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.nextIntRate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex class="smallerMargin" flex-offset="5">
+                        <input class="align-text-right"
+                               aria-label="nextIntIndex"
+                               name="nextIntIndex"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-required="false"
+                               ng-disabled="true"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.NextRateIndex" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.nextIntIndex.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>First Change Date</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-datepicker name="firstChangeDate"
+                                       ng-model="vm.model.FirstArmChangeDate"
+                                       ng-required="false"
+                                       ng-disabled="true"
+                                       md-hide-icons="calendar"
+                                       md-placeholder="Enter date"
+                                       md-min-date="minDate"
+                                       md-max-date="maxDate"
+                                       md-date-filter="businessDaysOnly">
+                        </md-datepicker>
+                        <div ng-messages="loanRatesForm.firstChangeDate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            <div ng-message="filtered">Business Days Only!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Next Change Date</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-datepicker name="nextChangeDate"
+                                       ng-model="vm.model.NextArmChangeDate"
+                                       md-placeholder="Enter date"
+                                       md-hide-icons="calendar"
+                                       ng-required="false"
+                                       ng-disabled="true"
+                                       md-min-date="minDate"
+                                       md-max-date="maxDate"
+                                       md-date-filter="businessDaysOnly">
+                        </md-datepicker>
+                        <div ng-messages="loanRatesForm.nextChangeDate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            <div ng-message="filtered">Business Days Only!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Max From Current Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="maxFromCurrentRate"
+                               name="maxFromCurrentRate"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-required="false"
+                               ng-disabled="true"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.InterestRateMaxFromCurrentRate" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.maxFromCurrentRate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Max From Closing Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="maxFromClosingRate"
+                               name="maxFromClosingRate"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.InterestRateMaxFromClosingRate" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.maxFromClosingRate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Debenture Int Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="debentureIntRate"
+                               name="debentureIntRate"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,3})?$/"
+                               ng-model="vm.model.DebentureInterestRate" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.debentureIntRate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Max From Closing Rate</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <input class="align-text-right"
+                               aria-label="maxFromClosingRate"
+                               name="maxLifeTime"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="true"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.InterestRateLifetimeMax" />
+                        <md-icon md-font-set="regular-font">%</md-icon>
+                        <div ng-messages="loanRatesForm.maxLifeTime.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" flex="45">
+                    <div layout="row" layout-align="start center" flex="70" class="formLabel">
+                        <label><small>Round to 1/8th</small></label>
+                    </div>
+                    <div layout="row" flex="30">
+                        <md-input-container flex class="smallerMargin">
+                            <md-checkbox class="md-primary"
+                                         aria-label="roundTo"
+                                         name="roundTo"
+                                         ng-required="false"
+                                         ng-disabled="true"
+                                         ng-model="vm.model.Rounding">
+                            </md-checkbox>
+                            <div ng-messages="loanRatesForm.roundTo.$error" md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" flex="50" flex-offset="5">
+                    <div layout="row" layout-align="start center" flex="25" class="formLabel">
+                        <label><small>BPS</small></label>
+                    </div>
+                    <div layout="row" flex="75">
+                        <md-input-container flex class="smallerMargin">
+                            <input class="align-text-right"
+                                   aria-label="bps"
+                                   name="bps"
+                                   type="number"
+                                   min="0"
+                                   max="4999"
+                                   ng-required="false"
+                                   ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                                   ng-model="vm.model.BPS" />
+                            <md-icon md-font-set="regular-font">%</md-icon>
+                            <div ng-messages="loanRatesForm.bps.$error" multiple md-auto-hide="false">
+                                <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

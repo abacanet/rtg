@@ -1,0 +1,203 @@
+﻿<style>
+    /*body {
+        padding: 15px;
+    }*/
+
+    .select2 > .select2-choice.ui-select-match {
+        /* Because of the inclusion of Bootstrap */
+        padding-top: 8px;
+        height: 44px;
+    }
+
+    .select2-container .select2-choice .select2-arrow b {
+        margin-top: 8px;
+    }
+
+    .selectize-control > .selectize-dropdown {
+        top: 36px;
+    }
+    /* Some additional styling to demonstrate that append-to-body helps achieve the proper z-index layering. */
+    .select-box {
+        background: #fff;
+        position: relative;
+        z-index: 1;
+    }
+
+    .alert-info.positioned {
+        margin-top: 1em;
+        position: relative;
+        z-index: 10000; /* The select2 dropdown has a z-index of 9999 */
+    }
+</style>
+
+<form id="registerForm" name="registerForm" novalidate>
+    <div class="form-group">
+        <input type="text"
+               name="firstName"
+               id="firstName"
+               class="form-control input-lg"
+               maxlength="50"
+               ng-model="vm.registerModel.FirstName"
+               placeholder="First Name"
+               ng-required="true" />
+        <div ng-messages="registerForm.firstName.$error"
+             ng-if="!registerForm.firstName.$pristine && !registerForm.firstName.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>
+    <!--<div class="form-group">
+        <input type="text"
+               name="middleName"
+               id="middleName"
+               class="form-control input-lg"
+               maxlength="50"
+               ng-model="vm.registerModel.MiddleName"
+               placeholder="Middle Name"
+               ng-required="false" />
+        <div ng-messages="registerForm.middleName.$error"
+             ng-if="!registerForm.middleName.$pristine && !registerForm.middleName.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>-->
+    <div class="form-group">
+        <input type="text"
+               name="lastName"
+               id="lastName"
+               class="form-control input-lg"
+               maxlength="50"
+               ng-model="vm.registerModel.LastName"
+               placeholder="Last Name"
+               ng-required="true" />
+        <div ng-messages="registerForm.lastName.$error"
+             ng-if="!registerForm.lastName.$pristine && !registerForm.lastName.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text"
+               name="email"
+               id="email"
+               class="form-control input-lg"
+               maxlength="50"
+               ng-model="vm.registerModel.Email"
+               placeholder="Email"
+               ng-required="true"
+               email-validation />
+        <div ng-messages="registerForm.email.$error"
+             ng-if="!registerForm.email.$pristine && !registerForm.email.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <select class="form-control input-lg"
+                id="contactType"
+                name="contactType"
+                ng-required="true"
+                ng-model="vm.registerModel.ContactTypeID"
+                ng-options="ct.Id as ct.Text for ct in vm.contactTypes">
+            <option value="" disabled="disabled">-- Please Select --</option>
+        </select>
+        <div ng-messages="registerForm.contactType.$error"
+             ng-if="!registerForm.contactType.$pristine && !registerForm.contactType.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text"
+               id="contactNumber"
+               name="contactNumber"
+               class="form-control input-lg"
+               ng-maxlength="14"
+               ng-minlength="14"
+               maxlength="14"
+               ng-required="true"
+               ui-us-phone-number
+               ng-model="vm.registerModel.Phone"
+               placeholder="(555) 555-5555" />
+        <div ng-messages="registerForm.contactNumber.$error"
+             ng-if="!registerForm.contactNumber.$pristine && !registerForm.contactNumber.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <select class="form-control input-lg"
+                id="affiliationGroup"
+                name="affiliationGroup"
+                ng-model="vm.registerModel.Affiliation"
+                ng-required="true"
+                ng-options="a as a.Text for a in vm.affiliations">
+            <option value="" disabled="disabled">-- Please Select --</option>
+        </select>
+        <div ng-messages="registerForm.affiliationGroup.$error"
+             ng-if="!registerForm.affiliationGroup.$pristine && !registerForm.affiliationGroup.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>
+    <div ng-show="vm.registerModel.Affiliation.Id === 3" class="form-group">
+        <p><strong>Which National Distributor(s) are you affiliated with? (List all that apply)</strong></p>
+        <ui-select name="nationalDistributor"
+                   id="nationalDistributor"
+                   multiple
+                   theme="select2"
+                   title="Choose a National Distributor"
+                   reset-search-input="false"
+                   style="font-size: 18px;width: 100%; margin-bottom:20px;"
+                   ng-required="vm.selectedGroup === 3"
+                   ng-model="vm.registerModel.SelectedNatDist"
+                   ng-model-options="{ debounce: 250 }">
+            <ui-select-match placeholder="Search and Select National Distributor...">{{$item.Text}}</ui-select-match>
+            <ui-select-choices refresh="vm.getNatDists($select.search)"
+                               refresh-delay="0"
+                               repeat="natDist in vm.natDists | filter: {Text: $select.search}">
+                <div ng-bind-html="natDist.Text | highlight: $select.search"></div>
+            </ui-select-choices>
+        </ui-select>
+        <div ng-messages="registerForm.nationalDistributor.$error"
+             ng-if="!registerForm.nationalDistributor.$pristine && !registerForm.nationalDistributor.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>
+    <div ng-show="vm.registerModel.Affiliation.Id === 5">
+        <p><strong>Which Publisher(s) are you affiliated with? (List all that apply)</strong></p>
+        <ui-select name="publisher"
+                   id="publisher"
+                   multiple
+                   theme="select2"
+                   title="Choose a Publisher"
+                   reset-search-input="false"
+                   style="font-size: 18px;width: 100%; margin-bottom:20px;"
+                   ng-model="vm.registerModel.SelectedPublisher"
+                   ng-required="vm.selectedGroup === 5"
+                   ng-model-options="{ debounce: 250 }">
+            <ui-select-match placeholder="Search and Select Publisher...">{{$item.Text}}</ui-select-match>
+            <ui-select-choices refresh="vm.getPublishers($select.search)"
+                               refresh-delay="0"
+                               repeat="publisher in vm.publishers | filter: {Text: $select.search}">
+                <div ng-bind-html="publisher.Text | highlight: $select.search"></div>
+            </ui-select-choices>
+        </ui-select>
+        <div ng-messages="registerForm.publisher.$error"
+             ng-if="!registerForm.publisher.$pristine && !registerForm.publisher.$valid">
+            <div ng-messages-include="/app/shared/views/partial-views/validation-messages.html">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-block btn-lg btn-primary"
+                ng-click="vm.register()"
+                ng-disabled="vm.busy ||
+                !registerForm.$valid ||
+                (vm.registerModel.Affiliation.Id === 3 && vm.registerModel.SelectedNatDist.length === 0) ||
+                (vm.registerModel.Affiliation.Id === 5 && vm.registerModel.SelectedPublisher.length === 0)">
+            Submit
+        </button>
+    </div>
+</form>

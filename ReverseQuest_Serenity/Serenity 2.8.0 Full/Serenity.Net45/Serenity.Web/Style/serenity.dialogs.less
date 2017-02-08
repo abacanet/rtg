@@ -1,0 +1,185 @@
+﻿@import "serenity.mixins.less";
+
+.s-Dialog {
+    line-height: normal;
+}
+
+.s-Dialog .ui-tabs {
+    padding: 0;
+    background: transparent;
+}
+
+.s-Dialog .ui-tabs .ui-tabs-nav li a {
+    padding: 2px 10px 3px 10px;
+}
+
+.s-Dialog .ui-dialog-buttonpane {
+    margin: 0px;
+    padding: 2px 7px 2px 3px;
+}
+
+.s-Dialog .tab-pane {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.s-Dialog .s-DialogToolbar {
+    margin: 0;
+    background: #f8fafc;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #d0d0d0;
+    padding: 5px 4px 0 4px;
+    min-height: 44px;
+}
+
+div.s-Toolbar .tool-button.no-text span.button-inner {
+    padding: 5px 3px 19px 13px;
+}
+
+div.s-Toolbar .s-PopupToolButton .button-outer > span > b {
+    margin-top: 2px;
+}
+
+
+.s-Dialog .s-Form {
+    padding: 12px 12px 0 12px;
+}
+
+.s-MessageDialog {
+    min-width: 310px;
+}
+
+.s-MessageDialog .message {
+    padding: 24px 6px 6px 86px;
+    min-height: 80px;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 16px 16px;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: pre-wrap;
+}
+
+.s-AlertDialog .ui-dialog-content {
+    .gradient(#c43c35, #ee5f5b, #c43c35);
+}
+
+.s-AlertDialog .message {
+    background-image: url(images/dialog-alert.png);
+}
+
+.s-WarningDialog .ui-dialog-content {
+    .gradient(#a4a435, #aaaa5b, #a4a435);
+}
+
+.s-WarningDialog .message {
+    background-image: url(images/dialog-warning.png);
+}
+
+.s-ConfirmDialog .ui-dialog-content {
+    .gradient(#353cc4, #5b5fee, #353cc4);
+}
+
+.s-ConfirmDialog .message {
+    background-image: url(images/dialog-confirm.png);
+}
+
+.s-InformationDialog .ui-dialog-content {
+    .gradient(#4ba94f, #5ba35f, #4ba94f);
+}
+
+.s-InformationDialog .message {
+    background-image: url(images/dialog-confirm.png);
+}
+
+.s-Form .translation > label.caption, .translation > label.caption {
+    color: darkviolet;
+}
+
+.flex-layout {
+    .s-Form .editor { float: initial; }
+    .s-Form .caption { float: initial; }
+    .s-Form .vx { float: initial; }
+
+    .field { .display(flex); .flex-wrap(nowrap); .align-items(flex-start); .flex(0, 1, 100%); min-width: 0; }
+    .caption { .flex(0, 0, auto); }
+
+    .editor { float: initial; .flex(1, 1, 80%); min-width: 0; }
+    input.editor[type=checkbox] { .flex(0, 0, auto); }
+    .s-DateTimeEditor.dateQ { .flex(1, 1, 50%); }
+    .s-DateTimeEditor.time { .flex(0, 0, auto); margin-left: 4px; }
+
+    .s-EmailEditor.emailuser { .flex(1, 1, 50%); }
+    .s-DateTimeEditor.emaildomain { .flex(0, 0, auto); margin-left: 4px; }
+
+    .vx { .flex(0, 0, auto); }
+
+    .category { .display(flex); .flex-wrap(wrap); .flex-direction(row); }
+    .category-links { .flex(0, 0, auto); }
+    .category-title { .flex(0, 1, 100%); }
+
+    .ui-dialog-content, 
+    .s-DialogContent, 
+    .s-Form, 
+    form,
+    .fieldset,
+    .tab-pane,
+    .tab-pane > .s-DataGrid,
+    .s-PropertyGrid {
+        .display(flex);
+        .flex-direction(column);
+        .flex(1, 1, auto);
+    }
+
+    .grid-container {
+        .flex(1, 1, auto);
+    }
+
+    .s-PropertyGrid .categories {
+        .flex(1, 1, auto);
+        //overflow-y: auto;
+    }
+
+    @media (max-width: 760px) {
+        .field { .flex-wrap(wrap); }
+        .select2-container { .flex(1); }
+        .caption { .flex(0, 0, 100%); width: auto; }
+        .s-Form .caption { text-align: left; padding-top: 0px; padding-bottom: 2px; }
+        .s-PropertyGrid .category-title { padding: 3px 0; margin: 12px 10px 8px 0; }
+    }
+}
+
+body.mobile-device.modal-dialog-open {
+    overflow-y: hidden;
+}
+
+.ui-dialog.mobile-layout {
+    box-shadow: none;
+    border: none;
+
+    .ui-dialog-titlebar {
+        border: none;
+        padding: 0.5em 0.5em 0.4em 3em;
+    }
+
+    .ui-dialog-titlebar-close, .ui-dialog-titlebar-close:hover {
+        border: none;
+        left: .3em;
+        width: 28px;
+        height: 28px;
+        background-color: transparent;
+        background-image: url(images/back-arrow-black.png);
+        top: 45%;
+    }
+
+    .ui-dialog-titlebar-buttonpane {
+        display: none;
+    }
+
+    .s-PropertyGrid .categories {
+        //overflow-y: scroll;
+    }
+}

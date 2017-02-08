@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8267A9E5-4396-42B0-9AF8-89A1D7FCED68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReverseQuest.Domain</RootNamespace>
+    <AssemblyName>ReverseQuest.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataTransformationObjects\ArmTypeDTO.cs" />
+    <Compile Include="DataTransformationObjects\CountyClerkDTO.cs" />
+    <Compile Include="DataTransformationObjects\Idl.cs" />
+    <Compile Include="DataTransformationObjects\LifeExpectancySetAside.cs" />
+    <Compile Include="DataTransformationObjects\BaseDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanBalanceDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanBoardingResultDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanBoardingStatusDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanContactDetailsDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanDetailsDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanHeaderDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanMasterDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanNotesDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanNotesSearchDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanPropertyDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanPropertyValueDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanQCSearchDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanRatesDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanSearchDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanServicerDTO.cs" />
+    <Compile Include="DataTransformationObjects\Loan\LoanSubStatusDTO.cs" />
+    <Compile Include="DataTransformationObjects\PaymentDTO.cs" />
+    <Compile Include="DataTransformationObjects\PaymentPlanTypeDTO.cs" />
+    <Compile Include="DataTransformationObjects\RateIndexTypeDTO.cs" />
+    <Compile Include="DataTransformationObjects\ReferenceProductTypeDTO.cs" />
+    <Compile Include="DataTransformationObjects\RffGroupDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Interfaces\Async\IServiceUpdateAsync.cs" />
+    <Compile Include="Services\Interfaces\Async\IServiceGetEntityBySkeyAsync.cs" />
+    <Compile Include="Services\Interfaces\Sync\IServiceDeleteEntityBySkey.cs" />
+    <Compile Include="Services\Interfaces\Sync\IServiceGetPrimitiveTypeByParameter.cs" />
+    <Compile Include="Services\Interfaces\Sync\IServiceUpdateEntityBySkey.cs" />
+    <Compile Include="Services\Interfaces\Sync\IServiceExecuteFunction.cs" />
+    <Compile Include="Services\Interfaces\Sync\IServiceAddEntityBySkey.cs" />
+    <Compile Include="Services\Interfaces\Sync\IServiceGetEntityListBySkey.cs" />
+    <Compile Include="Services\Interfaces\Sync\IServiceGetEntityListByParameter.cs" />
+    <Compile Include="Services\Interfaces\Sync\IServiceGetEntityBySkey.cs" />
+    <Compile Include="Services\LoanBoardingResultService.cs" />
+    <Compile Include="Services\LoanBoardingStatusService.cs" />
+    <Compile Include="Services\LoanContactService.cs" />
+    <Compile Include="Services\LoanDetailsService.cs" />
+    <Compile Include="Services\LoanBalanceService.cs" />
+    <Compile Include="Services\LoanPropertyService.cs" />
+    <Compile Include="Services\LoanPropertyValueService.cs" />
+    <Compile Include="Services\LoanServicerService.cs" />
+    <Compile Include="Services\LoanRatesService.cs" />
+    <Compile Include="Services\LoanHeaderService.cs" />
+    <Compile Include="Services\LoanMasterService.cs" />
+    <Compile Include="Services\LoanNotesService.cs" />
+    <Compile Include="Services\LoanSearchService.cs" />
+    <Compile Include="Services\LoanQCSearchService.cs" />
+    <Compile Include="Services\NextSystemKeyService.cs" />
+    <Compile Include="Services\ProcessLoanBoardingFileService.cs" />
+    <Compile Include="Services\ServiceTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReverseQuest.Data\ReverseQuest.Data.csproj">
+      <Project>{1FAB862D-A28E-4F49-AEE1-BD4925103AF8}</Project>
+      <Name>ReverseQuest.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

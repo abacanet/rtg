@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(ProjectDir)\..\packages\TypeScript.MSBuildTask.1.7.3\tools\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(ProjectDir)\..\packages\TypeScript.MSBuildTask.1.7.3\tools\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BD8E5F2-12C4-4BE8-8B81-C144C97F9A6C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReverseQuestWeb</RootNamespace>
+    <AssemblyName>ReverseQuestWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Kendo.Mvc, Version=2016.1.18.545, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\KENDOUIMVC\2016.1.18.545\Kendo.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Antiforgery, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Antiforgery.1.0.0\lib\net451\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.1.0.0\lib\net451\Microsoft.AspNetCore.Authorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cors, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cors.1.0.0\lib\net451\Microsoft.AspNetCore.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cryptography.Internal.1.0.0\lib\net451\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.1.0.0\lib\net451\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Diagnostics.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Html.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Html.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.AspNetCore.Html.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.1.0.0\lib\net451\Microsoft.AspNetCore.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.1.0.0\lib\net451\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.1.0.0\lib\net451\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.JsonPatch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.JsonPatch.1.0.0\lib\netstandard1.1\Microsoft.AspNetCore.JsonPatch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Localization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Localization.1.0.0\lib\net451\Microsoft.AspNetCore.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ApiExplorer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.ApiExplorer.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.ApiExplorer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Core.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Cors, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Cors.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.DataAnnotations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.DataAnnotations.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.DataAnnotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Formatters.Json.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Formatters.Xml.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Localization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Localization.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Razor.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Razor.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Razor.Host.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.Razor.Host.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.TagHelpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.TagHelpers.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.TagHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.ViewFeatures.1.0.0\lib\net451\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Razor.1.0.0\lib\net451\Microsoft.AspNetCore.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Runtime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Razor.Runtime.1.0.0\lib\net451\Microsoft.AspNetCore.Razor.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.1.0.0\lib\net451\Microsoft.AspNetCore.Routing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.1.0.0\lib\net451\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.1.0.0\lib\net451\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.3.0\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.3.0\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.InternalAbstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.InternalAbstractions.1.0.0\lib\net451\Microsoft.DotNet.InternalAbstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.1.0.0\lib\net451\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.1.0.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Composite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Composite.1.0.0\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Composite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.1.0.0\lib\net451\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.1.0.0\lib\net451\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Globalization.CultureInfoCache, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Globalization.CultureInfoCache.1.0.0\lib\netstandard1.1\Microsoft.Extensions.Globalization.CultureInfoCache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Localization.1.0.0\lib\net451\Microsoft.Extensions.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Localization.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.1.0.0\lib\net451\Microsoft.Extensions.ObjectPool.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Options.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.PlatformAbstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.PlatformAbstractions.1.0.0\lib\net451\Microsoft.Extensions.PlatformAbstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.WebEncoders, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.WebEncoders.1.0.0\lib\netstandard1.0\Microsoft.Extensions.WebEncoders.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.13.7.964, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.7\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.13.7.964, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.7\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.3.42, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.3.308261200\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.1.0.0\lib\netstandard1.1\Microsoft.Net.Http.Headers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OpenIdConnect.3.0.1\lib\net45\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.0.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.1.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.TypeConverter.4.1.0\lib\net45\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.0.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.1.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.FileVersionInfo.4.0.0\lib\net46\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.StackTrace.4.0.1\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.30826.1200, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.3.308261200\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>..\packages\System.Reflection.Metadata.1.3.0\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.1.1\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.2.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.0.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.0.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.0.1\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.0.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.0.0\lib\net46\System.Threading.Thread.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.0.1\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.0.1\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XDocument.4.0.1\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Classes\CustomAuthorize.cs" />
+    <Compile Include="Controllers\DashboardModule\DashboardModuleBaseController.cs" />
+    <Compile Include="Controllers\LoanModule\LoanModuleBaseController.cs" />
+    <Compile Include="Controllers\ModuleBaseController.cs" />
+    <Compile Include="Controllers\DashboardModule\DashboardController.cs" />
+    <Compile Include="Controllers\RefTables\refLoanServicerController.cs" />
+    <Compile Include="Controllers\RefTables\refCountyClerkController.cs" />
+    <Compile Include="Controllers\RefTables\refBankRoutingController.cs" />
+    <Compile Include="Controllers\RefTables\refBankruptcyDistrictController.cs" />
+    <Compile Include="Controllers\RefTables\refAgeEquivalencyController.cs" />
+    <Compile Include="Controllers\RefTables\refAlertSeverityController.cs" />
+    <Compile Include="Controllers\RefTables\refAlertTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refArmTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refAutoNoteController.cs" />
+    <Compile Include="Controllers\RefTables\refBusinessDayController.cs" />
+    <Compile Include="Controllers\RefTables\refContactTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refDefaultReasonController.cs" />
+    <Compile Include="Controllers\RefTables\refDefaultStatusController.cs" />
+    <Compile Include="Controllers\RefTables\refDenialReasonController.cs" />
+    <Compile Include="Controllers\RefTables\refDisbursementPayeeTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refDisbursementTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refEboutiqueLoanStatusMaintenanceController.cs" />
+    <Compile Include="Controllers\RefTables\refFloodZoneController.cs" />
+    <Compile Include="Controllers\RefTables\refGrowthMethodController.cs" />
+    <Compile Include="Controllers\RefTables\refHmbsCustodianController.cs" />
+    <Compile Include="Controllers\RefTables\refHmbsIssuerController.cs" />
+    <Compile Include="Controllers\RefTables\refHmbsTransactionCategoryController.cs" />
+    <Compile Include="Controllers\RefTables\refHmbsTransactionCodeController.cs" />
+    <Compile Include="Controllers\RefTables\refInvestorBankAccountController.cs" />
+    <Compile Include="Controllers\RefTables\refInvestorController.cs" />
+    <Compile Include="Controllers\RefTables\refInvestorDisbursementTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refLanguagePreferenceController.cs" />
+    <Compile Include="Controllers\RefTables\refLoanBoardingValidationMappingController.cs" />
+    <Compile Include="Controllers\RefTables\refLESATypeController.cs" />
+    <Compile Include="Controllers\RefTables\refLoanBoardingValidationRulesController.cs" />
+    <Compile Include="Controllers\RefTables\refLoanPoolController.cs" />
+    <Compile Include="Controllers\RefTables\refLoanSubStatusCategoryController.cs" />
+    <Compile Include="Controllers\RefTables\refLoanSubStatusController.cs" />
+    <Compile Include="Controllers\RefTables\refLogMessageTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refMaritalStatusController.cs" />
+    <Compile Include="Controllers\RefTables\refNoteTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refPaymentPlanStatusController.cs" />
+    <Compile Include="Controllers\RefTables\refPaymentPlanTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refPaymentStatusController.cs" />
+    <Compile Include="Controllers\RefTables\refProductArmRateIndexTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refProductPaymentPlanTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refProductTypeCategoryController.cs" />
+    <Compile Include="Controllers\RefTables\refProductTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refPropertyTypeCategoryController.cs" />
+    <Compile Include="Controllers\RefTables\refPropertyTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refPropertyValueSubTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refPropertyValueTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refRateIndexTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refRemitCategoryController.cs" />
+    <Compile Include="Controllers\RefTables\refRemitTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refReportingPeriodController.cs" />
+    <Compile Include="Controllers\RefTables\refResidencyStatusController.cs" />
+    <Compile Include="Controllers\RefTables\refRffGroupController.cs" />
+    <Compile Include="Controllers\RefTables\refRffTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refSearchColumnController.cs" />
+    <Compile Include="Controllers\RefTables\refSearchWindowController.cs" />
+    <Compile Include="Controllers\RefTables\refStateController.cs" />
+    <Compile Include="Controllers\RefTables\refStatusController.cs" />
+    <Compile Include="Controllers\RefTables\refTaxAuthorityController.cs" />
+    <Compile Include="Controllers\RefTables\refTaxAuthorityTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refTaxNoteCodeController.cs" />
+    <Compile Include="Controllers\RefTables\refTaxPaymentController.cs" />
+    <Compile Include="Controllers\RefTables\refTransactionAdjustmentReasonController.cs" />
+    <Compile Include="Controllers\RefTables\refTransactionCategoryController.cs" />
+    <Compile Include="Controllers\RefTables\refTransactionCodeController.cs" />
+    <Compile Include="Controllers\RefTables\refTransactionColumnController.cs" />
+    <Compile Include="Controllers\RefTables\refTransactionOriginController.cs" />
+    <Compile Include="Controllers\RefTables\refTransactionSourceController.cs" />
+    <Compile Include="Controllers\RefTables\refTransactionTypeController.cs" />
+    <Compile Include="Controllers\RefTables\refVendorController.cs" />
+    <Compile Include="Controllers\RefTables\refVendorTypeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdalTokenCache.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ref_age_equivalency.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_alert_severity.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_alert_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_app_parameter.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_arm_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_auto_job.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_auto_note.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_bankruptcy_district.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_bank_routing.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_batch_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_batch_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_business_day.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_client.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_contact_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_county_clerk.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_county_mortgage_limit.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_default_reason.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_default_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_denial_reason.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_disbursement_payee_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_disbursement_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_document_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_document_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_eboutique_loan_status_maintenance.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_email_template.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_flood_zone.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_growth_method.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_custodian.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_issuer.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_servicing_fee_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_transaction_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_hmbs_transaction_code.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_investor.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_investor_bank_account.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_investor_disbursement_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_language_preference.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_LESA_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_letter_default_value.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_boarding_validation_mapping.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_boarding_validation_rules.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_channel.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_originator.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_pool.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_servicer.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_loan_sub_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_log_message_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_map_interest_rate_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_map_servicer_document_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_marital_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_note_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_note_type_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_payment_plan_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_payment_plan_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_payment_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_arm_rate_index_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_payment_plan_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_type_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_product_type_workflow_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_property_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_property_type_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_property_value_sub_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_property_value_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_qc_criteria.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_qc_criteria_product.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_qc_document_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_qc_sub_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_rate_index_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_remit_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_remit_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_reporting_period.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_residency_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_rff_group.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_rff_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_search_column.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_search_window.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_ssrs_report.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_ssrs_report_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_state.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_status.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_tax_authority.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_tax_authority_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_tax_note_code.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_tax_payment.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_adjustment_reason.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_code.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_column.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_origin.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_source.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_transaction_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_vendor.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_vendor_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_category_client_config.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_conflict.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_category.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_client_config.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_result.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_result_xref.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_task_trigger.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_type.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_type_client_config.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_workflow_type_default_reason.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ref_zip_county.cs">
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReverseQuestEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReverseQuestEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReverseQuestEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReverseQuestEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReverseQuestEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReverseQuestEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\kendo.material.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="favicon.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\rtgHomeScreen.PNG" />
+    <Content Include="images\sprite.png" />
+    <Content Include="Models\ReverseQuestEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReverseQuestEntity.edmx</DependentUpon>
+      <LastGenOutput>ReverseQuestEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ReverseQuestEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReverseQuestEntity.edmx</DependentUpon>
+      <LastGenOutput>ReverseQuestEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\ReverseQuestEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ReverseQuestEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ReverseQuestEntity.edmx.diagram">
+      <DependentUpon>ReverseQuestEntity.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\RTG-DEV-WEB-1 - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\cbpHorizontalMenu.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr.custom.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="scss\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="scss\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="scss\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="scss\font-awesome-4.7.0\scss\font-awesome.css" />
+    <Content Include="scss\font-awesome-4.7.0\scss\font-awesome.min.css" />
+    <Content Include="scss\main.css" />
+    <Content Include="scss\main.min.css" />
+    <Content Include="scss\pure-drawer\pure-drawer.css" />
+    <Content Include="scss\pure-drawer\pure-drawer.min.css" />
+    <Content Include="styles\bootstrap-flex.css" />
+    <Content Include="styles\component.css" />
+    <Content Include="styles\default.css" />
+    <Content Include="styles\extensions_example.css" />
+    <Content Include="styles\font-awesome.min.css" />
+    <Content Include="styles\main.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="styles\extensions_example.css.map" />
+    <Content Include="styles\main.css.map" />
+    <Content Include="Views\Alert\Create.cshtml" />
+    <Content Include="Views\Alert\Delete.cshtml" />
+    <Content Include="Views\Alert\Details.cshtml" />
+    <Content Include="Views\Alert\Edit.cshtml" />
+    <Content Include="Views\Alert\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Views\Shared\_TopNavDrawer.cshtml" />
+    <Content Include="Views\sec_role_user\Create.cshtml" />
+    <Content Include="Views\sec_role_user\Delete.cshtml" />
+    <Content Include="Views\sec_role_user\Details.cshtml" />
+    <Content Include="Views\sec_role_user\Edit.cshtml" />
+    <Content Include="Views\sec_role_user\Index.cshtml" />
+    <Content Include="Views\secUser\Create.cshtml" />
+    <Content Include="Views\secUser\Delete.cshtml" />
+    <Content Include="Views\secUser\Details.cshtml" />
+    <Content Include="Views\secUser\Edit.cshtml" />
+    <Content Include="Views\secUser\Index.cshtml" />
+    <Content Include="Views\secWebPage\Create.cshtml" />
+    <Content Include="Views\secWebPage\Delete.cshtml" />
+    <Content Include="Views\secWebPage\Details.cshtml" />
+    <Content Include="Views\secWebPage\Edit.cshtml" />
+    <Content Include="Views\secWebPage\Index.cshtml" />
+    <Content Include="Views\Account\SignOutCallback.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\MultiSelects\LoanSubStatus.cshtml" />
+    <Content Include="Views\Search\MultiSelects\LoanStatus.cshtml" />
+    <Content Include="Views\Search\MultiSelects\ContactType.cshtml" />
+    <Content Include="Views\Search\MultiSelects\ServicerName.cshtml" />
+    <Content Include="Views\Search\MultiSelects\InvestorLenderName.cshtml" />
+    <Content Include="Views\Search\MultiSelects\InterestRateType.cshtml" />
+    <Content Include="Views\Search\MultiSelects\ProductType.cshtml" />
+    <Content Include="Views\Search\MultiSelects\PayPlanType.cshtml" />
+    <Content Include="Views\Search\MultiSelects\BoardingType.cshtml" />
+    <Content Include="Views\Search\MultiSelects\CreditType.cshtml" />
+    <Content Include="scss\extensions_example.scss" />
+    <Content Include="scss\main.scss" />
+    <Content Include="scss\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="scss\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="scss\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="scss\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="scss\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="scss\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="scss\partials\_da-rules.scss" />
+    <Content Include="scss\partials\custom\_body.scss" />
+    <Content Include="scss\partials\custom\_buttons.scss" />
+    <Content Include="scss\partials\custom\_footer.scss" />
+    <Content Include="scss\partials\custom\_global.scss" />
+    <Content Include="scss\partials\custom\_helpers.scss" />
+    <Content Include="scss\partials\custom\_nav.scss" />
+    <Content Include="scss\partials\custom\_sidebar.scss" />
+    <Content Include="scss\partials\custom\_typography.scss" />
+    <Content Include="scss\partials\custom\_welcome.scss" />
+    <Content Include="scss\partials\variables\_colors.scss" />
+    <Content Include="scss\partials\variables\_z-index-library.scss" />
+    <Content Include="scss\pure-drawer\_pure-drawer-breakpoints.scss" />
+    <Content Include="scss\pure-drawer\_pure-drawer-functions.scss" />
+    <Content Include="scss\pure-drawer\_pure-drawer-global.scss" />
+    <Content Include="scss\pure-drawer\_pure-drawer-settings.scss" />
+    <Content Include="scss\pure-drawer\pure-drawer.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-10.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-11.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-12.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-13.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-bounce.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-fade.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-fall.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-flipX.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-flipY.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-push.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-reveal.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-reverseSlide.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-scaleDown.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-scaleRotate.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-scaleUp.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-slide.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-slideAlong.scss" />
+    <Content Include="scss\pure-drawer\effects\_effect-zoom.scss" />
+    <Content Include="scss\pure-drawer\vendor\_animate.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(ProjectDir)\..\packages\TypeScript.MSBuildTask.1.7.3\tools\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(ProjectDir)\..\packages\TypeScript.MSBuildTask.1.7.3\tools\MSBuild\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53176</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53176/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildWebCompiler.1.11.319\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildWebCompiler.1.11.319\build\BuildWebCompiler.targets'))" />
+  </Target>
+  <Import Project="..\packages\BuildWebCompiler.1.11.319\build\BuildWebCompiler.targets" Condition="Exists('..\packages\BuildWebCompiler.1.11.319\build\BuildWebCompiler.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

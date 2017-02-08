@@ -1,0 +1,223 @@
+﻿<md-card>
+    <md-card-title class="card-form-header">
+        <md-card-title-text>
+            <span>Initial Disbursement Limit</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+        <form name="initDisbLimitForm">
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>IDL</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="idl"
+                               name="idl"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.Idl" />
+                        <div ng-messages="initDisbLimitForm.idl.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Prin Bal & Init MIP</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="prinBalAndInitMip"
+                               name="prinBalAndInitMip"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.PrinBalAndInitMip" />
+                        <div ng-messages="initDisbLimitForm.prinBalAndInitMip.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Repair Set Aside</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="repairSetAside"
+                               name="repairSetAside"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.RepairSetAside" />
+                        <div ng-messages="initDisbLimitForm.repairSetAside.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>First Year Set Aside</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="firstYearSetAside"
+                               name="firstYearSetAside"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.FirstYearSetAside" />
+                        <div ng-messages="initDisbLimitForm.firstYearSetAside.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Initial Credit LISA</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="initialCreditLisa"
+                               name="initialCreditLisa"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.InitialCreditLisa" />
+                        <div ng-messages="initDisbLimitForm.initialCreditLisa.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>First Year LESA T&I</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="firstYearLesaTaxAndInt"
+                               name="firstYearLesaTaxAndInt"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.FirstYearLesaTaxAndInt" />
+                        <div ng-messages="initDisbLimitForm.firstYearLesaTaxAndInt.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Initial Net Principal Limit</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="initialNetPrincipalLimit"
+                               name="initialNetPrincipalLimit"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.InitialNetPrincipalLimit" />
+                        <div ng-messages="initDisbLimitForm.initialNetPrincipalLimit.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="45" class="formLabel">
+                    <label><small>IDL Expiration Date</small></label>
+                </div>
+                <div layout="row" flex="50" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-datepicker name="idlExpirationDate"
+                                       ng-model="vm.model.IdlExpirationDate"
+                                       ng-disabled="false"
+                                       ng-required="false"
+                                       md-hide-icons="calendar"
+                                       md-placeholder="Enter date"
+                                       md-min-date="minDate"
+                                       md-max-date="maxDate"
+                                       md-date-filter="businessDaysOnly">
+                        </md-datepicker>
+                        <div ng-messages="initDisbLimitForm.idlExpirationDate.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                            <div ng-message="filtered">Business Days Only!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" layout-align="start center" flex="35" class="formLabel">
+                    <label><small>Net Growth</small></label>
+                </div>
+                <div layout="row" flex="60" flex-offset="5">
+                    <md-input-container flex class="smallerMargin">
+                        <md-icon md-font-set="regular-font">$</md-icon>
+                        <input class="align-text-right"
+                               aria-label="netGrowth"
+                               name="netGrowth"
+                               type="number"
+                               min="0"
+                               max="4999"
+                               ng-disabled="false"
+                               ng-required="false"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                               ng-model="vm.model.NetGrowth" />
+                        <div ng-messages="initDisbLimitForm.netGrowth.$error" multiple md-auto-hide="false">
+                            <div ng-messages-include="/app/shared/views/validation-messages.html"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>
